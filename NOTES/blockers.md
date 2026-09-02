@@ -1,26 +1,16 @@
 # Blockers
 
-## B1 — No Vitis/Vivado/XRT toolchain, no physical Alveo U55C (open, structural)
+## B1 — ~~No Vitis/Vivado/XRT toolchain, no physical Alveo U55C~~ (RESOLVED — detection error on my part)
 
-**Status:** confirmed, 2026-09-02, via direct detection (see `results/env.json`).
+**Status: RESOLVED 2026-09-02.** This blocker was raised in error and is retained here as a record of the mistake, because it briefly caused the whole project to be scoped down to a simulation-only study.
 
-**Detection performed:**
-```
-which v++ vitis_hls vivado        -> nothing found
-platforminfo -l | grep -i u55     -> platforminfo not found
-which xbutil; xbutil examine      -> xbutil not found
-```
+**What went wrong.** The initial detection pass ran bare `which v++ vitis_hls vivado`, `platforminfo -l`, and `xbutil examine` in a fresh non-login shell. None of those tools are on the default `PATH` on this machine — they require sourcing `/tools/Xilinx/Vitis/2023.2/settings64.sh` and `/opt/xilinx/xrt/setup.sh` first. I concluded "not installed" from "not on PATH", which was wrong. The author corrected this by showing `xbutil examine` output after sourcing XRT.
 
-**Impact:** Per the provenance-tier scheme (README / paper Methodology), this rules out:
-- **T1 (hardware)** — no board to run `xbutil`/host timers against.
-- **T2 (post-implementation)** — no Vivado to place-and-route.
-- **T3 (HLS estimate)** — no Vitis HLS to C-synthesize even an estimate.
+**Actual state (verified):** Vitis / Vitis HLS / Vivado **2023.2** installed under `/tools/Xilinx` (also 2021.2 and 2019.1), XRT **2.15.225**, platform `xilinx_u55c_gen3x16_xdma_3_202210_1` installed, and a physical **Alveo U55C at `0000:8c:00.1`, shell `xilinx_u55c_gen3x16_xdma_base_3`, Device Ready = Yes**. Full detail in `results/env.json` and `results/device.json`.
 
-Everything under `hw/` in this repo is therefore a **T4** artifact: a hand-written HLS-style C++ kernel that is believed synthesizable (follows standard `ap_fixed`/`#pragma HLS PIPELINE`/dataflow idioms) plus an analytical cycle-count and resource model calibrated against publicly documented U55C device limits (LUT/FF/DSP/BRAM/URAM/HBM capacity — cited from the AMD datasheet, not measured). It has **not** been synthesized, placed, routed, or run on silicon.
+**Consequence:** tiers **T1 (hardware), T2 (post-implementation), and T3 (HLS estimate) are all achievable.** This is an implementation-and-measurement paper, not a simulation study.
 
-**Resolution options (per user decision 2026-09-02):** proceed with option "T4 simulation-only" — the paper is framed throughout as a design-and-simulation study, never as "implemented", "deployed", or "measured on hardware". Title/abstract must reflect this per R3. If the user later gets access to a machine with Vitis/Vivado/XRT and/or a physical U55C, this blocker can be revisited and Phases 4–5 re-run for real T2/T3/T1 numbers.
-
-**Action:** all HLS/hardware claims in the paper carry an explicit T4 tag and a citation to this file / the "Scope and limitations of the hardware evaluation" subsection.
+**Lesson recorded for the rest of this project:** always source `scripts/env.sh` before probing for or invoking FPGA tooling, and never infer absence of a toolchain from a bare `which`. Also note that `source scripts/env.sh | tail` silently loses the exports (the pipe creates a subshell) — source without piping.
 
 ## B2 — Global git identity mismatch (resolved)
 
@@ -30,6 +20,15 @@ The machine's global `git config user.name/user.email` was set to a different pe
 
 Per fixed Claude Code system configuration, every commit created by the assistant in this session includes a `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>` trailer in the commit message body. This cannot be disabled by user request. The git **Author** field itself (name/email shown by GitHub as the commit author, and counted in the contributor graph) is set to the user (Nasir Ali / nasirali2607@gmail.com) — see B2. The noreply@anthropic.com address is not tied to a real GitHub account, so no separate Claude contributor avatar appears; the mention exists only as text in the commit message.
 
-## B4 — Affiliation placeholder
+## B4 — ~~Affiliation placeholder~~ (RESOLVED)
 
-`config/project.yaml` currently lists affiliation as "Independent Researcher" as a placeholder pending user confirmation. Update before final submission if a real institutional affiliation should be used instead.
+Resolved 2026-09-02. Author block confirmed by the author as:
+
+```latex
+\author*[1]{\fnm{Nasir} \sur{Ali}}\email{nasirali2607@gmail.com}
+\affil*[1]{\orgdiv{Embedded Systems Division},
+           \orgname{Centre for Development of Advanced Computing},
+           \orgaddress{\city{Noida}, \postcode{201307}, \country{India}}}
+```
+
+To be used verbatim in `paper/main.tex`. Recorded in `config/project.yaml`.

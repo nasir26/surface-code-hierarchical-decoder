@@ -1,21 +1,32 @@
 authors:
   - name: "Nasir Ali"
-    affiliation: "Independent Researcher"   # PLACEHOLDER — update before submission if a real institution should be listed
+    given_name: "Nasir"
+    surname: "Ali"
     email: "nasirali2607@gmail.com"
     orcid: ""   # optional, omit if none
     corresponding: true
+    affiliation:
+      orgdiv: "Embedded Systems Division"
+      orgname: "Centre for Development of Advanced Computing"
+      city: "Noida"
+      postcode: "201307"
+      country: "India"
 
 github:
-  remote: "git@github.com:nasir26/surface-code-hierarchical-decoder.git"
+  remote: "https://github.com/nasir26/surface-code-hierarchical-decoder.git"
   visibility: public
   create_with_gh_cli: true
 
 environment:
-  vitis_version: null              # NOT INSTALLED in this environment — see results/env.json
-  platform: "xilinx_u55c_gen3x16_xdma_3_202210_1"   # target platform string only; not verified via platforminfo (tool absent)
-  board_present: false             # confirmed absent — no XRT/xbutil detected
+  vitis_version: "2023.2"
+  vivado_version: "2023.2"
+  xrt_version: "2.15.225"
+  platform: "xilinx_u55c_gen3x16_xdma_3_202210_1"
+  board_present: true
+  board_bdf: "0000:8c:00.1"
   gpu_available: true              # NVIDIA RTX A4000, 16GB, CUDA 12.6
-  fpga_tier_ceiling: "T4"          # see results/env.json — no path to T1/T2/T3 without external Vitis/board access
+  tier_ceiling: "T1"               # physical board available; T1/T2/T3 all achievable
+  setup: "source scripts/env.sh"
 
 budget:
   max_stim_shots_per_point: 20000000

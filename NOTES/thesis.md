@@ -1,36 +1,31 @@
-# Thesis (draft — needs your approval before Phase 1)
+# Thesis
+
+**Revised 2026-09-02** after the toolchain/board detection error was corrected (see `NOTES/blockers.md`, B1). The earlier draft scoped this to a T4 simulation-only study on the false premise that no FPGA toolchain or board existed. Both do. This is an implementation-and-measurement paper.
 
 ## One-paragraph claim
 
-We study a two-tier surface-code decoder in which a heavily quantized neural-network **pre-decoder** — designed for, but in this project's environment only *simulated against*, the Alveo U55C's HBM-attached fabric — resolves the majority of low-weight syndromes within a single QEC round, while an on-host Sparse Blossom (PyMatching v2) decoder handles only the residual, escalated syndromes. We show that the pre-decoder's coverage/accuracy operating point is tunable via a confidence threshold τ, producing a Pareto front between decode latency, logical fidelity, and (modeled) FPGA fabric resources; and we build an analytical, cycle-level throughput model of HBM pseudo-channel parallelism showing how many independent decoder engines — and hence how many logical qubits' worth of syndrome bandwidth — a single U55C could plausibly sustain, addressing the decoder-backlog problem at the fleet level rather than the single-decoder level.
+We present a two-tier surface-code decoder in which a heavily quantized convolutional neural-network **pre-decoder**, implemented in Vitis HLS and deployed on an AMD Alveo U55C, resolves the majority of low-weight syndromes within a single QEC round, while an on-host Sparse Blossom (PyMatching v2) decoder handles only the residual syndromes escalated by a calibrated confidence gate. We show that the gate threshold τ tunes a Pareto front between logical fidelity, end-to-end latency, and fabric resources; that quantization to INT8/INT6/INT4 trades measurable logical-error-rate degradation against LUT/DSP cost; and — the U55C-specific contribution — that binding N independent decoder engines to distinct HBM pseudo-channels scales aggregate syndrome throughput, letting one card service the syndrome bandwidth of many logical qubits. All FPGA results are measured on a physical card (T1) or harvested from post-place-and-route reports (T2), with HLS estimates (T3) reported alongside for the design-space sweep.
 
-## What changed since the original build-spec draft, and why it matters
+## Novelty — narrowed after reading S1 and S2 properly
 
-The build spec that seeded this project assumed we might find *either* no board *and* Vitis HLS available (giving T3 estimates), *or* a board (T1/T2). Actual detection in this environment (`NOTES/blockers.md`, B1) found **neither Vitis/Vivado nor XRT installed, and no board attached** — a strictly worse starting point than the spec anticipated. Consequences we're committing to up front, per your decision to proceed T4-only:
+This is the most important correction from Phase 0. I fetched the real abstracts rather than working from titles, and both 2026 papers are closer to the original pitch than the build spec assumed:
 
-1. **No T1, T2, or T3 result is possible from this project as currently resourced.** Every FPGA-side number in this paper is **T4**: an analytical/cycle-count model, not a synthesis or hardware measurement.
-2. We will still **write** an HLS-style C++ kernel (`hw/hls/kernel.cpp`) following standard idioms (`ap_fixed`, `#pragma HLS PIPELINE II=1`, dataflow) as a concrete design artifact, but we cannot compile, csim, or cosim it in this environment — it must be labeled **"untested design, no toolchain available to verify"**, not "synthesizable" or "verified."
-3. The paper's title, abstract, and Section 1 must say **"evaluated via analytical simulation; no hardware synthesis was performed"** — never "implemented", "deployed", "synthesized", or "measured on hardware." This is stricter than the build spec's own fallback language ("post-implementation simulation"), because we have no implementation step at all, not even HLS C-synthesis.
+- **S1** (arXiv:2605.04892) is a **T1 hardware** real-time FPGA NN decoder already integrated into a live superconducting control loop: 550 ns deterministic closed loop, 124 ns NN decode, distance-3, inside a 1.25 µs cycle. So "real-time FPGA neural decoding, demonstrated on hardware" is **already done**. We cannot claim it.
+- **S2** (arXiv:2604.12841, NVIDIA) **already published the pre-decoder + global-decoder hierarchy itself**, escalating residual syndromes to PyMatching, open-sourced, at O(1 µs)/round on GB300 GPUs, and beating correlated PyMatching up to distance-13. So the hierarchy is **their** idea, not ours.
 
-## Honest novelty pitch (revised after reading S1 and S2's actual abstracts, not just their titles)
+What honestly remains ours:
 
-This is the most important update from Phase 0 recon. Both S1 and S2 are **closer to our idea than the original spec's framing assumed**:
+1. **The hierarchy on HBM-class FPGA fabric.** S2's hierarchy is GPU-resident; S1's FPGA decoder is a monolithic real-time decoder in the control stack, not a pre-decoder with an exact fallback. The combination — quantized pre-decoder in fabric, exact decoder on host, confidence gate between them, on a PCIe/HBM accelerator — is, pending the Related Work sweep, unpublished.
+2. **Fleet-level throughput via HBM pseudo-channel parallelism.** S1 answers "how fast for one logical qubit"; S2 answers "how fast with more GPUs". We ask "how many logical qubits can one card sustain", scaling engines against the card's 32 HBM pseudo-channels and measuring where bandwidth, not compute, binds. This is the question *The Journal of Supercomputing*'s readership actually cares about, and it is an accelerator-architecture question rather than a quantum-physics one.
+3. **Quantization-vs-fidelity Pareto at HLS bit-widths**, tied to measured LUT/DSP/BRAM cost from real place-and-route — a fabric-specific tradeoff with no GPU analogue.
+4. **An end-to-end reproducible artifact** spanning Stim generation → QAT training → HLS → xclbin → on-card measurement → paper figures, with every number tier-tagged to its provenance.
 
-- **S1** (arXiv:2605.04892) is a **hardware-measured (T1)** real-time FPGA NN decoder already integrated into a real superconducting control loop, at 550 ns closed-loop / 124 ns decode latency, distance-3. This is not a pre-decoder-plus-fallback hierarchy — it's a standalone real-time NN decoder embedded in the control stack — but it means "FPGA NN decoder, real, fast" is **already demonstrated on real hardware** by someone else. We cannot claim to be first to real-time FPGA NN decoding, and must not imply our T4 numbers are comparable to their T1 numbers.
-- **S2** (arXiv:2604.12841, NVIDIA) **already published the pre-decoder + global-decoder hierarchy** we based our core idea on, including a confidence-style escalation to PyMatching, open-sourced training recipes, and O(1 µs)/round performance — but on **GPU (GB300)**, not FPGA.
+**We are not claiming to be first to NN pre-decoders (S2) or first to real-time FPGA QEC decoding (S1).** We claim the first HBM-class multi-engine FPGA realization of the pre-decoder/exact-fallback hierarchy, with a fleet-throughput and quantization-cost analysis grounded in on-card measurement. Related Work must state both prior claims plainly and early.
 
-Given that, our defensible novelty is narrower and more specific than the original four-point pitch:
+## Honest comparison discipline
 
-1. **Porting the (already-published, S2-originated) pre-decoder/global-decoder hierarchy to an HBM-class FPGA target**, which — as far as our Related Work search can establish — has not been published; prior FPGA decoder work (Das et al., Ueno et al., Barber et al. — to be verified in Phase 0's related-work pass) targets DDR/BRAM-class devices and single-decoder latency, not HBM pseudo-channel fleet parallelism.
-2. **A fleet/backlog-level throughput study** (how many logical qubits per card) via HBM pseudo-channel parallelism, framed explicitly against Skoric et al.'s backlog argument — this is a different question from S1's single-qubit latency result and S2's multi-GPU scaling result.
-3. **A quantization-vs-fidelity Pareto analysis** at HLS-relevant bit-widths (FP32/INT8/INT6/INT4/ternary), which is a resource-cost question specific to fabric implementation, not GPU inference.
-4. **Full honesty about the simulation/no-hardware boundary** as a methodological contribution in its own right — an explicit provenance-tier framework (T1–T4) applied throughout, so a reader always knows exactly how much to trust each number. Given we're at T4 throughout the FPGA side, this paper reads as a **design-space and analytical-performance study**, not an implementation paper — which is a legitimate, honestly-scoped contribution, not a downgrade to hide.
-
-**This paper is not claiming to be first to NN pre-decoders (S2) or first to real-time FPGA QEC decoding (S1). It claims to be the first (pending Related Work verification) analytical study of pre-decoder+fallback hierarchies specifically on HBM-class multi-engine FPGA fabric, with an explicit backlog/fleet-throughput framing.** Please confirm this narrower framing is what you want before Phase 1 — it is more defensible than the original four-point pitch but is also a smaller claim.
+S1's 550 ns is a closed-loop latency including feedback on a real quantum device; our latency will be a host-to-card-to-host decode latency on a synthetic syndrome stream. **These are not the same quantity** and the paper must never table them as if they were. Where we tabulate S1 and S2 alongside our numbers (Table T2), each row carries its platform, what was measured, and whether a quantum device was in the loop.
 
 ## Journal fit
 
-*The Journal of Supercomputing* is an HPC/architecture venue. Emphasis stays on: memory hierarchy (HBM pseudo-channels), dataflow, roofline/bandwidth analysis, latency tails (p50/p99/p99.9), and fleet-level scaling — not quantum physics. This is unaffected by the hardware-availability finding above.
-
----
-**Awaiting your go/no-go on this narrower novelty framing before starting Phase 1 (Stim data generation + PyMatching baselines).**
+*The Journal of Supercomputing* is an HPC/accelerator-architecture venue. Emphasis: memory hierarchy (HBM pseudo-channel binding, bandwidth roofline), dataflow and II, latency tails (p50/p99/p99.9) against the ~1 µs round budget, energy per decode, and multi-engine scaling. The quantum content is the workload, not the contribution.

@@ -1,0 +1,57 @@
+{
+  "recorded_at": "2026-09-02",
+  "source": "Queried directly from the Vivado 2023.2 part database via get_property on get_parts, and from XRT xbutil examine on the installed card. No remembered or datasheet-quoted values are used for the resource counts.",
+  "part": "xcu55c-fsvh2892-2L-e",
+  "part_alternatives_present": ["xcu55c-fsvh2892-2L-e", "xcu55c-fsvh2892-2LV-e"],
+  "speed_grade": "-2L",
+  "resources": {
+    "lut": 1303680,
+    "ff": 2607360,
+    "dsp": 9024,
+    "bram": 2016,
+    "uram": 960,
+    "slr": 3
+  },
+  "resource_query_method": "vivado -mode batch: get_property {LUT_ELEMENTS,FLIPFLOPS,DSP,BLOCK_RAMS,ULTRA_RAMS,SLRS} [get_parts -filter {DEVICE =~ \"xcu55c*\"}]",
+  "board": {
+    "bdf": "0000:8c:00.1",
+    "shell": "xilinx_u55c_gen3x16_xdma_base_3",
+    "platform_uuid": "97088961-FEAE-DA91-52A2-1D9DFD63CCEF",
+    "jtag_id_code": "0x14b7d093",
+    "device_ready": true,
+    "mig_calibrated": true,
+    "p2p_status": "disabled",
+    "host_machine_model": "G292-Z43-00"
+  },
+  "clocks_mhz": {
+    "DATA_CLK": 300,
+    "KERNEL_CLK": 500,
+    "hbm_aclk": 450
+  },
+  "memory": {
+    "type": "HBM2",
+    "pseudo_channels_reported": 32,
+    "size_per_channel_mb": 512,
+    "total_hbm_gb": 16,
+    "ddr_size_bytes": 0,
+    "ddr_count": 0,
+    "note": "xbutil reports 32 HBM entries of 512 MB each (HBM[0]..HBM[31]); the first is tagged MEM_HBM and the remainder MEM_DRAM, which is a shell tagging artifact, not a physical difference."
+  },
+  "power": {
+    "max_power_watts": 225,
+    "idle_power_watts_measured": 21.984128,
+    "idle_measurement_note": "xbutil examine --report electrical, board idle with no xclbin loaded, 2026-09-02. This is the baseline against which any kernel-active power delta is reported.",
+    "rails_at_idle": {
+      "12V_aux": { "volts": 12.192, "amps": 0.504 },
+      "12V_pcie": { "volts": 12.192, "amps": 1.0 },
+      "3.3V_pcie": { "volts": 3.28, "amps": 1.112 },
+      "vccint": { "volts": 0.852, "amps": 6.3 },
+      "vccio": { "volts": 0.854, "amps": 3.0 },
+      "1.2V_hbm": { "volts": 1.202 }
+    }
+  },
+  "platform": {
+    "name": "xilinx_u55c_gen3x16_xdma_3_202210_1",
+    "xpfm": "/opt/xilinx/platforms/xilinx_u55c_gen3x16_xdma_3_202210_1/xilinx_u55c_gen3x16_xdma_3_202210_1.xpfm"
+  }
+}

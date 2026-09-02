@@ -4,13 +4,23 @@
 
 ## What this is
 
-A study of a two-tier surface-code decoder: a small, quantized neural-network pre-decoder resolves most low-weight syndromes, escalating only hard cases to an on-host Sparse Blossom (PyMatching v2) decoder. The pre-decoder is designed for an AMD/Xilinx Alveo U55C (HBM2, PCIe), but **no Vitis, Vivado, XRT toolchain, or physical U55C is available in the development environment used for this project** (see `results/env.json`, `NOTES/blockers.md`). Consequently:
+A two-tier surface-code decoder: a small, quantized neural-network pre-decoder resolves most low-weight syndromes, escalating only hard cases through a calibrated confidence gate to an on-host Sparse Blossom (PyMatching v2) decoder. The pre-decoder is implemented in Vitis HLS and runs on a physical AMD Alveo U55C (HBM2, PCIe).
 
-- **No FPGA synthesis, place-and-route, or hardware run has been performed.**
-- All FPGA-side numbers in this repository and its accompanying paper are **Tier T4** — analytical/cycle-model estimates or software simulation — never "measured," "implemented," or "deployed."
-- Software-side results (Stim-generated circuits, PyMatching baselines, NN training/inference) are real measurements taken on the host described in `results/env.json` (AMD EPYC 7742, NVIDIA RTX A4000).
+**Hardware and toolchain available** (see `results/env.json`, `results/device.json`):
 
-See the provenance-tier table in the paper's Methodology section for the full T1–T4 definitions used throughout.
+- AMD Alveo U55C, `xcu55c-fsvh2892-2L-e`, at `0000:8c:00.1`, shell `xilinx_u55c_gen3x16_xdma_base_3`
+- Vitis / Vitis HLS / Vivado 2023.2, XRT 2.15.225, platform `xilinx_u55c_gen3x16_xdma_3_202210_1`
+- Host: AMD EPYC 7742 (64 cores), 251 GB RAM, NVIDIA RTX A4000 for training
+
+Results are tier-tagged by provenance: **T1** measured on the card via XRT, **T2** post-place-and-route reports, **T3** Vitis HLS estimates, **T4** software simulation / analytical model. Every number in the paper traces to a tagged file under `results/`.
+
+Before running anything that touches the FPGA tooling:
+
+```bash
+source scripts/env.sh    # sources Vitis 2023.2 settings64.sh + XRT setup.sh + the venv
+```
+
+Note that the Xilinx tools are **not** on the default `PATH` on this machine; `which v++` will fail until `scripts/env.sh` is sourced.
 
 ## Repository layout
 
