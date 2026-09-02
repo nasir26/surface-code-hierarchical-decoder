@@ -1,0 +1,29 @@
+{
+  "experiment_id": "d3_r3_p0.008_pymatching_baseline",
+  "timestamp": "2026-09-02T06:31:42.750270+00:00",
+  "git_commit": "52dfcfaa023944f9de13862edeec5281e1393fc4",
+  "tier": "T4",
+  "config": {
+    "distance": 3,
+    "rounds": 3,
+    "p": 0.008,
+    "basis": "z",
+    "decoder": "pymatching",
+    "noise_model": "uniform_depolarizing",
+    "circuit": "surface_code:rotated_memory_z"
+  },
+  "metrics": {
+    "logical_error_rate": 0.040653138019083455,
+    "ci_low": 0.037536761046416456,
+    "ci_high": 0.04395066436242416,
+    "ci_method": "clopper-pearson-95",
+    "logical_error_rate_per_round": 0.013935853421719213,
+    "shots": 14882,
+    "errors": 605,
+    "discards": 0,
+    "seconds": 0.020265241619199514,
+    "throughput_shots_per_s": 734360.846993338
+  },
+  "env_ref": "results/env.json",
+  "provenance_note": "Logical error rates are Monte Carlo estimates from Stim-simulated circuits (T4 by definition -- a simulated quantum device). The decoder wall-clock time is a real measurement on the host in results/env.json, but is an aggregate over sinter's multiprocess batch decoding and is NOT a per-shot latency figure; see results/latency/ for that."
+}

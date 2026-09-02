@@ -1,0 +1,43 @@
+{
+  "experiment_id": "threshold_fit_pymatching_baseline",
+  "timestamp": "2026-09-02T06:31:42.750270+00:00",
+  "git_commit": "52dfcfaa023944f9de13862edeec5281e1393fc4",
+  "tier": "T4",
+  "config": {
+    "decoder": "pymatching",
+    "basis": "z",
+    "distances": [
+      3,
+      5
+    ],
+    "probabilities": [
+      0.001,
+      0.003,
+      0.005,
+      0.008,
+      0.01
+    ],
+    "ansatz": "p_L = A + B*x + C*x^2, x = (p - p_th) * d^(1/nu)"
+  },
+  "fit": {
+    "p_th": 0.005825495288985359,
+    "p_th_ci_low": 0.005297015120202858,
+    "p_th_ci_high": 0.00645042821075736,
+    "nu": 1.7500655187936989,
+    "coefficients": [
+      0.021972393706526577,
+      3.8597651286854857,
+      169.99323306130992
+    ],
+    "n_bootstrap": 500,
+    "n_bootstrap_converged": 500,
+    "distances": [
+      3,
+      5
+    ],
+    "n_points": 10,
+    "converged": true,
+    "message": "ok"
+  },
+  "env_ref": "results/env.json"
+}
