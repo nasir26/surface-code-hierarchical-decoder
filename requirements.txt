@@ -1,8 +1,10 @@
-stim==1.16.0
-pymatching==2.4.0
-sinter==1.16.0
-numpy==2.4.6
-scipy==1.17.1
+jsonschema==4.26.0
 matplotlib==3.11.1
-pyyaml
-jsonschema
+numpy==2.4.6
+PyMatching==2.4.0
+pytest==9.1.1
+PyYAML==6.0.3
+scipy==1.17.1
+sinter==1.16.0
+stim==1.16.0
+torch==2.14.0+cu126

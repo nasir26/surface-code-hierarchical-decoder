@@ -1,0 +1,13 @@
+surface-code-hierarchical-decoder
+Copyright (c) 2026 Nasir Ali, C-DAC Noida
+
+Portions of src/qec/ and src/nn/ are derived from the author's own earlier
+project, fpga-neural-predecoder (Copyright (c) 2026 Nasir Ali, C-DAC Noida,
+Apache-2.0), and are reused here under that licence. That earlier project is
+the baseline this work improves on; see NOTES/thesis.md and the paper's
+Related Work section, where its results are reported as the comparison point
+rather than presented as new.
+
+This project independently reimplements the pre-decoder concept described by
+Chamberland et al. (arXiv:2604.12841, NVIDIA Ising-Decoding). No NVIDIA source
+code, model weights, or other artifacts are used. See THIRD_PARTY.md.
