@@ -1,3 +1,12 @@
+# Install with:
+#   python3.11 -m virtualenv .venv && source .venv/bin/activate
+#   pip install -r requirements.txt
+#
+# torch is pinned to a CUDA 12.6 build, which is NOT on PyPI: the
+# --extra-index-url below is required or the torch line will fail to resolve.
+# For a CPU-only machine, drop the +cu126 suffix and the index URL.
+--extra-index-url https://download.pytorch.org/whl/cu126
+
 jsonschema==4.26.0
 matplotlib==3.11.1
 numpy==2.4.6
