@@ -154,6 +154,18 @@ def rekey(entry: str, key: str) -> str:
     return re.sub(r"^(\s*@\w+\s*\{)[^,]*,", rf"\g<1>{key},", entry.strip(), count=1, flags=re.M)
 
 
+def strip_month(entry: str) -> str:
+    """Remove month fields.
+
+    Crossref emits `month=Jan` unbraced, and the Springer .bst files do not
+    define those three-letter month macros, so BibTeX warns "string name
+    'jan' is undefined" on every such entry. Month is optional for all entry
+    types used here, so dropping it is cleaner than guessing a quoting form
+    that suits every style.
+    """
+    return re.sub(r",\s*month\s*=\s*[^,}]+(?=[,}])", "", entry, flags=re.IGNORECASE)
+
+
 def normalise_doi_url(entry: str) -> str:
     """The journal wants DOIs as full https://doi.org/ links.
 
@@ -195,7 +207,7 @@ def main() -> None:
                 time.sleep(args.sleep)
                 continue
 
-        entry = normalise_doi_url(rekey(raw, key))
+        entry = strip_month(normalise_doi_url(rekey(raw, key)))
         entries.append(entry)
         print(f"  ok          {key:26s} {kind}:{value}")
         time.sleep(args.sleep)

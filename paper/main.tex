@@ -1,0 +1,260 @@
+%% The Journal of Supercomputing (Springer, 11227)
+%% Compile with: latexmk -pdf main.tex   (pdfLaTeX + BibTeX)
+%% Bibliography style note: the class option also selects the .bst BibTeX
+%% will look for, and BibTeX honours the FIRST \bibstyle in the .aux. The
+%% option and the shipped .bst must therefore agree. We use sn-mathphys-num,
+%% a Springer-provided style that renders the numbered square-bracket
+%% citations this journal requires, because sn-basic.bst is not distributed
+%% via CTAN/TeX Live and shipping a self-contained folder matters more than
+%% the option name. Swap both together if you prefer sn-basic.
+\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}
+
+\usepackage{graphicx}
+\usepackage{multirow}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{textcomp}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+
+%% Every quotable number lives here, generated from results/ by
+%% scripts/make_numbers.py. No numeric literals in the results prose.
+\input{generated_numbers}
+
+\raggedbottom
+
+\begin{document}
+
+\title[Why a Neural Pre-Decoder Fails on an FPGA]{Why a Neural Pre-Decoder Fails
+for Surface-Code Decoding: Objective Misalignment, a Compute Roofline, and a
+Confidence Gate That Bounds the Damage}
+
+\author*[1]{\fnm{Nasir} \sur{Ali}}\email{nasirali2607@gmail.com}
+
+\affil*[1]{\orgdiv{Embedded Systems Division},
+           \orgname{Centre for Development of Advanced Computing},
+           \orgaddress{\city{Noida}, \postcode{201307}, \country{India}}}
+
+\abstract{Neural pre-decoders promise to cut the syndrome volume a matching
+decoder must resolve each surface-code round, easing a latency budget set by
+qubit coherence. We report a negative result with two identified causes. Training
+a convolutional pre-decoder on a GPU to \trainShots{} shots, over an order of
+magnitude beyond a prior CPU-only study, leaves it \hierPreOnlyRatio$\times$
+worse than a PyMatching baseline: the loss converges, so undertraining is not the
+cause. The per-mechanism training objective is misaligned with logical error
+rate. Independently, a compute roofline on an AMD Alveo U55C bounds this
+architecture at \rooflineIntEightLatency\,$\mu$s per shot using every DSP, so the
+microsecond target is unreachable by any implementation. We show a calibrated
+confidence gate bounds the damage, provably converging to the baseline, and
+quantify the headroom a perfect gate would exploit.}
+
+\keywords{Quantum error correction, surface code, neural decoder, FPGA,
+high-level synthesis, roofline analysis}
+
+\maketitle
+
+\section{Introduction}\label{sec:intro}
+
+Surface-code quantum error correction requires a classical decoder to turn a
+stream of syndrome measurements into a correction within the time set by qubit
+coherence and the syndrome-extraction period \cite{fowler2012surface,
+dennis2002topological}. Minimum-weight perfect matching (MWPM), implemented
+efficiently by PyMatching's sparse blossom algorithm
+\cite{higgott2025sparseblossom, higgott2022pymatching}, is the standard
+choice. If decoding is slower than syndrome generation, undecoded rounds
+accumulate without bound, the decoder backlog problem \cite{terhal2015quantum,
+skoric2023parallel}.
+
+A neural \emph{pre-decoder} is one proposed remedy: a small network resolves
+local detection events before an exact decoder handles the remainder
+\cite{chamberland2026fast, alavisamani2024promatch}. Recent work demonstrates
+real-time FPGA neural decoding on hardware \cite{yang2026realtime}, and
+GPU-resident pre-decoders reach microsecond-scale runtimes
+\cite{chamberland2026fast}.
+
+This paper reports that a faithful FPGA-oriented reimplementation of the
+pre-decoder concept does \emph{not} work, and identifies why. Our contributions:
+
+\begin{itemize}
+\item \textbf{Scale is not the cause.} We train to \trainShots{} shots on a GPU,
+far beyond a prior CPU-only budget that named undertraining as its most likely
+failure cause. The pre-decoder remains \hierPreOnlyRatio$\times$ worse than
+baseline while training loss converges to \trainFinalLoss{}
+(Section~\ref{sec:results}).
+\item \textbf{A compute roofline shows the latency target was never reachable.}
+The architecture costs \archMACs{} multiply-accumulates per shot; on the U55C's
+\devDSP{} DSPs at \rooflineClock\,MHz with INT8 packing, the floor is
+\rooflineIntEightLatency\,$\mu$s per shot against a \roundBudget\,$\mu$s budget
+(Section~\ref{sec:roofline}).
+\item \textbf{A confidence gate bounds the damage.} Escalating low-confidence
+shots to matching on the \emph{raw} syndrome makes the hierarchical decoder
+provably no worse than the baseline, unlike an unconditional pre-decoder
+(Section~\ref{sec:design}).
+\item \textbf{An oracle bound separates gate quality from decoder value},
+showing a perfect gate would reach \hierOracleRatio$\times$ baseline but must
+find \hierSaves{} useful shots among \hierBreaks{} harmful ones.
+\end{itemize}
+
+\section{Background}\label{sec:background}
+
+We simulate rotated surface-code memory circuits with Stim \cite{gidney2021stim}
+(version \envStim) under circuit-level depolarising noise, and decode the
+resulting detector error model with PyMatching \cite{higgott2025sparseblossom}
+(version \envPyMatching). Monte Carlo collection uses \texttt{sinter}
+(version \envSinter). Our target device is an AMD Alveo U55C
+(\devPart), carrying \devLUT{} LUTs, \devDSP{} DSP slices, \devBRAM{} block RAMs
+and \devURAM{} UltraRAMs across \devSLR{} super-logic regions, with \devHBMGB\,GB
+of HBM2 exposed as \devHBMChannels{} pseudo-channels.
+
+\section{Design}\label{sec:design}
+
+The pre-decoder is a fully convolutional 3D network over the detector volume,
+with \trainParams{} parameters at width \archWidth{} and depth \archDepth. It
+predicts which local error mechanisms fired; those corrections are applied to the
+syndrome, and the residual is decoded by MWPM.
+
+\subsection{The confidence gate}\label{sec:gate}
+
+An unconditional pre-decoder has no recovery path: a wrong correction corrupts a
+syndrome the matcher would have decoded correctly. We therefore score each shot
+with seven cheap statistics (correction counts, decision margins, syndrome weight
+before and after) and a calibrated logistic model, and accept the pre-decoder
+path only when the score reaches a threshold $\tau$. Escalated shots are decoded
+from the \emph{raw} syndrome, not the corrected one. This yields two exact
+limits: at $\tau \to 0$ the system reduces to the unconditional pre-decoder, and
+at $\tau \to 1$ it reduces to the MWPM baseline. The hierarchical decoder is
+therefore bounded above by the baseline error rate for sufficiently large $\tau$.
+
+\section{The compute roofline}\label{sec:roofline}
+
+The architecture requires \archMACs{} multiply-accumulates per shot. Counting
+only these, and charging nothing for data movement, activations, control or
+matching, the U55C's \devDSP{} DSPs at \rooflineClock\,MHz give a floor of
+\rooflineIntEightLatency\,$\mu$s per shot at INT8 with every DSP busy, sustaining
+\rooflineIntEightQubits{} logical qubits. At a realistic 50\,\% DSP utilisation
+these become \rooflineIntEightLatencyHalf\,$\mu$s and
+\rooflineIntEightQubitsHalf{} qubits. The \roundBudget\,$\mu$s round budget is
+therefore unreachable for this architecture regardless of implementation quality.
+Inverting the bound gives a design target: width \widthForQubitsOne{} sustains one
+logical qubit, width \widthForQubitsFour{} sustains four, and width
+\widthForQubitsSixteen{} sustains sixteen (Fig.~\ref{fig:roofline}).
+
+\section{Methodology}\label{sec:method}
+
+All experiments run on an \envCPU{} with \envCores{} logical cores and an
+\envGPU. FPGA tooling is Vitis \envVitis{} with XRT \envXRT. Results carry a
+provenance tier: \textbf{T1} measured on hardware, \textbf{T2}
+post-place-and-route, \textbf{T3} HLS estimate, \textbf{T4} simulation or
+analytical model. Logical error rates are Monte Carlo estimates from simulated
+circuits and are therefore T4; device resource counts and idle power are T1.
+
+Baselines span \baselineCells{} cells at distances \baselineDistances, totalling
+\baselineShots{} shots and \baselineErrors{} observed logical errors, with
+Clopper--Pearson 95\,\% intervals.
+
+\section{Results}\label{sec:results}
+
+\subsection{Baseline and threshold}
+
+The MWPM baseline behaves correctly: below threshold the logical error rate falls
+with distance and above it rises (Fig.~\ref{fig:ler}). A finite-size-scaling
+collapse gives $p_{\mathrm{th}} = \pth\,\%$ with bootstrap 95\,\% interval
+$[\pthCIlow, \pthCIhigh]\,\%$ and $\nu = \pthNu$ over \pthBootstrap{} converged
+resamples. Varying the fitting window moves the estimate over
+$[\pthWindowLow, \pthWindowHigh]\,\%$, a systematic wider than the statistical
+interval, so we quote both.
+
+\subsection{Training at scale does not help}
+
+At \trainShots{} shots (\trainMinutes{} minutes at \trainRate{} shots/s), the
+training loss converges to \trainFinalLoss. Evaluated on \hierTestShots{} held-out
+shots at $d=5$, $p=0.003$, the baseline reaches \hierBaselineLER{} while the
+unconditional pre-decoder reaches \hierPreOnlyLER, a factor of
+\hierPreOnlyRatio{} worse. Because the loss has converged, this is not
+undertraining: the per-mechanism objective is misaligned with logical error rate,
+and optimising it harder makes the network apply more confident wrong
+corrections.
+
+\subsection{The gate bounds the damage, and the oracle bounds the gate}
+
+Sweeping $\tau$ moves the decoder monotonically from the unconditional result to
+the baseline, reaching full escalation at $\tau = \hierTauFullEscalation$. The
+gate is well calibrated, with expected calibration error \hierECE. An oracle that
+chose the better path per shot would reach \hierOracleLER{}
+(\hierOracleRatio$\times$ baseline), so the pre-decoder does carry complementary
+information; but it rescues only \hierSaves{} shots while corrupting
+\hierBreaks, so exploiting that headroom demands a discrimination the present
+feature set cannot provide.
+
+\subsection{Scope and limitations of the hardware evaluation}
+
+The roofline is analytical (T4), built from T1 device counts. We report no new
+bitstream here; the prior implementation this work builds on measured
+\priorLatencyLo--\priorLatencyHi\,ms per shot using \priorDSP{} DSPs at
+\priorClock\,MHz, leaving large implementation headroom that the roofline shows
+would still be insufficient. Logical error rates come from simulated circuits,
+not a quantum device.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{Fig6.pdf}
+\caption{Logical error rate versus physical error rate for the MWPM baseline at
+distances \baselineDistances, with Clopper--Pearson 95\,\% intervals. The dashed
+line marks the fitted threshold. Provenance: T4}\label{fig:ler}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{Fig7.pdf}
+\caption{Finite-size-scaling collapse of the baseline data onto a single
+quadratic. Provenance: T4}\label{fig:collapse}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{Fig9.pdf}
+\caption{Sustainable logical qubits per card versus convolution width, from the
+compute roofline. Provenance: T4 bound from T1 device
+counts}\label{fig:roofline}
+\end{figure}
+
+\section{Discussion}\label{sec:discussion}
+
+Two independent obstacles emerge. The accuracy failure is an objective problem:
+the network is trained on a proxy that does not track logical error rate. The
+latency failure is an architectural one: the network is too large for the device
+by roughly an order of magnitude. Neither is addressed by more compute, and the
+second is not addressed by better HLS. A loss penalising logical errors directly,
+and a network narrow enough to satisfy the roofline, are the natural next steps.
+
+\section{Conclusion}\label{sec:conclusion}
+
+We report, and diagnose, a negative result for neural pre-decoding of the surface
+code on an HBM-class FPGA. Training at scale does not rescue accuracy; the
+architecture cannot meet the round budget on this device at any implementation
+quality; and a calibrated confidence gate, while unable to make the pre-decoder
+useful, does make it safe.
+
+\section*{Declarations}
+
+\textbf{Funding:} This work received no external funding.
+
+\textbf{Competing interests:} The author declares no competing interests.
+
+\textbf{Data availability:} All result files, figures and generated numbers are
+available in the public repository accompanying this paper.
+
+\textbf{Code availability:} All code is available in the same repository.
+
+\textbf{Author contributions:} N.A. conceived the study, implemented the
+software, performed the experiments and wrote the manuscript.
+
+\textbf{Ethics approval:} Not applicable.
+
+%% No \bibliographystyle here: the sn-mathphys-num class option already
+%% emits \bibstyle, and BibTeX rejects a second one outright.
+\bibliography{references}
+
+\end{document}

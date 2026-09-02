@@ -33,6 +33,13 @@ class Numbers:
     def add(self, macro: str, value: str, provenance: str) -> None:
         if macro in self._seen:
             raise ValueError(f"duplicate macro \\{macro}")
+        if not macro.isalpha():
+            # \newcommand{\fooTwo} is valid; \newcommand{\foo2} is not, and
+            # LaTeX reports it far from the generator that produced it.
+            raise ValueError(
+                f"macro name {macro!r} must be letters only: LaTeX control "
+                f"sequences cannot contain digits or punctuation"
+            )
         self._seen[macro] = value
         self.rows.append((macro, value, provenance))
 
@@ -175,12 +182,19 @@ def main() -> None:
                       "same, INT8 @50% DSP, T4 bound")
                 n.add("rooflineIntEightQubitsHalf", fmt(row["logical_qubits_per_card"]),
                       "same, INT8 @50% DSP, T4 bound")
+        # LaTeX control sequences may contain letters only, so the qubit count
+        # is spelled out rather than embedded as a digit.
+        number_words = {1: "One", 2: "Two", 4: "Four", 8: "Eight", 16: "Sixteen",
+                        32: "ThirtyTwo", 64: "SixtyFour"}
         for inv in rf.get("required_width", []):
             mf = inv.get("max_feasible")
             if mf:
-                tag = f"{int(inv['target_qubits'])}"
-                n.add(f"widthForQubits{tag}", str(mf["width"]),
-                      f"same, max width serving {tag} logical qubit(s), INT8 @50% DSP")
+                count = int(inv["target_qubits"])
+                word = number_words.get(count)
+                if word is None:
+                    continue
+                n.add(f"widthForQubits{word}", str(mf["width"]),
+                      f"same, max width serving {count} logical qubit(s), INT8 @50% DSP")
         mc = rf.get("measured_comparison", {})
         if mc:
             lo, hi = mc["predecessor_measured_latency_ms"]
