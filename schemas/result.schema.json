@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "QEC decoder experiment result",
+  "type": "object",
+  "required": ["experiment_id", "timestamp", "git_commit", "tier", "config", "metrics", "env_ref"],
+  "properties": {
+    "experiment_id": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "git_commit": { "type": "string" },
+    "tier": { "type": "string", "enum": ["T1", "T2", "T3", "T4"] },
+    "config": { "type": "object" },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "logical_error_rate": { "type": "number" },
+        "ci_low": { "type": "number" },
+        "ci_high": { "type": "number" },
+        "shots": { "type": "integer" },
+        "errors": { "type": "integer" },
+        "latency_ns": {
+          "type": "object",
+          "properties": {
+            "p50": { "type": "number" },
+            "p90": { "type": "number" },
+            "p99": { "type": "number" },
+            "p999": { "type": "number" }
+          }
+        },
+        "throughput_shots_per_s": { "type": "number" },
+        "escalation_rate": { "type": "number" }
+      }
+    },
+    "resources": {
+      "type": "object",
+      "properties": {
+        "lut": { "type": "number" },
+        "ff": { "type": "number" },
+        "dsp": { "type": "number" },
+        "bram": { "type": "number" },
+        "uram": { "type": "number" },
+        "fmax_mhz": { "type": "number" },
+        "wns_ns": { "type": "number" }
+      }
+    },
+    "env_ref": { "type": "string" }
+  }
+}

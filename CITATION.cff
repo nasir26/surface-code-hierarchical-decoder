@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "Hierarchical Neural-Network Pre-Decoder with Sparse-Blossom Fallback for Surface Codes: A Simulated Study for HBM-Class FPGA Accelerators"
+authors:
+  - family-names: "Ali"
+    given-names: "Nasir"
+    email: "nasirali2607@gmail.com"
+version: "0.1.0-dev"
+date-released: "2026-09-02"
+license: "Apache-2.0"
+repository-code: "https://github.com/nasir26/surface-code-hierarchical-decoder"
