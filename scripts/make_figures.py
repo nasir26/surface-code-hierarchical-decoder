@@ -176,10 +176,63 @@ def fig_threshold_collapse(by_d: Dict[int, List[dict]], threshold: dict, name: s
     save(fig, name)
 
 
+def fig_roofline(record: dict, name: str = "Fig9") -> None:
+    """Sustainable logical qubits per card vs network width, against the budget.
+
+    The horizontal line at one qubit is the point below which a card cannot
+    keep up with even a single logical qubit's syndrome stream, which is what
+    makes the currently trained width unusable regardless of implementation
+    quality.
+    """
+    from src.pipeline.roofline import architecture_macs, roofline
+
+    cfg = record["config"]
+    device = {"resources": {"dsp": cfg["dsp_total"]}, "part": cfg["device_part"]}
+    depth, volume = cfg["depth"], cfg["volume"]
+    rounds = cfg["rounds_per_shot"]
+    out_ch = cfg["out_channels"]
+
+    widths = list(range(4, 97, 2))
+    fig, ax = plt.subplots(figsize=(SINGLE_COL, SINGLE_COL * 0.8))
+
+    for i, (precision, util) in enumerate([("int8", 1.0), ("int8", 0.5), ("int16", 0.5)]):
+        qubits = []
+        for w in widths:
+            macs = architecture_macs(depth, w, out_ch, volume)
+            r = roofline(macs, rounds, precision, cfg["clock_mhz"], util,
+                         cfg["round_period_us"], device)
+            qubits.append(r.logical_qubits_per_card)
+        ax.plot(widths, qubits,
+                color=COLORS[i % len(COLORS)],
+                linestyle=LINESTYLES[i % len(LINESTYLES)],
+                marker="none",
+                label=f"{precision}, {util:.0%} DSP")
+
+    ax.axhline(1.0, color="0.3", linewidth=0.8, linestyle=(0, (2, 2)), zorder=0)
+    ax.annotate("one logical qubit", xy=(widths[-1], 1.0), xytext=(-2, 3),
+                textcoords="offset points", fontsize=6.5, color="0.3",
+                ha="right", va="bottom")
+
+    trained = cfg["width"]
+    ax.axvline(trained, color=COLORS[3], linewidth=0.8, linestyle=":", zorder=0)
+    ax.annotate(f"trained width = {trained}", xy=(trained, 0.97), xycoords=("data", "axes fraction"),
+                xytext=(-4, 0), textcoords="offset points", fontsize=6.5,
+                color=COLORS[3], ha="right", va="top", rotation=90)
+
+    ax.set_yscale("log")
+    ax.set_xlabel("Convolution channel width")
+    ax.set_ylabel(f"Logical qubits per card ({cfg['round_period_us']:g} $\\mu$s round)")
+    ax.grid(True, which="major", alpha=0.3)
+    ax.grid(True, which="minor", alpha=0.12)
+    ax.legend(frameon=False, loc="lower left")
+    save(fig, name)
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--baselines", default=str(REPO_ROOT / "results" / "baselines" / "*.json"))
     ap.add_argument("--threshold", default=str(REPO_ROOT / "results" / "threshold_fit_pymatching_baseline.json"))
+    ap.add_argument("--roofline", default=str(REPO_ROOT / "results" / "roofline_R5_w64.json"))
     args = ap.parse_args()
 
     set_style()
@@ -195,6 +248,12 @@ def main() -> None:
     fig_ler_vs_p(by_d, threshold)
     if threshold is not None:
         fig_threshold_collapse(by_d, threshold)
+
+    rpath = Path(args.roofline)
+    if rpath.exists():
+        fig_roofline(json.load(open(rpath)))
+    else:
+        print(f"skipping Fig9: {rpath} not found")
 
 
 if __name__ == "__main__":
