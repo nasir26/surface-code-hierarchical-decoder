@@ -18,4 +18,5 @@ __pycache__/
 .ipynb_checkpoints/
 results/hw/*.rpt.raw
 .DS_Store
-models/*.pt
+# models/*.pt is deliberately NOT ignored: each checkpoint is ~450KB and
+# costs ~85 GPU-minutes to reproduce, so it is tracked as a real artifact.
