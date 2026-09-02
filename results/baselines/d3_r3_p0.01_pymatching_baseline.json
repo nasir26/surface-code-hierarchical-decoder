@@ -1,7 +1,7 @@
 {
   "experiment_id": "d3_r3_p0.01_pymatching_baseline",
-  "timestamp": "2026-09-02T06:31:42.750270+00:00",
-  "git_commit": "52dfcfaa023944f9de13862edeec5281e1393fc4",
+  "timestamp": "2026-09-02T06:32:32.798761+00:00",
+  "git_commit": "cdc0a5b54a4c2026aabecda76ab30000a46c4c45",
   "tier": "T4",
   "config": {
     "distance": 3,
@@ -13,16 +13,16 @@
     "circuit": "surface_code:rotated_memory_z"
   },
   "metrics": {
-    "logical_error_rate": 0.06063415538661227,
-    "ci_low": 0.054411023990021457,
-    "ci_high": 0.06733778870757455,
+    "logical_error_rate": 0.060395029116887794,
+    "ci_low": 0.05682439585523878,
+    "ci_high": 0.06412009441083413,
     "ci_method": "clopper-pearson-95",
-    "logical_error_rate_per_round": 0.021088314721186663,
-    "shots": 5393,
-    "errors": 327,
+    "logical_error_rate_per_round": 0.021001447405117113,
+    "shots": 16657,
+    "errors": 1006,
     "discards": 0,
-    "seconds": 0.007828093599528074,
-    "throughput_shots_per_s": 688928.9111623708
+    "seconds": 0.04876939579844475,
+    "throughput_shots_per_s": 341546.1628608323
   },
   "env_ref": "results/env.json",
   "provenance_note": "Logical error rates are Monte Carlo estimates from Stim-simulated circuits (T4 by definition -- a simulated quantum device). The decoder wall-clock time is a real measurement on the host in results/env.json, but is an aggregate over sinter's multiprocess batch decoding and is NOT a per-shot latency figure; see results/latency/ for that."

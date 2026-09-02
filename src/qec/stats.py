@@ -96,21 +96,80 @@ def _fit_once(
         return None
 
 
+def estimate_crossing(points: Sequence[ThresholdPoint]) -> float:
+    """First-pass estimate of p_th from where the LER-vs-p curves cross.
+
+    For each pair of adjacent distances, walk up p until the sign of
+    (LER_small_d - LER_large_d) flips: below threshold the larger code wins
+    (difference positive), above it the larger code loses. The crossing is
+    linearly interpolated in log(p) between the bracketing points, and the
+    median over all adjacent pairs is returned. This needs no model and is
+    only used to centre the fitting window.
+    """
+    by_d: dict = {}
+    for pt in points:
+        by_d.setdefault(pt.distance, {})[pt.p] = pt.ler
+    distances = sorted(by_d)
+    if len(distances) < 2:
+        raise ValueError("crossing estimate needs at least two distinct distances")
+
+    crossings: List[float] = []
+    for d_small, d_large in zip(distances, distances[1:]):
+        shared = sorted(set(by_d[d_small]) & set(by_d[d_large]))
+        prev_p = None
+        prev_diff = None
+        for p in shared:
+            diff = by_d[d_small][p] - by_d[d_large][p]
+            if prev_diff is not None and prev_diff > 0 >= diff:
+                # Interpolate in log p where diff hits zero.
+                w = prev_diff / (prev_diff - diff) if prev_diff != diff else 0.5
+                crossings.append(float(np.exp(np.log(prev_p) + w * (np.log(p) - np.log(prev_p)))))
+                break
+            prev_p, prev_diff = p, diff
+    if not crossings:
+        # No crossing bracketed by the data: fall back to the geometric
+        # centre of the sampled range so the caller still gets a window.
+        all_p = [pt.p for pt in points]
+        return float(np.exp(np.mean(np.log(all_p))))
+    return float(np.median(crossings))
+
+
 def fit_threshold(
     points: Sequence[ThresholdPoint],
     n_bootstrap: int = 500,
     seed: int = 0,
     nu_guess: float = 1.5,
+    window: Optional[float] = 0.4,
 ) -> ThresholdFit:
-    """Fit p_th over all (d, p) points, with a bootstrap CI on p_th.
+    """Fit p_th over the (d, p) points, with a bootstrap CI on p_th.
+
+    The collapse ansatz p_L = A + Bx + Cx^2 is a *local* expansion about the
+    threshold, not a global description of the LER curve. Fitting it across a
+    wide range of p -- where LER varies by orders of magnitude and is bounded
+    below by 0 -- is invalid and in practice drives the optimiser onto its
+    bounds. `window` therefore restricts the fit to physical error rates
+    within a relative fraction of a first-pass crossing estimate: points with
+    |p/p_cross - 1| <= window are kept. Pass window=None to fit everything
+    (only sensible if the caller has already narrowed the grid).
 
     Requires at least two distinct distances (a threshold is defined by
     curves crossing; one distance has nothing to cross with) and at least
     as many points as free parameters.
     """
-    distances = sorted({pt.distance for pt in points})
-    if len(distances) < 2:
+    distances_all = sorted({pt.distance for pt in points})
+    if len(distances_all) < 2:
         raise ValueError("threshold fit needs at least two distinct code distances")
+
+    if window is not None:
+        p_cross = estimate_crossing(points)
+        selected = [pt for pt in points if abs(pt.p / p_cross - 1.0) <= window]
+        # Keep the window only if it retains enough points and distances to
+        # constrain the five parameters; otherwise fall back to everything
+        # and let the caller see the wider fit rather than a failed one.
+        if len(selected) >= 8 and len({pt.distance for pt in selected}) >= 2:
+            points = selected
+
+    distances = sorted({pt.distance for pt in points})
     if len(points) < 5:
         raise ValueError("threshold fit needs at least 5 points for 5 free parameters")
 
@@ -157,6 +216,17 @@ def fit_threshold(
     else:
         ci_low = ci_high = float("nan")
         message = f"bootstrap produced only {len(boot)} converged fits; CI not reported"
+
+    # A fit that lands on its own parameter bound is not a measurement of a
+    # threshold, it is the optimiser running out of room. Say so loudly
+    # rather than reporting the bound as if it were an estimate.
+    span = p.max() - p.min()
+    if span > 0 and min(abs(popt[0] - p.min()), abs(popt[0] - p.max())) < 0.01 * span:
+        message = (
+            f"WARNING: p_th={popt[0]:.5g} is at the edge of the fitted range "
+            f"[{p.min():.5g}, {p.max():.5g}]; the collapse did not find an interior "
+            f"crossing and this value must not be reported as a threshold. " + message
+        )
 
     return ThresholdFit(
         p_th=float(popt[0]),
