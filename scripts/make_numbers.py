@@ -178,6 +178,9 @@ def main() -> None:
                 n.add("rooflineIntEightQubits", fmt(row["logical_qubits_per_card"]),
                       "same, INT8 @100% DSP, T4 bound")
             if row["precision"] == "int8" and row["dsp_utilisation"] == 0.5:
+                if "dspUtilisation" not in n._seen:
+                    n.add("dspUtilisation", pct(row["dsp_utilisation"]),
+                          "same, assumed DSP utilisation for the realistic case")
                 n.add("rooflineIntEightLatencyHalf", fmt(row["min_shot_latency_us"]),
                       "same, INT8 @50% DSP, T4 bound")
                 n.add("rooflineIntEightQubitsHalf", fmt(row["logical_qubits_per_card"]),

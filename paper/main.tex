@@ -177,7 +177,7 @@ The architecture requires \archMACs{} multiply-accumulates per shot. Counting
 only these, and charging nothing for data movement, activations, control or
 matching, the U55C's \devDSP{} DSPs at \rooflineClock\,MHz give a floor of
 \rooflineIntEightLatency\,$\mu$s per shot at INT8 with every DSP busy, sustaining
-\rooflineIntEightQubits{} logical qubits. At a realistic 50\,\% DSP utilisation
+\rooflineIntEightQubits{} logical qubits. At a realistic \dspUtilisation\,\% DSP utilisation
 these become \rooflineIntEightLatencyHalf\,$\mu$s and
 \rooflineIntEightQubitsHalf{} qubits. The \roundBudget\,$\mu$s round budget is
 therefore unreachable for this architecture regardless of implementation quality.
@@ -204,7 +204,8 @@ Clopper--Pearson 95\,\% intervals.
 
 The MWPM baseline behaves correctly: below threshold the logical error rate falls
 with distance and above it rises (Fig.~\ref{fig:ler}). A finite-size-scaling
-collapse gives $p_{\mathrm{th}} = \pth\,\%$ with bootstrap 95\,\% interval
+collapse (Fig.~\ref{fig:collapse}) gives $p_{\mathrm{th}} = \pth\,\%$ with
+bootstrap 95\,\% interval
 $[\pthCIlow, \pthCIhigh]\,\%$ and $\nu = \pthNu$ over \pthBootstrap{} converged
 resamples. Varying the fitting window moves the estimate over
 $[\pthWindowLow, \pthWindowHigh]\,\%$, a systematic wider than the statistical
