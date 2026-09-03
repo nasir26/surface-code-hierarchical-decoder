@@ -124,7 +124,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
-    assert not torch.cuda.is_available(), "CPU-only training required"
+    # The predecessor asserted `not torch.cuda.is_available()` here to keep its
+    # scope honestly CPU-only. Removing that constraint is the point of this
+    # project, and refusing to run on a machine that happens to have a GPU is
+    # not a meaningful guarantee. This fine-tune is short and stays on CPU
+    # tensors regardless; it simply no longer refuses to start.
 
     models_dir = REPO_ROOT / "models"
     metrics_path = REPO_ROOT / "results" / "metrics" / f"train_qat_{args.precision}.json"

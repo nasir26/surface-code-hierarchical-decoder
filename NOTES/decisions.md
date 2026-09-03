@@ -95,9 +95,11 @@ deployability, and the predecessor swept precision only.
   reported.
 - Clopper-Pearson intervals replace Wilson for anything reported, because
   several cells observe only tens of logical errors.
-- Reported p_th = 0.00695, bootstrap CI [0.00684, 0.00706], with a window
-  systematic of 0.0065-0.0070 that is wider than the statistical CI and is
-  quoted alongside it.
+- Reported p_th = 0.00699, bootstrap CI [0.00688, 0.00710], nu = 1.16, with a
+  window systematic of 0.0065-0.0070 that is wider than the statistical CI and
+  is quoted alongside it. (This entry originally recorded 0.00695 from a grid
+  that still contained six smoke-run cells; see the 2026-09-03 contamination
+  fix. The intervals overlap and no conclusion changed.)
 
 ## 2026-09-03: the misalignment claim, measured
 
