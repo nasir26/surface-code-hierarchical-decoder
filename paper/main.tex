@@ -97,6 +97,50 @@ showing a perfect gate would reach \hierOracleRatio$\times$ baseline but must
 find \hierSaves{} useful shots among \hierBreaks{} harmful ones.
 \end{itemize}
 
+\section{Related work}\label{sec:related}
+
+\paragraph{Exact decoders.} MWPM decoding of the surface code descends from
+Dennis et al.\ \cite{dennis2002topological} and the toric code
+\cite{kitaev2003fault}, with the practical treatment of circuit-level noise and
+fault-tolerant thresholds developed by Fowler et al.\ \cite{fowler2012surface}.
+PyMatching \cite{higgott2022pymatching} made MWPM decoding widely usable, and its
+sparse blossom algorithm \cite{higgott2025sparseblossom} brought single-core
+throughput to roughly a microsecond per round at distance 17. Union-find
+decoders trade a little accuracy for near-linear complexity
+\cite{delfosse2021almost}. We use sparse blossom both as our accuracy reference
+and as the fallback path, and re-measure it on our own hardware rather than
+quoting published figures.
+
+\paragraph{Neural decoders.} Neural networks were applied to decoding early
+\cite{torlai2017neural, varsamopoulos2017decoding} and have since reached
+state-of-the-art accuracy with recurrent transformer architectures
+\cite{bausch2024alphaqubit}, alongside experimental demonstrations of
+below-threshold operation \cite{google2025belowthreshold}. The pre-decoder
+variant, in which a network removes easy detection events before an exact
+decoder resolves the rest, is the direct ancestor of this work
+\cite{chamberland2026fast}; Promatch \cite{alavisamani2024promatch} is
+the closest prior art to our confidence gate, adapting predecoding effort per
+shot. Our contribution is not the hierarchy, which is theirs, but the
+measurement of why an FPGA-oriented reimplementation of it fails.
+
+\paragraph{Real-time and hardware decoding.} The backlog argument
+\cite{terhal2015quantum} motivates windowed and parallel decoding
+\cite{skoric2023parallel}; Battistel et al.\ survey the real-time problem
+\cite{battistel2023realtime}. Hardware decoders include lookup-table and
+ASIC-oriented designs \cite{das2022lilliput, das2022afs}, cryogenic online
+decoders \cite{ueno2021qecool, ueno2022qulatis}, a scalable
+resource-efficient decoder deployed in a real system
+\cite{barber2025realtime}, and an FPGA neural decoder demonstrated in a
+superconducting control loop at 550\,ns closed-loop latency
+\cite{yang2026realtime}. Our roofline complements these by bounding what a
+given network can achieve on a given device before any of it is built.
+
+\paragraph{Quantised inference.} Our precision assumptions follow standard
+quantised-inference practice \cite{jacob2018quantization, hubara2017quantized}
+and FPGA toolflows for small networks \cite{umuroglu2017finn, duarte2018hls4ml}.
+Gate calibration uses temperature-scaling-style reliability analysis
+\cite{guo2017calibration, niculescu2005predicting}.
+
 \section{Background}\label{sec:background}
 
 We simulate rotated surface-code memory circuits with Stim \cite{gidney2021stim}

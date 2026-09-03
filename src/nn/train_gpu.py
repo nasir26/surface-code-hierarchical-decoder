@@ -67,6 +67,11 @@ class TrainConfig:
     channels_last: bool = True
     log_every_shots: int = 5_000_000
     tag: str = "gpu"
+    # When set, each logging point also writes an immutable checkpoint named
+    # by the shot count. Used to reconstruct the loss-versus-logical-error
+    # trajectory: the rolling checkpoint is overwritten and cannot show how
+    # the two metrics moved relative to each other during training.
+    snapshot: bool = False
 
 
 class ShotStream(IterableDataset):
@@ -235,6 +240,10 @@ def train(cfg: TrainConfig, out_dir: Path, metrics_path: Path) -> dict:
                 },
                 checkpoint_path,
             )
+            if cfg.snapshot:
+                snap = out_dir / f"predecoder_R{cfg.R}_{cfg.tag}_at{shots_done}.pt"
+                import shutil
+                shutil.copyfile(checkpoint_path, snap)
             metrics_path.write_text(json.dumps({
                 "config": cfg.__dict__,
                 "device": device,
@@ -265,6 +274,8 @@ def parse_args() -> argparse.Namespace:
     ap.add_argument("--num-workers", type=int, default=8)
     ap.add_argument("--no-amp", action="store_true")
     ap.add_argument("--log-every-shots", type=int, default=5_000_000)
+    ap.add_argument("--snapshot", action="store_true",
+                    help="also keep an immutable checkpoint at each logging point")
     ap.add_argument("--tag", default="gpu")
     return ap.parse_args()
 
@@ -277,6 +288,7 @@ def main() -> None:
         chunk_shots=args.chunk_shots, lr=args.lr, seed=args.seed,
         num_workers=args.num_workers, amp=not args.no_amp,
         log_every_shots=args.log_every_shots, tag=args.tag,
+        snapshot=args.snapshot,
     )
     train(
         cfg,
