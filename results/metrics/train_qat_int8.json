@@ -71,23 +71,17 @@
       -1
     ]
   ],
-  "shots_per_epoch": 400000,
+  "shots_per_epoch": 300000,
   "batch_size": 256,
   "lr": 0.0001,
   "seed": 0,
-  "fp32_checkpoint": "models/predecoder_R5_w12.pt",
+  "fp32_checkpoint": "models/predecoder_R5_gpu.pt",
   "history": [
     {
       "epoch": 0,
-      "loss": 0.002722978871643229,
-      "shots": 400000,
-      "epoch_time_s": 38.11823868751526
-    },
-    {
-      "epoch": 1,
-      "loss": 0.0027187267400841215,
-      "shots": 400000,
-      "epoch_time_s": 39.07867074012756
+      "loss": 0.0022016112684317486,
+      "shots": 300000,
+      "epoch_time_s": 95.7130036354065
     }
   ]
 }

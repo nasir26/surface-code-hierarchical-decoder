@@ -17,7 +17,7 @@ constexpr int NUM_EDGE_OFFSETS = 13;
 // Hidden-layer channel width. The kernel sizes its activation vectors
 // and unroll factors from this, so a narrower model synthesises as a
 // genuinely smaller design rather than a padded wide one.
-constexpr int WIDTH = 12;
+constexpr int WIDTH = 64;
 
 // channel 0 is the singleton (weight-1 local error); channels 1..NUM_EDGE_OFFSETS
 // correspond to EDGE_OFFSETS[0..NUM_EDGE_OFFSETS-1] (dt, dy, dx).
