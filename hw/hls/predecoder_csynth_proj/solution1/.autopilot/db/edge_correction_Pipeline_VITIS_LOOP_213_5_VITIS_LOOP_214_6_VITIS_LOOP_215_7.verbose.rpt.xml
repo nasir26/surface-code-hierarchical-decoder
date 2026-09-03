@@ -1,0 +1,389 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7'" level="0">
+<item name = "Date">Thu Sep  3 17:11:07 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">predecoder_csynth_proj</item>
+<item name = "Solution">solution1 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplusHBM</item>
+<item name = "Target device">xcu55c-fsvh2892-2L-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33 ns, 2.608 ns, 0.90 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">218, 218, 0.726 us, 0.726 us, 218, 218, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7">216, 216, 2, 1, 1, 216, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 192, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">-, -, 0, 434, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, -, 117, -</column>
+<column name="Register">-, -, 548, -, -</column>
+<specialColumn name="Available SLR">1344, 3008, 869120, 434560, 320</specialColumn>
+<specialColumn name="Utilization SLR (%)">0, 0, ~0, ~0, 0</specialColumn>
+<specialColumn name="Available">4032, 9024, 2607360, 1303680, 960</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="sparsemux_13_3_1_1_1_U2733">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2734">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2735">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2736">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2737">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2738">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2739">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2740">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2741">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2742">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2743">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2744">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2745">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+<column name="sparsemux_13_3_1_1_1_U2746">sparsemux_13_3_1_1_1, 0, 0, 0, 31, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln213_1_fu_1224_p2">+, 0, 0, 15, 8, 1</column>
+<column name="add_ln213_fu_1242_p2">+, 0, 0, 10, 3, 1</column>
+<column name="add_ln214_1_fu_1412_p2">+, 0, 0, 13, 6, 1</column>
+<column name="add_ln214_fu_1288_p2">+, 0, 0, 10, 3, 1</column>
+<column name="add_ln215_fu_1406_p2">+, 0, 0, 10, 3, 1</column>
+<column name="add_ln217_fu_1961_p2">+, 0, 0, 18, 10, 10</column>
+<column name="empty_55_fu_1485_p2">+, 0, 0, 16, 7, 7</column>
+<column name="empty_56_fu_1511_p2">-, 0, 0, 18, 10, 10</column>
+<column name="empty_fu_1476_p2">-, 0, 0, 16, 7, 7</column>
+<column name="and_ln212_fu_1274_p2">and, 0, 0, 2, 1, 1</column>
+<column name="icmp_ln213_fu_1218_p2">icmp, 0, 0, 15, 8, 7</column>
+<column name="icmp_ln214_fu_1248_p2">icmp, 0, 0, 13, 6, 6</column>
+<column name="icmp_ln215_fu_1268_p2">icmp, 0, 0, 10, 3, 3</column>
+<column name="or_ln212_fu_1294_p2">or, 0, 0, 2, 1, 1</column>
+<column name="select_ln212_1_fu_1300_p3">select, 0, 0, 3, 1, 1</column>
+<column name="select_ln212_fu_1254_p3">select, 0, 0, 3, 1, 1</column>
+<column name="select_ln213_fu_1280_p3">select, 0, 0, 3, 1, 3</column>
+<column name="select_ln214_1_fu_1418_p3">select, 0, 0, 6, 1, 1</column>
+<column name="select_ln214_fu_1308_p3">select, 0, 0, 3, 1, 3</column>
+<column name="select_ln217_fu_1954_p3">select, 0, 0, 2, 1, 1</column>
+<column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln212_fu_1262_p2">xor, 0, 0, 2, 1, 2</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_done_int">9, 2, 1, 2</column>
+<column name="ap_enable_reg_pp0_iter1">9, 2, 1, 2</column>
+<column name="ap_sig_allocacmp_indvar_flatten43_load">9, 2, 6, 12</column>
+<column name="ap_sig_allocacmp_indvar_flatten58_load">9, 2, 8, 16</column>
+<column name="ap_sig_allocacmp_t_load">9, 2, 3, 6</column>
+<column name="ap_sig_allocacmp_x_load">9, 2, 3, 6</column>
+<column name="ap_sig_allocacmp_y_load">9, 2, 3, 6</column>
+<column name="beat_fu_218">9, 2, 512, 1024</column>
+<column name="indvar_flatten43_fu_230">9, 2, 6, 12</column>
+<column name="indvar_flatten58_fu_238">9, 2, 8, 16</column>
+<column name="t_fu_234">9, 2, 3, 6</column>
+<column name="x_fu_222">9, 2, 3, 6</column>
+<column name="y_fu_226">9, 2, 3, 6</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">1, 0, 1, 0</column>
+<column name="ap_done_reg">1, 0, 1, 0</column>
+<column name="ap_enable_reg_pp0_iter1">1, 0, 1, 0</column>
+<column name="beat_fu_218">512, 0, 512, 0</column>
+<column name="indvar_flatten43_fu_230">6, 0, 6, 0</column>
+<column name="indvar_flatten58_fu_238">8, 0, 8, 0</column>
+<column name="select_ln212_1_reg_2042">3, 0, 3, 0</column>
+<column name="select_ln213_reg_2036">3, 0, 3, 0</column>
+<column name="select_ln214_reg_2059">3, 0, 3, 0</column>
+<column name="t_fu_234">3, 0, 3, 0</column>
+<column name="trunc_ln213_reg_2066">1, 0, 1, 0</column>
+<column name="x_fu_222">3, 0, 3, 0</column>
+<column name="y_fu_226">3, 0, 3, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, return value</column>
+<column name="correction_address0">out, 2, ap_memory, correction, array</column>
+<column name="correction_ce0">out, 1, ap_memory, correction, array</column>
+<column name="correction_q0">in, 1, ap_memory, correction, array</column>
+<column name="correction_1_address0">out, 2, ap_memory, correction_1, array</column>
+<column name="correction_1_ce0">out, 1, ap_memory, correction_1, array</column>
+<column name="correction_1_q0">in, 1, ap_memory, correction_1, array</column>
+<column name="correction_2_address0">out, 2, ap_memory, correction_2, array</column>
+<column name="correction_2_ce0">out, 1, ap_memory, correction_2, array</column>
+<column name="correction_2_q0">in, 1, ap_memory, correction_2, array</column>
+<column name="correction_3_address0">out, 2, ap_memory, correction_3, array</column>
+<column name="correction_3_ce0">out, 1, ap_memory, correction_3, array</column>
+<column name="correction_3_q0">in, 1, ap_memory, correction_3, array</column>
+<column name="correction_4_address0">out, 2, ap_memory, correction_4, array</column>
+<column name="correction_4_ce0">out, 1, ap_memory, correction_4, array</column>
+<column name="correction_4_q0">in, 1, ap_memory, correction_4, array</column>
+<column name="correction_5_address0">out, 2, ap_memory, correction_5, array</column>
+<column name="correction_5_ce0">out, 1, ap_memory, correction_5, array</column>
+<column name="correction_5_q0">in, 1, ap_memory, correction_5, array</column>
+<column name="correction_6_address0">out, 2, ap_memory, correction_6, array</column>
+<column name="correction_6_ce0">out, 1, ap_memory, correction_6, array</column>
+<column name="correction_6_q0">in, 1, ap_memory, correction_6, array</column>
+<column name="correction_7_address0">out, 2, ap_memory, correction_7, array</column>
+<column name="correction_7_ce0">out, 1, ap_memory, correction_7, array</column>
+<column name="correction_7_q0">in, 1, ap_memory, correction_7, array</column>
+<column name="correction_8_address0">out, 2, ap_memory, correction_8, array</column>
+<column name="correction_8_ce0">out, 1, ap_memory, correction_8, array</column>
+<column name="correction_8_q0">in, 1, ap_memory, correction_8, array</column>
+<column name="correction_9_address0">out, 2, ap_memory, correction_9, array</column>
+<column name="correction_9_ce0">out, 1, ap_memory, correction_9, array</column>
+<column name="correction_9_q0">in, 1, ap_memory, correction_9, array</column>
+<column name="correction_10_address0">out, 2, ap_memory, correction_10, array</column>
+<column name="correction_10_ce0">out, 1, ap_memory, correction_10, array</column>
+<column name="correction_10_q0">in, 1, ap_memory, correction_10, array</column>
+<column name="correction_11_address0">out, 2, ap_memory, correction_11, array</column>
+<column name="correction_11_ce0">out, 1, ap_memory, correction_11, array</column>
+<column name="correction_11_q0">in, 1, ap_memory, correction_11, array</column>
+<column name="correction_12_address0">out, 2, ap_memory, correction_12, array</column>
+<column name="correction_12_ce0">out, 1, ap_memory, correction_12, array</column>
+<column name="correction_12_q0">in, 1, ap_memory, correction_12, array</column>
+<column name="correction_13_address0">out, 2, ap_memory, correction_13, array</column>
+<column name="correction_13_ce0">out, 1, ap_memory, correction_13, array</column>
+<column name="correction_13_q0">in, 1, ap_memory, correction_13, array</column>
+<column name="correction_14_address0">out, 2, ap_memory, correction_14, array</column>
+<column name="correction_14_ce0">out, 1, ap_memory, correction_14, array</column>
+<column name="correction_14_q0">in, 1, ap_memory, correction_14, array</column>
+<column name="correction_15_address0">out, 2, ap_memory, correction_15, array</column>
+<column name="correction_15_ce0">out, 1, ap_memory, correction_15, array</column>
+<column name="correction_15_q0">in, 1, ap_memory, correction_15, array</column>
+<column name="correction_16_address0">out, 2, ap_memory, correction_16, array</column>
+<column name="correction_16_ce0">out, 1, ap_memory, correction_16, array</column>
+<column name="correction_16_q0">in, 1, ap_memory, correction_16, array</column>
+<column name="correction_17_address0">out, 2, ap_memory, correction_17, array</column>
+<column name="correction_17_ce0">out, 1, ap_memory, correction_17, array</column>
+<column name="correction_17_q0">in, 1, ap_memory, correction_17, array</column>
+<column name="correction_18_address0">out, 2, ap_memory, correction_18, array</column>
+<column name="correction_18_ce0">out, 1, ap_memory, correction_18, array</column>
+<column name="correction_18_q0">in, 1, ap_memory, correction_18, array</column>
+<column name="correction_19_address0">out, 2, ap_memory, correction_19, array</column>
+<column name="correction_19_ce0">out, 1, ap_memory, correction_19, array</column>
+<column name="correction_19_q0">in, 1, ap_memory, correction_19, array</column>
+<column name="correction_20_address0">out, 2, ap_memory, correction_20, array</column>
+<column name="correction_20_ce0">out, 1, ap_memory, correction_20, array</column>
+<column name="correction_20_q0">in, 1, ap_memory, correction_20, array</column>
+<column name="correction_21_address0">out, 2, ap_memory, correction_21, array</column>
+<column name="correction_21_ce0">out, 1, ap_memory, correction_21, array</column>
+<column name="correction_21_q0">in, 1, ap_memory, correction_21, array</column>
+<column name="correction_22_address0">out, 2, ap_memory, correction_22, array</column>
+<column name="correction_22_ce0">out, 1, ap_memory, correction_22, array</column>
+<column name="correction_22_q0">in, 1, ap_memory, correction_22, array</column>
+<column name="correction_23_address0">out, 2, ap_memory, correction_23, array</column>
+<column name="correction_23_ce0">out, 1, ap_memory, correction_23, array</column>
+<column name="correction_23_q0">in, 1, ap_memory, correction_23, array</column>
+<column name="correction_24_address0">out, 2, ap_memory, correction_24, array</column>
+<column name="correction_24_ce0">out, 1, ap_memory, correction_24, array</column>
+<column name="correction_24_q0">in, 1, ap_memory, correction_24, array</column>
+<column name="correction_25_address0">out, 2, ap_memory, correction_25, array</column>
+<column name="correction_25_ce0">out, 1, ap_memory, correction_25, array</column>
+<column name="correction_25_q0">in, 1, ap_memory, correction_25, array</column>
+<column name="correction_26_address0">out, 2, ap_memory, correction_26, array</column>
+<column name="correction_26_ce0">out, 1, ap_memory, correction_26, array</column>
+<column name="correction_26_q0">in, 1, ap_memory, correction_26, array</column>
+<column name="correction_27_address0">out, 2, ap_memory, correction_27, array</column>
+<column name="correction_27_ce0">out, 1, ap_memory, correction_27, array</column>
+<column name="correction_27_q0">in, 1, ap_memory, correction_27, array</column>
+<column name="correction_28_address0">out, 2, ap_memory, correction_28, array</column>
+<column name="correction_28_ce0">out, 1, ap_memory, correction_28, array</column>
+<column name="correction_28_q0">in, 1, ap_memory, correction_28, array</column>
+<column name="correction_29_address0">out, 2, ap_memory, correction_29, array</column>
+<column name="correction_29_ce0">out, 1, ap_memory, correction_29, array</column>
+<column name="correction_29_q0">in, 1, ap_memory, correction_29, array</column>
+<column name="correction_30_address0">out, 2, ap_memory, correction_30, array</column>
+<column name="correction_30_ce0">out, 1, ap_memory, correction_30, array</column>
+<column name="correction_30_q0">in, 1, ap_memory, correction_30, array</column>
+<column name="correction_31_address0">out, 2, ap_memory, correction_31, array</column>
+<column name="correction_31_ce0">out, 1, ap_memory, correction_31, array</column>
+<column name="correction_31_q0">in, 1, ap_memory, correction_31, array</column>
+<column name="correction_32_address0">out, 2, ap_memory, correction_32, array</column>
+<column name="correction_32_ce0">out, 1, ap_memory, correction_32, array</column>
+<column name="correction_32_q0">in, 1, ap_memory, correction_32, array</column>
+<column name="correction_33_address0">out, 2, ap_memory, correction_33, array</column>
+<column name="correction_33_ce0">out, 1, ap_memory, correction_33, array</column>
+<column name="correction_33_q0">in, 1, ap_memory, correction_33, array</column>
+<column name="correction_34_address0">out, 2, ap_memory, correction_34, array</column>
+<column name="correction_34_ce0">out, 1, ap_memory, correction_34, array</column>
+<column name="correction_34_q0">in, 1, ap_memory, correction_34, array</column>
+<column name="correction_35_address0">out, 2, ap_memory, correction_35, array</column>
+<column name="correction_35_ce0">out, 1, ap_memory, correction_35, array</column>
+<column name="correction_35_q0">in, 1, ap_memory, correction_35, array</column>
+<column name="correction_36_address0">out, 2, ap_memory, correction_36, array</column>
+<column name="correction_36_ce0">out, 1, ap_memory, correction_36, array</column>
+<column name="correction_36_q0">in, 1, ap_memory, correction_36, array</column>
+<column name="correction_37_address0">out, 2, ap_memory, correction_37, array</column>
+<column name="correction_37_ce0">out, 1, ap_memory, correction_37, array</column>
+<column name="correction_37_q0">in, 1, ap_memory, correction_37, array</column>
+<column name="correction_38_address0">out, 2, ap_memory, correction_38, array</column>
+<column name="correction_38_ce0">out, 1, ap_memory, correction_38, array</column>
+<column name="correction_38_q0">in, 1, ap_memory, correction_38, array</column>
+<column name="correction_39_address0">out, 2, ap_memory, correction_39, array</column>
+<column name="correction_39_ce0">out, 1, ap_memory, correction_39, array</column>
+<column name="correction_39_q0">in, 1, ap_memory, correction_39, array</column>
+<column name="correction_40_address0">out, 2, ap_memory, correction_40, array</column>
+<column name="correction_40_ce0">out, 1, ap_memory, correction_40, array</column>
+<column name="correction_40_q0">in, 1, ap_memory, correction_40, array</column>
+<column name="correction_41_address0">out, 2, ap_memory, correction_41, array</column>
+<column name="correction_41_ce0">out, 1, ap_memory, correction_41, array</column>
+<column name="correction_41_q0">in, 1, ap_memory, correction_41, array</column>
+<column name="correction_42_address0">out, 2, ap_memory, correction_42, array</column>
+<column name="correction_42_ce0">out, 1, ap_memory, correction_42, array</column>
+<column name="correction_42_q0">in, 1, ap_memory, correction_42, array</column>
+<column name="correction_43_address0">out, 2, ap_memory, correction_43, array</column>
+<column name="correction_43_ce0">out, 1, ap_memory, correction_43, array</column>
+<column name="correction_43_q0">in, 1, ap_memory, correction_43, array</column>
+<column name="correction_44_address0">out, 2, ap_memory, correction_44, array</column>
+<column name="correction_44_ce0">out, 1, ap_memory, correction_44, array</column>
+<column name="correction_44_q0">in, 1, ap_memory, correction_44, array</column>
+<column name="correction_45_address0">out, 2, ap_memory, correction_45, array</column>
+<column name="correction_45_ce0">out, 1, ap_memory, correction_45, array</column>
+<column name="correction_45_q0">in, 1, ap_memory, correction_45, array</column>
+<column name="correction_46_address0">out, 2, ap_memory, correction_46, array</column>
+<column name="correction_46_ce0">out, 1, ap_memory, correction_46, array</column>
+<column name="correction_46_q0">in, 1, ap_memory, correction_46, array</column>
+<column name="correction_47_address0">out, 2, ap_memory, correction_47, array</column>
+<column name="correction_47_ce0">out, 1, ap_memory, correction_47, array</column>
+<column name="correction_47_q0">in, 1, ap_memory, correction_47, array</column>
+<column name="correction_48_address0">out, 2, ap_memory, correction_48, array</column>
+<column name="correction_48_ce0">out, 1, ap_memory, correction_48, array</column>
+<column name="correction_48_q0">in, 1, ap_memory, correction_48, array</column>
+<column name="correction_49_address0">out, 2, ap_memory, correction_49, array</column>
+<column name="correction_49_ce0">out, 1, ap_memory, correction_49, array</column>
+<column name="correction_49_q0">in, 1, ap_memory, correction_49, array</column>
+<column name="correction_50_address0">out, 2, ap_memory, correction_50, array</column>
+<column name="correction_50_ce0">out, 1, ap_memory, correction_50, array</column>
+<column name="correction_50_q0">in, 1, ap_memory, correction_50, array</column>
+<column name="correction_51_address0">out, 2, ap_memory, correction_51, array</column>
+<column name="correction_51_ce0">out, 1, ap_memory, correction_51, array</column>
+<column name="correction_51_q0">in, 1, ap_memory, correction_51, array</column>
+<column name="correction_52_address0">out, 2, ap_memory, correction_52, array</column>
+<column name="correction_52_ce0">out, 1, ap_memory, correction_52, array</column>
+<column name="correction_52_q0">in, 1, ap_memory, correction_52, array</column>
+<column name="correction_53_address0">out, 2, ap_memory, correction_53, array</column>
+<column name="correction_53_ce0">out, 1, ap_memory, correction_53, array</column>
+<column name="correction_53_q0">in, 1, ap_memory, correction_53, array</column>
+<column name="correction_54_address0">out, 2, ap_memory, correction_54, array</column>
+<column name="correction_54_ce0">out, 1, ap_memory, correction_54, array</column>
+<column name="correction_54_q0">in, 1, ap_memory, correction_54, array</column>
+<column name="correction_55_address0">out, 2, ap_memory, correction_55, array</column>
+<column name="correction_55_ce0">out, 1, ap_memory, correction_55, array</column>
+<column name="correction_55_q0">in, 1, ap_memory, correction_55, array</column>
+<column name="correction_56_address0">out, 2, ap_memory, correction_56, array</column>
+<column name="correction_56_ce0">out, 1, ap_memory, correction_56, array</column>
+<column name="correction_56_q0">in, 1, ap_memory, correction_56, array</column>
+<column name="correction_57_address0">out, 2, ap_memory, correction_57, array</column>
+<column name="correction_57_ce0">out, 1, ap_memory, correction_57, array</column>
+<column name="correction_57_q0">in, 1, ap_memory, correction_57, array</column>
+<column name="correction_58_address0">out, 2, ap_memory, correction_58, array</column>
+<column name="correction_58_ce0">out, 1, ap_memory, correction_58, array</column>
+<column name="correction_58_q0">in, 1, ap_memory, correction_58, array</column>
+<column name="correction_59_address0">out, 2, ap_memory, correction_59, array</column>
+<column name="correction_59_ce0">out, 1, ap_memory, correction_59, array</column>
+<column name="correction_59_q0">in, 1, ap_memory, correction_59, array</column>
+<column name="correction_60_address0">out, 2, ap_memory, correction_60, array</column>
+<column name="correction_60_ce0">out, 1, ap_memory, correction_60, array</column>
+<column name="correction_60_q0">in, 1, ap_memory, correction_60, array</column>
+<column name="correction_61_address0">out, 2, ap_memory, correction_61, array</column>
+<column name="correction_61_ce0">out, 1, ap_memory, correction_61, array</column>
+<column name="correction_61_q0">in, 1, ap_memory, correction_61, array</column>
+<column name="correction_62_address0">out, 2, ap_memory, correction_62, array</column>
+<column name="correction_62_ce0">out, 1, ap_memory, correction_62, array</column>
+<column name="correction_62_q0">in, 1, ap_memory, correction_62, array</column>
+<column name="correction_63_address0">out, 2, ap_memory, correction_63, array</column>
+<column name="correction_63_ce0">out, 1, ap_memory, correction_63, array</column>
+<column name="correction_63_q0">in, 1, ap_memory, correction_63, array</column>
+<column name="correction_64_address0">out, 2, ap_memory, correction_64, array</column>
+<column name="correction_64_ce0">out, 1, ap_memory, correction_64, array</column>
+<column name="correction_64_q0">in, 1, ap_memory, correction_64, array</column>
+<column name="correction_65_address0">out, 2, ap_memory, correction_65, array</column>
+<column name="correction_65_ce0">out, 1, ap_memory, correction_65, array</column>
+<column name="correction_65_q0">in, 1, ap_memory, correction_65, array</column>
+<column name="correction_66_address0">out, 2, ap_memory, correction_66, array</column>
+<column name="correction_66_ce0">out, 1, ap_memory, correction_66, array</column>
+<column name="correction_66_q0">in, 1, ap_memory, correction_66, array</column>
+<column name="correction_67_address0">out, 2, ap_memory, correction_67, array</column>
+<column name="correction_67_ce0">out, 1, ap_memory, correction_67, array</column>
+<column name="correction_67_q0">in, 1, ap_memory, correction_67, array</column>
+<column name="correction_68_address0">out, 2, ap_memory, correction_68, array</column>
+<column name="correction_68_ce0">out, 1, ap_memory, correction_68, array</column>
+<column name="correction_68_q0">in, 1, ap_memory, correction_68, array</column>
+<column name="correction_69_address0">out, 2, ap_memory, correction_69, array</column>
+<column name="correction_69_ce0">out, 1, ap_memory, correction_69, array</column>
+<column name="correction_69_q0">in, 1, ap_memory, correction_69, array</column>
+<column name="correction_70_address0">out, 2, ap_memory, correction_70, array</column>
+<column name="correction_70_ce0">out, 1, ap_memory, correction_70, array</column>
+<column name="correction_70_q0">in, 1, ap_memory, correction_70, array</column>
+<column name="correction_71_address0">out, 2, ap_memory, correction_71, array</column>
+<column name="correction_71_ce0">out, 1, ap_memory, correction_71, array</column>
+<column name="correction_71_q0">in, 1, ap_memory, correction_71, array</column>
+<column name="beat_2_out">out, 512, ap_vld, beat_2_out, pointer</column>
+<column name="beat_2_out_ap_vld">out, 1, ap_vld, beat_2_out, pointer</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,210 @@
+
+
+================================================================
+== Vitis HLS Report for 'conv3d_hidden_layer_12_Pipeline_SUM_PARTIAL_VITIS_LOOP_109_9'
+================================================================
+* Date:           Thu Sep  3 17:06:11 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        predecoder_csynth_proj
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplusHBM
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.749 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |  Latency (cycles) |   Latency (absolute)  |  Interval | Pipeline|
+    |   min   |   max   |    min    |    max    | min | max |   Type  |
+    +---------+---------+-----------+-----------+-----+-----+---------+
+    |       11|       11|  36.630 ns|  36.630 ns|   11|   11|       no|
+    +---------+---------+-----------+-----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +--------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                                |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |            Loop Name           |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +--------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- SUM_PARTIAL_VITIS_LOOP_109_9  |        9|        9|         2|          1|          1|     9|       yes|
+        +--------------------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.74>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%acc = alloca i32 1" [predecoder_kernel.cpp:106]   --->   Operation 5 'alloca' 'acc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%dy = alloca i32 1" [predecoder_kernel.cpp:109]   --->   Operation 6 'alloca' 'dy' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%dz = alloca i32 1" [predecoder_kernel.cpp:108]   --->   Operation 7 'alloca' 'dz' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%indvar_flatten54 = alloca i32 1"   --->   Operation 8 'alloca' 'indvar_flatten54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%conv3_i_2_2_2229_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_2_2229_reload"   --->   Operation 9 'read' 'conv3_i_2_2_2229_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%conv3_i_2_1_2226_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_1_2226_reload"   --->   Operation 10 'read' 'conv3_i_2_1_2226_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%conv3_i_2_275223_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_275223_reload"   --->   Operation 11 'read' 'conv3_i_2_275223_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%conv3_i_1_2_2220_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_2_2220_reload"   --->   Operation 12 'read' 'conv3_i_1_2_2220_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%conv3_i_1_1_2217_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_1_2217_reload"   --->   Operation 13 'read' 'conv3_i_1_1_2217_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%conv3_i_1_2101214_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_2101214_reload"   --->   Operation 14 'read' 'conv3_i_1_2101214_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%conv3_i_2131_2211_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2131_2211_reload"   --->   Operation 15 'read' 'conv3_i_2131_2211_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%conv3_i_1116_2208_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1116_2208_reload"   --->   Operation 16 'read' 'conv3_i_1116_2208_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%conv3_i_2161205_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2161205_reload"   --->   Operation 17 'read' 'conv3_i_2161205_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%conv3_i_2_2_1228_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_2_1228_reload"   --->   Operation 18 'read' 'conv3_i_2_2_1228_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%conv3_i_2_1_1225_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_1_1225_reload"   --->   Operation 19 'read' 'conv3_i_2_1_1225_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%conv3_i_2_162222_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_162222_reload"   --->   Operation 20 'read' 'conv3_i_2_162222_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%conv3_i_1_2_1219_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_2_1219_reload"   --->   Operation 21 'read' 'conv3_i_1_2_1219_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%conv3_i_1_1_1216_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_1_1216_reload"   --->   Operation 22 'read' 'conv3_i_1_1_1216_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%conv3_i_1_188213_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_188213_reload"   --->   Operation 23 'read' 'conv3_i_1_188213_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%conv3_i_2131_1210_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2131_1210_reload"   --->   Operation 24 'read' 'conv3_i_2131_1210_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%conv3_i_1116_1207_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1116_1207_reload"   --->   Operation 25 'read' 'conv3_i_1116_1207_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%conv3_i_1148204_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1148204_reload"   --->   Operation 26 'read' 'conv3_i_1148204_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%conv3_i_2_2227_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_2227_reload"   --->   Operation 27 'read' 'conv3_i_2_2227_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%conv3_i_2_1224_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2_1224_reload"   --->   Operation 28 'read' 'conv3_i_2_1224_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%conv3_i_2221_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2221_reload"   --->   Operation 29 'read' 'conv3_i_2221_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%conv3_i_1_2218_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_2218_reload"   --->   Operation 30 'read' 'conv3_i_1_2218_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%conv3_i_1_1215_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1_1215_reload"   --->   Operation 31 'read' 'conv3_i_1_1215_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%conv3_i_1212_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1212_reload"   --->   Operation 32 'read' 'conv3_i_1212_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%conv3_i_2131209_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_2131209_reload"   --->   Operation 33 'read' 'conv3_i_2131209_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%conv3_i_1116206_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i_1116206_reload"   --->   Operation 34 'read' 'conv3_i_1116206_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%conv3_i203_reload_read = read i20 @_ssdm_op_Read.ap_auto.i20, i20 %conv3_i203_reload"   --->   Operation 35 'read' 'conv3_i203_reload_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%acc_cast_read = read i14 @_ssdm_op_Read.ap_auto.i14, i14 %acc_cast"   --->   Operation 36 'read' 'acc_cast_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%acc_cast_cast = sext i14 %acc_cast_read"   --->   Operation 37 'sext' 'acc_cast_cast' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.38ns)   --->   "%store_ln0 = store i4 0, i4 %indvar_flatten54"   --->   Operation 38 'store' 'store_ln0' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 39 [1/1] (0.38ns)   --->   "%store_ln108 = store i2 0, i2 %dz" [predecoder_kernel.cpp:108]   --->   Operation 39 'store' 'store_ln108' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 40 [1/1] (0.38ns)   --->   "%store_ln109 = store i2 0, i2 %dy" [predecoder_kernel.cpp:109]   --->   Operation 40 'store' 'store_ln109' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 41 [1/1] (0.38ns)   --->   "%store_ln106 = store i25 %acc_cast_cast, i25 %acc" [predecoder_kernel.cpp:106]   --->   Operation 41 'store' 'store_ln106' <Predicate = true> <Delay = 0.38>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%br_ln0 = br void %VITIS_LOOP_110_10"   --->   Operation 42 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%indvar_flatten54_load = load i4 %indvar_flatten54" [predecoder_kernel.cpp:108]   --->   Operation 43 'load' 'indvar_flatten54_load' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.70ns)   --->   "%icmp_ln108 = icmp_eq  i4 %indvar_flatten54_load, i4 9" [predecoder_kernel.cpp:108]   --->   Operation 44 'icmp' 'icmp_ln108' <Predicate = true> <Delay = 0.70> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 45 [1/1] (0.70ns)   --->   "%add_ln108_1 = add i4 %indvar_flatten54_load, i4 1" [predecoder_kernel.cpp:108]   --->   Operation 45 'add' 'add_ln108_1' <Predicate = true> <Delay = 0.70> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%br_ln108 = br i1 %icmp_ln108, void %for.inc153, void %for.end155.exitStub" [predecoder_kernel.cpp:108]   --->   Operation 46 'br' 'br_ln108' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%dy_load = load i2 %dy" [predecoder_kernel.cpp:109]   --->   Operation 47 'load' 'dy_load' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%dz_load = load i2 %dz" [predecoder_kernel.cpp:108]   --->   Operation 48 'load' 'dz_load' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.43ns)   --->   "%add_ln108 = add i2 %dz_load, i2 1" [predecoder_kernel.cpp:108]   --->   Operation 49 'add' 'add_ln108' <Predicate = (!icmp_ln108)> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 50 [1/1] (0.43ns)   --->   "%icmp_ln109 = icmp_eq  i2 %dy_load, i2 3" [predecoder_kernel.cpp:109]   --->   Operation 50 'icmp' 'icmp_ln109' <Predicate = (!icmp_ln108)> <Delay = 0.43> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 51 [1/1] (0.27ns)   --->   "%select_ln106 = select i1 %icmp_ln109, i2 0, i2 %dy_load" [predecoder_kernel.cpp:106]   --->   Operation 51 'select' 'select_ln106' <Predicate = (!icmp_ln108)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.27ns)   --->   "%select_ln108 = select i1 %icmp_ln109, i2 %add_ln108, i2 %dz_load" [predecoder_kernel.cpp:108]   --->   Operation 52 'select' 'select_ln108' <Predicate = (!icmp_ln108)> <Delay = 0.27> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 0.27> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.41ns)   --->   "%tmp_507 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i203_reload_read, i2 1, i20 %conv3_i_1116206_reload_read, i2 2, i20 %conv3_i_2131209_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 53 'sparsemux' 'tmp_507' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (0.41ns)   --->   "%tmp_508 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_1212_reload_read, i2 1, i20 %conv3_i_1_1215_reload_read, i2 2, i20 %conv3_i_1_2218_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 54 'sparsemux' 'tmp_508' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.41ns)   --->   "%tmp_509 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_2221_reload_read, i2 1, i20 %conv3_i_2_1224_reload_read, i2 2, i20 %conv3_i_2_2227_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 55 'sparsemux' 'tmp_509' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.41ns)   --->   "%tmp_510 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %tmp_507, i2 1, i20 %tmp_508, i2 2, i20 %tmp_509, i20 0, i2 %select_ln108" [predecoder_kernel.cpp:112]   --->   Operation 56 'sparsemux' 'tmp_510' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 57 [1/1] (0.41ns)   --->   "%tmp_511 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_1148204_reload_read, i2 1, i20 %conv3_i_1116_1207_reload_read, i2 2, i20 %conv3_i_2131_1210_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 57 'sparsemux' 'tmp_511' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 58 [1/1] (0.41ns)   --->   "%tmp_512 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_1_188213_reload_read, i2 1, i20 %conv3_i_1_1_1216_reload_read, i2 2, i20 %conv3_i_1_2_1219_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 58 'sparsemux' 'tmp_512' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 59 [1/1] (0.41ns)   --->   "%tmp_513 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_2_162222_reload_read, i2 1, i20 %conv3_i_2_1_1225_reload_read, i2 2, i20 %conv3_i_2_2_1228_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 59 'sparsemux' 'tmp_513' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (0.41ns)   --->   "%tmp_514 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %tmp_511, i2 1, i20 %tmp_512, i2 2, i20 %tmp_513, i20 0, i2 %select_ln108" [predecoder_kernel.cpp:112]   --->   Operation 60 'sparsemux' 'tmp_514' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%sext_ln112_18 = sext i20 %tmp_514" [predecoder_kernel.cpp:112]   --->   Operation 61 'sext' 'sext_ln112_18' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.41ns)   --->   "%tmp_515 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_2161205_reload_read, i2 1, i20 %conv3_i_1116_2208_reload_read, i2 2, i20 %conv3_i_2131_2211_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 62 'sparsemux' 'tmp_515' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (0.41ns)   --->   "%tmp_516 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_1_2101214_reload_read, i2 1, i20 %conv3_i_1_1_2217_reload_read, i2 2, i20 %conv3_i_1_2_2220_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 63 'sparsemux' 'tmp_516' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 64 [1/1] (0.41ns)   --->   "%tmp_517 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %conv3_i_2_275223_reload_read, i2 1, i20 %conv3_i_2_1_2226_reload_read, i2 2, i20 %conv3_i_2_2_2229_reload_read, i20 0, i2 %select_ln106" [predecoder_kernel.cpp:112]   --->   Operation 64 'sparsemux' 'tmp_517' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 65 [1/1] (0.41ns)   --->   "%tmp_518 = sparsemux i20 @_ssdm_op_SparseMux.ap_auto.3i20.i20.i2, i2 0, i20 %tmp_515, i2 1, i20 %tmp_516, i2 2, i20 %tmp_517, i20 0, i2 %select_ln108" [predecoder_kernel.cpp:112]   --->   Operation 65 'sparsemux' 'tmp_518' <Predicate = (!icmp_ln108)> <Delay = 0.41> <CoreInst = "SparseMux">   --->   Core 147 'SparseMux' <Latency = 0> <II = 1> <Delay = 0.41> <FuncUnit> <Opcode : 'sparsemux'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%sext_ln112_19 = sext i20 %tmp_518" [predecoder_kernel.cpp:112]   --->   Operation 66 'sext' 'sext_ln112_19' <Predicate = (!icmp_ln108)> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.80ns)   --->   "%add_ln112 = add i21 %sext_ln112_18, i21 %sext_ln112_19" [predecoder_kernel.cpp:112]   --->   Operation 67 'add' 'add_ln112' <Predicate = (!icmp_ln108)> <Delay = 0.80> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 68 [1/1] (0.43ns)   --->   "%add_ln109 = add i2 %select_ln106, i2 1" [predecoder_kernel.cpp:109]   --->   Operation 68 'add' 'add_ln109' <Predicate = (!icmp_ln108)> <Delay = 0.43> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.43> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 69 [1/1] (0.38ns)   --->   "%store_ln108 = store i4 %add_ln108_1, i4 %indvar_flatten54" [predecoder_kernel.cpp:108]   --->   Operation 69 'store' 'store_ln108' <Predicate = (!icmp_ln108)> <Delay = 0.38>
+ST_1 : Operation 70 [1/1] (0.38ns)   --->   "%store_ln108 = store i2 %select_ln108, i2 %dz" [predecoder_kernel.cpp:108]   --->   Operation 70 'store' 'store_ln108' <Predicate = (!icmp_ln108)> <Delay = 0.38>
+ST_1 : Operation 71 [1/1] (0.38ns)   --->   "%store_ln109 = store i2 %add_ln109, i2 %dy" [predecoder_kernel.cpp:109]   --->   Operation 71 'store' 'store_ln109' <Predicate = (!icmp_ln108)> <Delay = 0.38>
+ST_1 : Operation 83 [1/1] (0.00ns)   --->   "%acc_load = load i25 %acc"   --->   Operation 83 'load' 'acc_load' <Predicate = (icmp_ln108)> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns)   --->   "%write_ln0 = write void @_ssdm_op_Write.ap_auto.i25P0A, i25 %acc_3_out, i25 %acc_load"   --->   Operation 84 'write' 'write_ln0' <Predicate = (icmp_ln108)> <Delay = 0.00>
+ST_1 : Operation 85 [1/1] (0.00ns)   --->   "%ret_ln0 = ret"   --->   Operation 85 'ret' 'ret_ln0' <Predicate = (icmp_ln108)> <Delay = 0.00>
+
+State 2 <SV = 1> <Delay = 2.04>
+ST_2 : Operation 72 [1/1] (0.00ns)   --->   "%acc_load_1 = load i25 %acc" [predecoder_kernel.cpp:112]   --->   Operation 72 'load' 'acc_load_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 73 [1/1] (0.00ns)   --->   "%specloopname_ln0 = specloopname void @_ssdm_op_SpecLoopName, void @SUM_PARTIAL_VITIS_LOOP_109_9_str"   --->   Operation 73 'specloopname' 'specloopname_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 74 [1/1] (0.00ns)   --->   "%speclooptripcount_ln0 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 9, i64 9, i64 9"   --->   Operation 74 'speclooptripcount' 'speclooptripcount_ln0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 75 [1/1] (0.00ns)   --->   "%specpipeline_ln106 = specpipeline void @_ssdm_op_SpecPipeline, i32 4294967295, i32 0, i32 0, i32 0, void @empty_5" [predecoder_kernel.cpp:106]   --->   Operation 75 'specpipeline' 'specpipeline_ln106' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 76 [1/1] (0.00ns)   --->   "%sext_ln112 = sext i20 %tmp_510" [predecoder_kernel.cpp:112]   --->   Operation 76 'sext' 'sext_ln112' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 77 [1/1] (0.00ns)   --->   "%sext_ln112_20 = sext i21 %add_ln112" [predecoder_kernel.cpp:112]   --->   Operation 77 'sext' 'sext_ln112_20' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 78 [1/1] (0.81ns)   --->   "%add_ln112_27 = add i22 %sext_ln112_20, i22 %sext_ln112" [predecoder_kernel.cpp:112]   --->   Operation 78 'add' 'add_ln112_27' <Predicate = true> <Delay = 0.81> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.81> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 79 [1/1] (0.00ns)   --->   "%sext_ln112_21 = sext i22 %add_ln112_27" [predecoder_kernel.cpp:112]   --->   Operation 79 'sext' 'sext_ln112_21' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 80 [1/1] (0.83ns)   --->   "%acc_3 = add i25 %acc_load_1, i25 %sext_ln112_21" [predecoder_kernel.cpp:112]   --->   Operation 80 'add' 'acc_3' <Predicate = true> <Delay = 0.83> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.83> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 81 [1/1] (0.38ns)   --->   "%store_ln106 = store i25 %acc_3, i25 %acc" [predecoder_kernel.cpp:106]   --->   Operation 81 'store' 'store_ln106' <Predicate = true> <Delay = 0.38>
+ST_2 : Operation 82 [1/1] (0.00ns)   --->   "%br_ln109 = br void %VITIS_LOOP_110_10" [predecoder_kernel.cpp:109]   --->   Operation 82 'br' 'br_ln109' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.330ns, clock uncertainty: 0.899ns.
+
+ <State 1>: 2.749ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln109', predecoder_kernel.cpp:109) of constant 0 on local variable 'dy', predecoder_kernel.cpp:109 [65]  (0.387 ns)
+	'load' operation 2 bit ('dy_load', predecoder_kernel.cpp:109) on local variable 'dy', predecoder_kernel.cpp:109 [75]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln109', predecoder_kernel.cpp:109) [80]  (0.436 ns)
+	'select' operation 2 bit ('select_ln106', predecoder_kernel.cpp:106) [81]  (0.278 ns)
+	'sparsemux' operation 20 bit ('tmp_517', predecoder_kernel.cpp:112) [96]  (0.420 ns)
+	'sparsemux' operation 20 bit ('tmp_518', predecoder_kernel.cpp:112) [97]  (0.420 ns)
+	'add' operation 21 bit ('add_ln112', predecoder_kernel.cpp:112) [99]  (0.809 ns)
+
+ <State 2>: 2.040ns
+The critical path consists of the following:
+	'add' operation 22 bit ('add_ln112_27', predecoder_kernel.cpp:112) [101]  (0.815 ns)
+	'add' operation 25 bit ('acc_3', predecoder_kernel.cpp:112) [103]  (0.838 ns)
+	'store' operation 0 bit ('store_ln106', predecoder_kernel.cpp:106) of variable 'acc_3', predecoder_kernel.cpp:112 on local variable 'acc', predecoder_kernel.cpp:106 [108]  (0.387 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

@@ -285,6 +285,34 @@ information; but it rescues only \hierSaves{} shots while corrupting
 \hierBreaks, so exploiting that headroom demands a discrimination the present
 feature set cannot provide.
 
+\subsection{A preliminary synthesis of the deployable width}\label{sec:hls}
+
+The roofline says width \widthForQubitsSixteen{} is the configuration worth
+building, so we parameterised the HLS kernel by channel width and put that
+configuration through Vitis C-synthesis. Against a \hlsClockTarget\,ns target
+the tool estimates \hlsClockEstimated\,ns and a worst-case latency of
+\hlsLatencyUs\,$\mu$s, using \hlsLUT{} LUTs (\hlsLUTpct\,\%), \hlsFF{} flip-flops,
+\hlsDSP{} DSPs (\hlsDSPpct\,\%) and \hlsBRAM{} block RAMs.
+
+That is \hlsGap$\times$ the \hlsRooflineUs\,$\mu$s bound for the same
+architecture, and the reason is visible in the DSP column: the design
+instantiates \hlsDSP{} DSPs against the \hlsDSPShortfall$\times$ larger budget
+the bound assumes. The kernel deliberately serialises its input-channel
+reduction to avoid a block-RAM blow-up, and the cost of that choice is most of
+the gap. The two obstacles this paper identifies are therefore independent and
+compound: an architectural bound that no implementation can beat, and an
+implementation that is far from even that bound.
+
+\textbf{This result is preliminary and is not evidence of a working decoder.}
+At the time of writing the kernel's C-simulation disagrees with the golden
+model for this configuration, so while the loop structure that determines
+resources and latency is settled, we cannot claim the synthesised datapath
+computes correct corrections, and the figures above may move once that is
+resolved. They are reported as T3 estimates with functional verification
+outstanding rather than withheld, because the size of the implementation gap is
+itself the useful quantity and is unlikely to be explained by a correctness
+bug of this kind.
+
 \subsection{Scope and limitations of the hardware evaluation}
 
 The roofline is analytical (T4), built from T1 device counts. We report no new

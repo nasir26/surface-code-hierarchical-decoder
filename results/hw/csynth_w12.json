@@ -1,0 +1,61 @@
+{
+  "experiment_id": "csynth_w12",
+  "timestamp": "2026-09-03T11:44:37.226720+00:00",
+  "git_commit": "ecec69a06d6541054e57f7040b1d143a8cf31d71",
+  "tier": "T3",
+  "functionally_verified": false,
+  "verification_note": "csim currently disagrees with the golden model for this configuration; see NOTES/blockers.md B5. These are resource and latency estimates for a datapath of the right shape, not evidence that it computes correct values.",
+  "config": {
+    "width": 12,
+    "R": 5,
+    "depth": 2,
+    "volume": 216,
+    "out_channels": 14,
+    "macs_per_shot": 946080,
+    "part": "xcu55c-fsvh2892-2L-e",
+    "clock_target_ns": 3.33,
+    "clock_mhz": 300.3003003003003,
+    "flow": "vitis_hls csynth_design"
+  },
+  "csynth": {
+    "clock_target_ns": 3.33,
+    "clock_estimated_ns": 2.757,
+    "clock_uncertainty_ns": 0.9,
+    "latency_cycles_min": 116284,
+    "latency_cycles_max": 136935,
+    "interval_min": 12783,
+    "interval_max": 136919,
+    "pipeline_type": "dataflow",
+    "resources": {
+      "bram_18k": 60,
+      "dsp": 113,
+      "ff": 159474,
+      "lut": 187131,
+      "uram": 0
+    },
+    "device_available": {
+      "bram_18k": 4032,
+      "dsp": 9024,
+      "ff": 2607360,
+      "lut": 1303680,
+      "uram": 960
+    },
+    "utilisation_pct": {
+      "bram_18k": 1.4880952380952381,
+      "dsp": 1.2522163120567376,
+      "ff": 6.116301546391752,
+      "lut": 14.354059278350515,
+      "uram": 0.0
+    }
+  },
+  "roofline_comparison": {
+    "roofline_min_latency_us_int8_50pct_dsp": 0.34911861702127656,
+    "csynth_latency_us_worst_case": 455.99354999999997,
+    "implementation_gap_x": 1306.1278538812785,
+    "dsp_used": 113,
+    "dsp_budget_at_50pct": 4512,
+    "dsp_provisioning_shortfall_x": 39.92920353982301,
+    "note": "The gap between the synthesised latency and the roofline decomposes into how few DSPs the design instantiates against the budget the bound assumes, and the residual inefficiency per DSP. The kernel deliberately serialises its input-channel reduction to avoid a BRAM blow-up (see the comment in hw/hls/predecoder_kernel.cpp), so a large shortfall here is an expected consequence of that choice rather than a surprise."
+  },
+  "env_ref": "results/env.json"
+}

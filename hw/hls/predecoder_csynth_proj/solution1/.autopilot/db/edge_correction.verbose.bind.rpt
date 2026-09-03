@@ -1,0 +1,2247 @@
+
+
+================================================================
+== Vitis HLS Report for 'edge_correction'
+================================================================
+* Date:           Thu Sep  3 17:10:49 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        predecoder_csynth_proj
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplusHBM
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.608 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+    |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |    12782|    12782|  42.564 us|  42.564 us|  12782|  12782|       no|
+    +---------+---------+-----------+-----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |                                                                                        |                                                                             |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+        |                                        Instance                                        |                                    Module                                   |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+        +----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+        |grp_edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2_fu_354              |edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2              |      218|      218|   0.726 us|   0.726 us|    218|    218|       no|
+        |grp_edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4_fu_502           |edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4           |    12340|    12340|  41.092 us|  41.092 us|  12340|  12340|       no|
+        |grp_edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7_fu_613  |edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7  |      218|      218|   0.726 us|   0.726 us|    218|    218|       no|
+        +----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+---------+---------+-----------+-----------+-------+-------+---------+
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.63>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%beat_2_loc = alloca i64 1"   --->   Operation 8 'alloca' 'beat_2_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%obs_parity_1_loc = alloca i64 1"   --->   Operation 9 'alloca' 'obs_parity_1_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.63ns)   --->   "%correction = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 10 'alloca' 'correction' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 11 [1/1] (0.63ns)   --->   "%correction_1 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 11 'alloca' 'correction_1' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 12 [1/1] (0.63ns)   --->   "%correction_2 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 12 'alloca' 'correction_2' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 13 [1/1] (0.63ns)   --->   "%correction_3 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 13 'alloca' 'correction_3' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 14 [1/1] (0.63ns)   --->   "%correction_4 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 14 'alloca' 'correction_4' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 15 [1/1] (0.63ns)   --->   "%correction_5 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 15 'alloca' 'correction_5' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 16 [1/1] (0.63ns)   --->   "%correction_6 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 16 'alloca' 'correction_6' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 17 [1/1] (0.63ns)   --->   "%correction_7 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 17 'alloca' 'correction_7' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 18 [1/1] (0.63ns)   --->   "%correction_8 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 18 'alloca' 'correction_8' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 19 [1/1] (0.63ns)   --->   "%correction_9 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 19 'alloca' 'correction_9' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 20 [1/1] (0.63ns)   --->   "%correction_10 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 20 'alloca' 'correction_10' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 21 [1/1] (0.63ns)   --->   "%correction_11 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 21 'alloca' 'correction_11' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 22 [1/1] (0.63ns)   --->   "%correction_12 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 22 'alloca' 'correction_12' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 23 [1/1] (0.63ns)   --->   "%correction_13 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 23 'alloca' 'correction_13' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 24 [1/1] (0.63ns)   --->   "%correction_14 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 24 'alloca' 'correction_14' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 25 [1/1] (0.63ns)   --->   "%correction_15 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 25 'alloca' 'correction_15' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 26 [1/1] (0.63ns)   --->   "%correction_16 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 26 'alloca' 'correction_16' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 27 [1/1] (0.63ns)   --->   "%correction_17 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 27 'alloca' 'correction_17' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 28 [1/1] (0.63ns)   --->   "%correction_18 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 28 'alloca' 'correction_18' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 29 [1/1] (0.63ns)   --->   "%correction_19 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 29 'alloca' 'correction_19' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 30 [1/1] (0.63ns)   --->   "%correction_20 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 30 'alloca' 'correction_20' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 31 [1/1] (0.63ns)   --->   "%correction_21 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 31 'alloca' 'correction_21' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 32 [1/1] (0.63ns)   --->   "%correction_22 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 32 'alloca' 'correction_22' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 33 [1/1] (0.63ns)   --->   "%correction_23 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 33 'alloca' 'correction_23' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 34 [1/1] (0.63ns)   --->   "%correction_24 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 34 'alloca' 'correction_24' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 35 [1/1] (0.63ns)   --->   "%correction_25 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 35 'alloca' 'correction_25' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 36 [1/1] (0.63ns)   --->   "%correction_26 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 36 'alloca' 'correction_26' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 37 [1/1] (0.63ns)   --->   "%correction_27 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 37 'alloca' 'correction_27' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 38 [1/1] (0.63ns)   --->   "%correction_28 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 38 'alloca' 'correction_28' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 39 [1/1] (0.63ns)   --->   "%correction_29 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 39 'alloca' 'correction_29' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 40 [1/1] (0.63ns)   --->   "%correction_30 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 40 'alloca' 'correction_30' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 41 [1/1] (0.63ns)   --->   "%correction_31 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 41 'alloca' 'correction_31' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 42 [1/1] (0.63ns)   --->   "%correction_32 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 42 'alloca' 'correction_32' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 43 [1/1] (0.63ns)   --->   "%correction_33 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 43 'alloca' 'correction_33' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 44 [1/1] (0.63ns)   --->   "%correction_34 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 44 'alloca' 'correction_34' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 45 [1/1] (0.63ns)   --->   "%correction_35 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 45 'alloca' 'correction_35' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 46 [1/1] (0.63ns)   --->   "%correction_36 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 46 'alloca' 'correction_36' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 47 [1/1] (0.63ns)   --->   "%correction_37 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 47 'alloca' 'correction_37' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 48 [1/1] (0.63ns)   --->   "%correction_38 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 48 'alloca' 'correction_38' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 49 [1/1] (0.63ns)   --->   "%correction_39 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 49 'alloca' 'correction_39' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 50 [1/1] (0.63ns)   --->   "%correction_40 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 50 'alloca' 'correction_40' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 51 [1/1] (0.63ns)   --->   "%correction_41 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 51 'alloca' 'correction_41' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 52 [1/1] (0.63ns)   --->   "%correction_42 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 52 'alloca' 'correction_42' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 53 [1/1] (0.63ns)   --->   "%correction_43 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 53 'alloca' 'correction_43' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 54 [1/1] (0.63ns)   --->   "%correction_44 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 54 'alloca' 'correction_44' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 55 [1/1] (0.63ns)   --->   "%correction_45 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 55 'alloca' 'correction_45' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 56 [1/1] (0.63ns)   --->   "%correction_46 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 56 'alloca' 'correction_46' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 57 [1/1] (0.63ns)   --->   "%correction_47 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 57 'alloca' 'correction_47' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 58 [1/1] (0.63ns)   --->   "%correction_48 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 58 'alloca' 'correction_48' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 59 [1/1] (0.63ns)   --->   "%correction_49 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 59 'alloca' 'correction_49' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 60 [1/1] (0.63ns)   --->   "%correction_50 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 60 'alloca' 'correction_50' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 61 [1/1] (0.63ns)   --->   "%correction_51 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 61 'alloca' 'correction_51' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 62 [1/1] (0.63ns)   --->   "%correction_52 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 62 'alloca' 'correction_52' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 63 [1/1] (0.63ns)   --->   "%correction_53 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 63 'alloca' 'correction_53' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 64 [1/1] (0.63ns)   --->   "%correction_54 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 64 'alloca' 'correction_54' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 65 [1/1] (0.63ns)   --->   "%correction_55 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 65 'alloca' 'correction_55' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 66 [1/1] (0.63ns)   --->   "%correction_56 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 66 'alloca' 'correction_56' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 67 [1/1] (0.63ns)   --->   "%correction_57 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 67 'alloca' 'correction_57' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 68 [1/1] (0.63ns)   --->   "%correction_58 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 68 'alloca' 'correction_58' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 69 [1/1] (0.63ns)   --->   "%correction_59 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 69 'alloca' 'correction_59' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 70 [1/1] (0.63ns)   --->   "%correction_60 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 70 'alloca' 'correction_60' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 71 [1/1] (0.63ns)   --->   "%correction_61 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 71 'alloca' 'correction_61' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 72 [1/1] (0.63ns)   --->   "%correction_62 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 72 'alloca' 'correction_62' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 73 [1/1] (0.63ns)   --->   "%correction_63 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 73 'alloca' 'correction_63' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 74 [1/1] (0.63ns)   --->   "%correction_64 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 74 'alloca' 'correction_64' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 75 [1/1] (0.63ns)   --->   "%correction_65 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 75 'alloca' 'correction_65' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 76 [1/1] (0.63ns)   --->   "%correction_66 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 76 'alloca' 'correction_66' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 77 [1/1] (0.63ns)   --->   "%correction_67 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 77 'alloca' 'correction_67' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 78 [1/1] (0.63ns)   --->   "%correction_68 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 78 'alloca' 'correction_68' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 79 [1/1] (0.63ns)   --->   "%correction_69 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 79 'alloca' 'correction_69' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 80 [1/1] (0.63ns)   --->   "%correction_70 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 80 'alloca' 'correction_70' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 81 [1/1] (0.63ns)   --->   "%correction_71 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 81 'alloca' 'correction_71' <Predicate = true> <Delay = 0.63>
+ST_1 : Operation 82 [2/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71"   --->   Operation 82 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 83 [1/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71"   --->   Operation 83 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 84 'wait' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [2/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i448 %s3, i1 %obs_parity_1_loc, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16"   --->   Operation 85 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 86 [1/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i448 %s3, i1 %obs_parity_1_loc, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16"   --->   Operation 86 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 87 [2/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i512 %beat_2_loc"   --->   Operation 87 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 1.09>
+ST_6 : Operation 88 [1/2] (1.09ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i512 %beat_2_loc"   --->   Operation 88 'call' 'call_ln0' <Predicate = true> <Delay = 1.09> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 89 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i448 %s3, void @empty_1, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 89 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%obs_parity_1_loc_load = load i1 %obs_parity_1_loc"   --->   Operation 90 'load' 'obs_parity_1_loc_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "%beat_2_loc_load = load i512 %beat_2_loc"   --->   Operation 91 'load' 'beat_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 92 [1/1] (0.00ns)   --->   "%beat = bitset i512 @_ssdm_op_BitSet.i512.i512.i32.i1, i512 %beat_2_loc_load, i32 216, i1 %obs_parity_1_loc_load" [predecoder_kernel.cpp:219]   --->   Operation 92 'bitset' 'beat' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 93 [1/1] (0.00ns)   --->   "%ret_ln221 = ret i512 %beat" [predecoder_kernel.cpp:221]   --->   Operation 93 'ret' 'ret_ln221' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+STG Binding: 
+---------------- STG Properties BEGIN ----------------
+- Is combinational: 0
+- Is one-state seq: 0
+- Is datapath-only: 0
+- Is pipelined: 0
+- Is top level: 0
+Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
+Port [ s3]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=3; pingpong=0; private_global=0; IO mode=ap_fifo:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+Port [ p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16]:  wired=0; compound=1; hidden=1; nouse=1; global=1; static=1; extern=0; dir=0; type=1; pingpong=0; private_global=0; MemPort=[1]; IO mode=ap_memory:ce=0
+---------------- STG Properties END ------------------
+
+---------------- Datapath Model BEGIN ----------------
+
+<LifeTime>
+<method=bitvector/>
+beat_2_loc            (alloca       ) [ 00111111]
+obs_parity_1_loc      (alloca       ) [ 00111111]
+correction            (alloca       ) [ 00111110]
+correction_1          (alloca       ) [ 00111110]
+correction_2          (alloca       ) [ 00111110]
+correction_3          (alloca       ) [ 00111110]
+correction_4          (alloca       ) [ 00111110]
+correction_5          (alloca       ) [ 00111110]
+correction_6          (alloca       ) [ 00111110]
+correction_7          (alloca       ) [ 00111110]
+correction_8          (alloca       ) [ 00111110]
+correction_9          (alloca       ) [ 00111110]
+correction_10         (alloca       ) [ 00111110]
+correction_11         (alloca       ) [ 00111110]
+correction_12         (alloca       ) [ 00111110]
+correction_13         (alloca       ) [ 00111110]
+correction_14         (alloca       ) [ 00111110]
+correction_15         (alloca       ) [ 00111110]
+correction_16         (alloca       ) [ 00111110]
+correction_17         (alloca       ) [ 00111110]
+correction_18         (alloca       ) [ 00111110]
+correction_19         (alloca       ) [ 00111110]
+correction_20         (alloca       ) [ 00111110]
+correction_21         (alloca       ) [ 00111110]
+correction_22         (alloca       ) [ 00111110]
+correction_23         (alloca       ) [ 00111110]
+correction_24         (alloca       ) [ 00111110]
+correction_25         (alloca       ) [ 00111110]
+correction_26         (alloca       ) [ 00111110]
+correction_27         (alloca       ) [ 00111110]
+correction_28         (alloca       ) [ 00111110]
+correction_29         (alloca       ) [ 00111110]
+correction_30         (alloca       ) [ 00111110]
+correction_31         (alloca       ) [ 00111110]
+correction_32         (alloca       ) [ 00111110]
+correction_33         (alloca       ) [ 00111110]
+correction_34         (alloca       ) [ 00111110]
+correction_35         (alloca       ) [ 00111110]
+correction_36         (alloca       ) [ 00111110]
+correction_37         (alloca       ) [ 00111110]
+correction_38         (alloca       ) [ 00111110]
+correction_39         (alloca       ) [ 00111110]
+correction_40         (alloca       ) [ 00111110]
+correction_41         (alloca       ) [ 00111110]
+correction_42         (alloca       ) [ 00111110]
+correction_43         (alloca       ) [ 00111110]
+correction_44         (alloca       ) [ 00111110]
+correction_45         (alloca       ) [ 00111110]
+correction_46         (alloca       ) [ 00111110]
+correction_47         (alloca       ) [ 00111110]
+correction_48         (alloca       ) [ 00111110]
+correction_49         (alloca       ) [ 00111110]
+correction_50         (alloca       ) [ 00111110]
+correction_51         (alloca       ) [ 00111110]
+correction_52         (alloca       ) [ 00111110]
+correction_53         (alloca       ) [ 00111110]
+correction_54         (alloca       ) [ 00111110]
+correction_55         (alloca       ) [ 00111110]
+correction_56         (alloca       ) [ 00111110]
+correction_57         (alloca       ) [ 00111110]
+correction_58         (alloca       ) [ 00111110]
+correction_59         (alloca       ) [ 00111110]
+correction_60         (alloca       ) [ 00111110]
+correction_61         (alloca       ) [ 00111110]
+correction_62         (alloca       ) [ 00111110]
+correction_63         (alloca       ) [ 00111110]
+correction_64         (alloca       ) [ 00111110]
+correction_65         (alloca       ) [ 00111110]
+correction_66         (alloca       ) [ 00111110]
+correction_67         (alloca       ) [ 00111110]
+correction_68         (alloca       ) [ 00111110]
+correction_69         (alloca       ) [ 00111110]
+correction_70         (alloca       ) [ 00111110]
+correction_71         (alloca       ) [ 00111110]
+call_ln0              (call         ) [ 00000000]
+empty                 (wait         ) [ 00000000]
+call_ln0              (call         ) [ 00000000]
+call_ln0              (call         ) [ 00000000]
+specinterface_ln0     (specinterface) [ 00000000]
+obs_parity_1_loc_load (load         ) [ 00000000]
+beat_2_loc_load       (load         ) [ 00000000]
+beat                  (bitset       ) [ 00000000]
+ret_ln221             (ret          ) [ 00000000]
+</LifeTime>
+
+<model>
+
+<comp_list>
+<comp id="0" class="1000" name="s3">
+<pin_list>
+<pin id="1" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="s3"/></StgValue>
+</bind>
+</comp>
+
+<comp id="2" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0">
+<pin_list>
+<pin id="3" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="4" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1">
+<pin_list>
+<pin id="5" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="6" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2">
+<pin_list>
+<pin id="7" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="8" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3">
+<pin_list>
+<pin id="9" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="10" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4">
+<pin_list>
+<pin id="11" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="12" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5">
+<pin_list>
+<pin id="13" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="14" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6">
+<pin_list>
+<pin id="15" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="16" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7">
+<pin_list>
+<pin id="17" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="18" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9">
+<pin_list>
+<pin id="19" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="20" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10">
+<pin_list>
+<pin id="21" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="22" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11">
+<pin_list>
+<pin id="23" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="24" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12">
+<pin_list>
+<pin id="25" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="26" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13">
+<pin_list>
+<pin id="27" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="28" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14">
+<pin_list>
+<pin id="29" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="30" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15">
+<pin_list>
+<pin id="31" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="32" class="1000" name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16">
+<pin_list>
+<pin id="33" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16"/><MemPortTyVec>1 </MemPortTyVec>
+</StgValue>
+</bind>
+</comp>
+
+<comp id="34" class="1001" name="const_34">
+<pin_list>
+<pin id="35" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="36" class="1001" name="const_36">
+<pin_list>
+<pin id="37" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2"/></StgValue>
+</bind>
+</comp>
+
+<comp id="38" class="1001" name="const_38">
+<pin_list>
+<pin id="39" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_Wait"/></StgValue>
+</bind>
+</comp>
+
+<comp id="40" class="1001" name="const_40">
+<pin_list>
+<pin id="41" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4"/></StgValue>
+</bind>
+</comp>
+
+<comp id="42" class="1001" name="const_42">
+<pin_list>
+<pin id="43" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7"/></StgValue>
+</bind>
+</comp>
+
+<comp id="44" class="1001" name="const_44">
+<pin_list>
+<pin id="45" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_SpecInterface"/></StgValue>
+</bind>
+</comp>
+
+<comp id="46" class="1001" name="const_46">
+<pin_list>
+<pin id="47" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="48" class="1001" name="const_48">
+<pin_list>
+<pin id="49" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="50" class="1001" name="const_50">
+<pin_list>
+<pin id="51" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="empty_5"/></StgValue>
+</bind>
+</comp>
+
+<comp id="52" class="1001" name="const_52">
+<pin_list>
+<pin id="53" dir="1" index="0" bw="1" slack="2147483647"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="54" class="1001" name="const_54">
+<pin_list>
+<pin id="55" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name="_ssdm_op_BitSet.i512.i512.i32.i1"/></StgValue>
+</bind>
+</comp>
+
+<comp id="56" class="1001" name="const_56">
+<pin_list>
+<pin id="57" dir="1" index="0" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<StgValue><ssdm name=""/></StgValue>
+</bind>
+</comp>
+
+<comp id="58" class="1004" name="beat_2_loc_fu_58">
+<pin_list>
+<pin id="59" dir="0" index="0" bw="1" slack="0"/>
+<pin id="60" dir="1" index="1" bw="512" slack="4"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="beat_2_loc/1 "/>
+</bind>
+</comp>
+
+<comp id="62" class="1004" name="obs_parity_1_loc_fu_62">
+<pin_list>
+<pin id="63" dir="0" index="0" bw="1" slack="0"/>
+<pin id="64" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="obs_parity_1_loc/1 "/>
+</bind>
+</comp>
+
+<comp id="66" class="1004" name="correction_alloca_fu_66">
+<pin_list>
+<pin id="67" dir="0" index="0" bw="1" slack="0"/>
+<pin id="68" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction/1 "/>
+</bind>
+</comp>
+
+<comp id="70" class="1004" name="correction_1_alloca_fu_70">
+<pin_list>
+<pin id="71" dir="0" index="0" bw="1" slack="0"/>
+<pin id="72" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_1/1 "/>
+</bind>
+</comp>
+
+<comp id="74" class="1004" name="correction_2_alloca_fu_74">
+<pin_list>
+<pin id="75" dir="0" index="0" bw="1" slack="0"/>
+<pin id="76" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_2/1 "/>
+</bind>
+</comp>
+
+<comp id="78" class="1004" name="correction_3_alloca_fu_78">
+<pin_list>
+<pin id="79" dir="0" index="0" bw="1" slack="0"/>
+<pin id="80" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_3/1 "/>
+</bind>
+</comp>
+
+<comp id="82" class="1004" name="correction_4_alloca_fu_82">
+<pin_list>
+<pin id="83" dir="0" index="0" bw="1" slack="0"/>
+<pin id="84" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_4/1 "/>
+</bind>
+</comp>
+
+<comp id="86" class="1004" name="correction_5_alloca_fu_86">
+<pin_list>
+<pin id="87" dir="0" index="0" bw="1" slack="0"/>
+<pin id="88" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_5/1 "/>
+</bind>
+</comp>
+
+<comp id="90" class="1004" name="correction_6_alloca_fu_90">
+<pin_list>
+<pin id="91" dir="0" index="0" bw="1" slack="0"/>
+<pin id="92" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_6/1 "/>
+</bind>
+</comp>
+
+<comp id="94" class="1004" name="correction_7_alloca_fu_94">
+<pin_list>
+<pin id="95" dir="0" index="0" bw="1" slack="0"/>
+<pin id="96" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_7/1 "/>
+</bind>
+</comp>
+
+<comp id="98" class="1004" name="correction_8_alloca_fu_98">
+<pin_list>
+<pin id="99" dir="0" index="0" bw="1" slack="0"/>
+<pin id="100" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_8/1 "/>
+</bind>
+</comp>
+
+<comp id="102" class="1004" name="correction_9_alloca_fu_102">
+<pin_list>
+<pin id="103" dir="0" index="0" bw="1" slack="0"/>
+<pin id="104" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_9/1 "/>
+</bind>
+</comp>
+
+<comp id="106" class="1004" name="correction_10_alloca_fu_106">
+<pin_list>
+<pin id="107" dir="0" index="0" bw="1" slack="0"/>
+<pin id="108" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_10/1 "/>
+</bind>
+</comp>
+
+<comp id="110" class="1004" name="correction_11_alloca_fu_110">
+<pin_list>
+<pin id="111" dir="0" index="0" bw="1" slack="0"/>
+<pin id="112" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_11/1 "/>
+</bind>
+</comp>
+
+<comp id="114" class="1004" name="correction_12_alloca_fu_114">
+<pin_list>
+<pin id="115" dir="0" index="0" bw="1" slack="0"/>
+<pin id="116" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_12/1 "/>
+</bind>
+</comp>
+
+<comp id="118" class="1004" name="correction_13_alloca_fu_118">
+<pin_list>
+<pin id="119" dir="0" index="0" bw="1" slack="0"/>
+<pin id="120" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_13/1 "/>
+</bind>
+</comp>
+
+<comp id="122" class="1004" name="correction_14_alloca_fu_122">
+<pin_list>
+<pin id="123" dir="0" index="0" bw="1" slack="0"/>
+<pin id="124" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_14/1 "/>
+</bind>
+</comp>
+
+<comp id="126" class="1004" name="correction_15_alloca_fu_126">
+<pin_list>
+<pin id="127" dir="0" index="0" bw="1" slack="0"/>
+<pin id="128" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_15/1 "/>
+</bind>
+</comp>
+
+<comp id="130" class="1004" name="correction_16_alloca_fu_130">
+<pin_list>
+<pin id="131" dir="0" index="0" bw="1" slack="0"/>
+<pin id="132" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_16/1 "/>
+</bind>
+</comp>
+
+<comp id="134" class="1004" name="correction_17_alloca_fu_134">
+<pin_list>
+<pin id="135" dir="0" index="0" bw="1" slack="0"/>
+<pin id="136" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_17/1 "/>
+</bind>
+</comp>
+
+<comp id="138" class="1004" name="correction_18_alloca_fu_138">
+<pin_list>
+<pin id="139" dir="0" index="0" bw="1" slack="0"/>
+<pin id="140" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_18/1 "/>
+</bind>
+</comp>
+
+<comp id="142" class="1004" name="correction_19_alloca_fu_142">
+<pin_list>
+<pin id="143" dir="0" index="0" bw="1" slack="0"/>
+<pin id="144" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_19/1 "/>
+</bind>
+</comp>
+
+<comp id="146" class="1004" name="correction_20_alloca_fu_146">
+<pin_list>
+<pin id="147" dir="0" index="0" bw="1" slack="0"/>
+<pin id="148" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_20/1 "/>
+</bind>
+</comp>
+
+<comp id="150" class="1004" name="correction_21_alloca_fu_150">
+<pin_list>
+<pin id="151" dir="0" index="0" bw="1" slack="0"/>
+<pin id="152" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_21/1 "/>
+</bind>
+</comp>
+
+<comp id="154" class="1004" name="correction_22_alloca_fu_154">
+<pin_list>
+<pin id="155" dir="0" index="0" bw="1" slack="0"/>
+<pin id="156" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_22/1 "/>
+</bind>
+</comp>
+
+<comp id="158" class="1004" name="correction_23_alloca_fu_158">
+<pin_list>
+<pin id="159" dir="0" index="0" bw="1" slack="0"/>
+<pin id="160" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_23/1 "/>
+</bind>
+</comp>
+
+<comp id="162" class="1004" name="correction_24_alloca_fu_162">
+<pin_list>
+<pin id="163" dir="0" index="0" bw="1" slack="0"/>
+<pin id="164" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_24/1 "/>
+</bind>
+</comp>
+
+<comp id="166" class="1004" name="correction_25_alloca_fu_166">
+<pin_list>
+<pin id="167" dir="0" index="0" bw="1" slack="0"/>
+<pin id="168" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_25/1 "/>
+</bind>
+</comp>
+
+<comp id="170" class="1004" name="correction_26_alloca_fu_170">
+<pin_list>
+<pin id="171" dir="0" index="0" bw="1" slack="0"/>
+<pin id="172" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_26/1 "/>
+</bind>
+</comp>
+
+<comp id="174" class="1004" name="correction_27_alloca_fu_174">
+<pin_list>
+<pin id="175" dir="0" index="0" bw="1" slack="0"/>
+<pin id="176" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_27/1 "/>
+</bind>
+</comp>
+
+<comp id="178" class="1004" name="correction_28_alloca_fu_178">
+<pin_list>
+<pin id="179" dir="0" index="0" bw="1" slack="0"/>
+<pin id="180" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_28/1 "/>
+</bind>
+</comp>
+
+<comp id="182" class="1004" name="correction_29_alloca_fu_182">
+<pin_list>
+<pin id="183" dir="0" index="0" bw="1" slack="0"/>
+<pin id="184" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_29/1 "/>
+</bind>
+</comp>
+
+<comp id="186" class="1004" name="correction_30_alloca_fu_186">
+<pin_list>
+<pin id="187" dir="0" index="0" bw="1" slack="0"/>
+<pin id="188" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_30/1 "/>
+</bind>
+</comp>
+
+<comp id="190" class="1004" name="correction_31_alloca_fu_190">
+<pin_list>
+<pin id="191" dir="0" index="0" bw="1" slack="0"/>
+<pin id="192" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_31/1 "/>
+</bind>
+</comp>
+
+<comp id="194" class="1004" name="correction_32_alloca_fu_194">
+<pin_list>
+<pin id="195" dir="0" index="0" bw="1" slack="0"/>
+<pin id="196" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_32/1 "/>
+</bind>
+</comp>
+
+<comp id="198" class="1004" name="correction_33_alloca_fu_198">
+<pin_list>
+<pin id="199" dir="0" index="0" bw="1" slack="0"/>
+<pin id="200" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_33/1 "/>
+</bind>
+</comp>
+
+<comp id="202" class="1004" name="correction_34_alloca_fu_202">
+<pin_list>
+<pin id="203" dir="0" index="0" bw="1" slack="0"/>
+<pin id="204" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_34/1 "/>
+</bind>
+</comp>
+
+<comp id="206" class="1004" name="correction_35_alloca_fu_206">
+<pin_list>
+<pin id="207" dir="0" index="0" bw="1" slack="0"/>
+<pin id="208" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_35/1 "/>
+</bind>
+</comp>
+
+<comp id="210" class="1004" name="correction_36_alloca_fu_210">
+<pin_list>
+<pin id="211" dir="0" index="0" bw="1" slack="0"/>
+<pin id="212" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_36/1 "/>
+</bind>
+</comp>
+
+<comp id="214" class="1004" name="correction_37_alloca_fu_214">
+<pin_list>
+<pin id="215" dir="0" index="0" bw="1" slack="0"/>
+<pin id="216" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_37/1 "/>
+</bind>
+</comp>
+
+<comp id="218" class="1004" name="correction_38_alloca_fu_218">
+<pin_list>
+<pin id="219" dir="0" index="0" bw="1" slack="0"/>
+<pin id="220" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_38/1 "/>
+</bind>
+</comp>
+
+<comp id="222" class="1004" name="correction_39_alloca_fu_222">
+<pin_list>
+<pin id="223" dir="0" index="0" bw="1" slack="0"/>
+<pin id="224" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_39/1 "/>
+</bind>
+</comp>
+
+<comp id="226" class="1004" name="correction_40_alloca_fu_226">
+<pin_list>
+<pin id="227" dir="0" index="0" bw="1" slack="0"/>
+<pin id="228" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_40/1 "/>
+</bind>
+</comp>
+
+<comp id="230" class="1004" name="correction_41_alloca_fu_230">
+<pin_list>
+<pin id="231" dir="0" index="0" bw="1" slack="0"/>
+<pin id="232" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_41/1 "/>
+</bind>
+</comp>
+
+<comp id="234" class="1004" name="correction_42_alloca_fu_234">
+<pin_list>
+<pin id="235" dir="0" index="0" bw="1" slack="0"/>
+<pin id="236" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_42/1 "/>
+</bind>
+</comp>
+
+<comp id="238" class="1004" name="correction_43_alloca_fu_238">
+<pin_list>
+<pin id="239" dir="0" index="0" bw="1" slack="0"/>
+<pin id="240" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_43/1 "/>
+</bind>
+</comp>
+
+<comp id="242" class="1004" name="correction_44_alloca_fu_242">
+<pin_list>
+<pin id="243" dir="0" index="0" bw="1" slack="0"/>
+<pin id="244" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_44/1 "/>
+</bind>
+</comp>
+
+<comp id="246" class="1004" name="correction_45_alloca_fu_246">
+<pin_list>
+<pin id="247" dir="0" index="0" bw="1" slack="0"/>
+<pin id="248" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_45/1 "/>
+</bind>
+</comp>
+
+<comp id="250" class="1004" name="correction_46_alloca_fu_250">
+<pin_list>
+<pin id="251" dir="0" index="0" bw="1" slack="0"/>
+<pin id="252" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_46/1 "/>
+</bind>
+</comp>
+
+<comp id="254" class="1004" name="correction_47_alloca_fu_254">
+<pin_list>
+<pin id="255" dir="0" index="0" bw="1" slack="0"/>
+<pin id="256" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_47/1 "/>
+</bind>
+</comp>
+
+<comp id="258" class="1004" name="correction_48_alloca_fu_258">
+<pin_list>
+<pin id="259" dir="0" index="0" bw="1" slack="0"/>
+<pin id="260" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_48/1 "/>
+</bind>
+</comp>
+
+<comp id="262" class="1004" name="correction_49_alloca_fu_262">
+<pin_list>
+<pin id="263" dir="0" index="0" bw="1" slack="0"/>
+<pin id="264" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_49/1 "/>
+</bind>
+</comp>
+
+<comp id="266" class="1004" name="correction_50_alloca_fu_266">
+<pin_list>
+<pin id="267" dir="0" index="0" bw="1" slack="0"/>
+<pin id="268" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_50/1 "/>
+</bind>
+</comp>
+
+<comp id="270" class="1004" name="correction_51_alloca_fu_270">
+<pin_list>
+<pin id="271" dir="0" index="0" bw="1" slack="0"/>
+<pin id="272" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_51/1 "/>
+</bind>
+</comp>
+
+<comp id="274" class="1004" name="correction_52_alloca_fu_274">
+<pin_list>
+<pin id="275" dir="0" index="0" bw="1" slack="0"/>
+<pin id="276" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_52/1 "/>
+</bind>
+</comp>
+
+<comp id="278" class="1004" name="correction_53_alloca_fu_278">
+<pin_list>
+<pin id="279" dir="0" index="0" bw="1" slack="0"/>
+<pin id="280" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_53/1 "/>
+</bind>
+</comp>
+
+<comp id="282" class="1004" name="correction_54_alloca_fu_282">
+<pin_list>
+<pin id="283" dir="0" index="0" bw="1" slack="0"/>
+<pin id="284" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_54/1 "/>
+</bind>
+</comp>
+
+<comp id="286" class="1004" name="correction_55_alloca_fu_286">
+<pin_list>
+<pin id="287" dir="0" index="0" bw="1" slack="0"/>
+<pin id="288" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_55/1 "/>
+</bind>
+</comp>
+
+<comp id="290" class="1004" name="correction_56_alloca_fu_290">
+<pin_list>
+<pin id="291" dir="0" index="0" bw="1" slack="0"/>
+<pin id="292" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_56/1 "/>
+</bind>
+</comp>
+
+<comp id="294" class="1004" name="correction_57_alloca_fu_294">
+<pin_list>
+<pin id="295" dir="0" index="0" bw="1" slack="0"/>
+<pin id="296" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_57/1 "/>
+</bind>
+</comp>
+
+<comp id="298" class="1004" name="correction_58_alloca_fu_298">
+<pin_list>
+<pin id="299" dir="0" index="0" bw="1" slack="0"/>
+<pin id="300" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_58/1 "/>
+</bind>
+</comp>
+
+<comp id="302" class="1004" name="correction_59_alloca_fu_302">
+<pin_list>
+<pin id="303" dir="0" index="0" bw="1" slack="0"/>
+<pin id="304" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_59/1 "/>
+</bind>
+</comp>
+
+<comp id="306" class="1004" name="correction_60_alloca_fu_306">
+<pin_list>
+<pin id="307" dir="0" index="0" bw="1" slack="0"/>
+<pin id="308" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_60/1 "/>
+</bind>
+</comp>
+
+<comp id="310" class="1004" name="correction_61_alloca_fu_310">
+<pin_list>
+<pin id="311" dir="0" index="0" bw="1" slack="0"/>
+<pin id="312" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_61/1 "/>
+</bind>
+</comp>
+
+<comp id="314" class="1004" name="correction_62_alloca_fu_314">
+<pin_list>
+<pin id="315" dir="0" index="0" bw="1" slack="0"/>
+<pin id="316" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_62/1 "/>
+</bind>
+</comp>
+
+<comp id="318" class="1004" name="correction_63_alloca_fu_318">
+<pin_list>
+<pin id="319" dir="0" index="0" bw="1" slack="0"/>
+<pin id="320" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_63/1 "/>
+</bind>
+</comp>
+
+<comp id="322" class="1004" name="correction_64_alloca_fu_322">
+<pin_list>
+<pin id="323" dir="0" index="0" bw="1" slack="0"/>
+<pin id="324" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_64/1 "/>
+</bind>
+</comp>
+
+<comp id="326" class="1004" name="correction_65_alloca_fu_326">
+<pin_list>
+<pin id="327" dir="0" index="0" bw="1" slack="0"/>
+<pin id="328" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_65/1 "/>
+</bind>
+</comp>
+
+<comp id="330" class="1004" name="correction_66_alloca_fu_330">
+<pin_list>
+<pin id="331" dir="0" index="0" bw="1" slack="0"/>
+<pin id="332" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_66/1 "/>
+</bind>
+</comp>
+
+<comp id="334" class="1004" name="correction_67_alloca_fu_334">
+<pin_list>
+<pin id="335" dir="0" index="0" bw="1" slack="0"/>
+<pin id="336" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_67/1 "/>
+</bind>
+</comp>
+
+<comp id="338" class="1004" name="correction_68_alloca_fu_338">
+<pin_list>
+<pin id="339" dir="0" index="0" bw="1" slack="0"/>
+<pin id="340" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_68/1 "/>
+</bind>
+</comp>
+
+<comp id="342" class="1004" name="correction_69_alloca_fu_342">
+<pin_list>
+<pin id="343" dir="0" index="0" bw="1" slack="0"/>
+<pin id="344" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_69/1 "/>
+</bind>
+</comp>
+
+<comp id="346" class="1004" name="correction_70_alloca_fu_346">
+<pin_list>
+<pin id="347" dir="0" index="0" bw="1" slack="0"/>
+<pin id="348" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_70/1 "/>
+</bind>
+</comp>
+
+<comp id="350" class="1004" name="correction_71_alloca_fu_350">
+<pin_list>
+<pin id="351" dir="0" index="0" bw="1" slack="0"/>
+<pin id="352" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="alloca(26) " fcode="alloca"/>
+<opset="correction_71/1 "/>
+</bind>
+</comp>
+
+<comp id="354" class="1004" name="grp_edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2_fu_354">
+<pin_list>
+<pin id="355" dir="0" index="0" bw="0" slack="0"/>
+<pin id="356" dir="0" index="1" bw="1" slack="0"/>
+<pin id="357" dir="0" index="2" bw="1" slack="0"/>
+<pin id="358" dir="0" index="3" bw="1" slack="0"/>
+<pin id="359" dir="0" index="4" bw="1" slack="0"/>
+<pin id="360" dir="0" index="5" bw="1" slack="0"/>
+<pin id="361" dir="0" index="6" bw="1" slack="0"/>
+<pin id="362" dir="0" index="7" bw="1" slack="0"/>
+<pin id="363" dir="0" index="8" bw="1" slack="0"/>
+<pin id="364" dir="0" index="9" bw="1" slack="0"/>
+<pin id="365" dir="0" index="10" bw="1" slack="0"/>
+<pin id="366" dir="0" index="11" bw="1" slack="0"/>
+<pin id="367" dir="0" index="12" bw="1" slack="0"/>
+<pin id="368" dir="0" index="13" bw="1" slack="0"/>
+<pin id="369" dir="0" index="14" bw="1" slack="0"/>
+<pin id="370" dir="0" index="15" bw="1" slack="0"/>
+<pin id="371" dir="0" index="16" bw="1" slack="0"/>
+<pin id="372" dir="0" index="17" bw="1" slack="0"/>
+<pin id="373" dir="0" index="18" bw="1" slack="0"/>
+<pin id="374" dir="0" index="19" bw="1" slack="0"/>
+<pin id="375" dir="0" index="20" bw="1" slack="0"/>
+<pin id="376" dir="0" index="21" bw="1" slack="0"/>
+<pin id="377" dir="0" index="22" bw="1" slack="0"/>
+<pin id="378" dir="0" index="23" bw="1" slack="0"/>
+<pin id="379" dir="0" index="24" bw="1" slack="0"/>
+<pin id="380" dir="0" index="25" bw="1" slack="0"/>
+<pin id="381" dir="0" index="26" bw="1" slack="0"/>
+<pin id="382" dir="0" index="27" bw="1" slack="0"/>
+<pin id="383" dir="0" index="28" bw="1" slack="0"/>
+<pin id="384" dir="0" index="29" bw="1" slack="0"/>
+<pin id="385" dir="0" index="30" bw="1" slack="0"/>
+<pin id="386" dir="0" index="31" bw="1" slack="0"/>
+<pin id="387" dir="0" index="32" bw="1" slack="0"/>
+<pin id="388" dir="0" index="33" bw="1" slack="0"/>
+<pin id="389" dir="0" index="34" bw="1" slack="0"/>
+<pin id="390" dir="0" index="35" bw="1" slack="0"/>
+<pin id="391" dir="0" index="36" bw="1" slack="0"/>
+<pin id="392" dir="0" index="37" bw="1" slack="0"/>
+<pin id="393" dir="0" index="38" bw="1" slack="0"/>
+<pin id="394" dir="0" index="39" bw="1" slack="0"/>
+<pin id="395" dir="0" index="40" bw="1" slack="0"/>
+<pin id="396" dir="0" index="41" bw="1" slack="0"/>
+<pin id="397" dir="0" index="42" bw="1" slack="0"/>
+<pin id="398" dir="0" index="43" bw="1" slack="0"/>
+<pin id="399" dir="0" index="44" bw="1" slack="0"/>
+<pin id="400" dir="0" index="45" bw="1" slack="0"/>
+<pin id="401" dir="0" index="46" bw="1" slack="0"/>
+<pin id="402" dir="0" index="47" bw="1" slack="0"/>
+<pin id="403" dir="0" index="48" bw="1" slack="0"/>
+<pin id="404" dir="0" index="49" bw="1" slack="0"/>
+<pin id="405" dir="0" index="50" bw="1" slack="0"/>
+<pin id="406" dir="0" index="51" bw="1" slack="0"/>
+<pin id="407" dir="0" index="52" bw="1" slack="0"/>
+<pin id="408" dir="0" index="53" bw="1" slack="0"/>
+<pin id="409" dir="0" index="54" bw="1" slack="0"/>
+<pin id="410" dir="0" index="55" bw="1" slack="0"/>
+<pin id="411" dir="0" index="56" bw="1" slack="0"/>
+<pin id="412" dir="0" index="57" bw="1" slack="0"/>
+<pin id="413" dir="0" index="58" bw="1" slack="0"/>
+<pin id="414" dir="0" index="59" bw="1" slack="0"/>
+<pin id="415" dir="0" index="60" bw="1" slack="0"/>
+<pin id="416" dir="0" index="61" bw="1" slack="0"/>
+<pin id="417" dir="0" index="62" bw="1" slack="0"/>
+<pin id="418" dir="0" index="63" bw="1" slack="0"/>
+<pin id="419" dir="0" index="64" bw="1" slack="0"/>
+<pin id="420" dir="0" index="65" bw="1" slack="0"/>
+<pin id="421" dir="0" index="66" bw="1" slack="0"/>
+<pin id="422" dir="0" index="67" bw="1" slack="0"/>
+<pin id="423" dir="0" index="68" bw="1" slack="0"/>
+<pin id="424" dir="0" index="69" bw="1" slack="0"/>
+<pin id="425" dir="0" index="70" bw="1" slack="0"/>
+<pin id="426" dir="0" index="71" bw="1" slack="0"/>
+<pin id="427" dir="0" index="72" bw="1" slack="0"/>
+<pin id="428" dir="1" index="73" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/1 "/>
+</bind>
+</comp>
+
+<comp id="502" class="1004" name="grp_edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4_fu_502">
+<pin_list>
+<pin id="503" dir="0" index="0" bw="0" slack="0"/>
+<pin id="504" dir="0" index="1" bw="1" slack="2147483647"/>
+<pin id="505" dir="0" index="2" bw="1" slack="2147483647"/>
+<pin id="506" dir="0" index="3" bw="1" slack="2147483647"/>
+<pin id="507" dir="0" index="4" bw="1" slack="2147483647"/>
+<pin id="508" dir="0" index="5" bw="1" slack="2147483647"/>
+<pin id="509" dir="0" index="6" bw="1" slack="2147483647"/>
+<pin id="510" dir="0" index="7" bw="1" slack="2147483647"/>
+<pin id="511" dir="0" index="8" bw="1" slack="2147483647"/>
+<pin id="512" dir="0" index="9" bw="1" slack="2147483647"/>
+<pin id="513" dir="0" index="10" bw="1" slack="2147483647"/>
+<pin id="514" dir="0" index="11" bw="1" slack="2147483647"/>
+<pin id="515" dir="0" index="12" bw="1" slack="2147483647"/>
+<pin id="516" dir="0" index="13" bw="1" slack="2147483647"/>
+<pin id="517" dir="0" index="14" bw="1" slack="2147483647"/>
+<pin id="518" dir="0" index="15" bw="1" slack="2147483647"/>
+<pin id="519" dir="0" index="16" bw="1" slack="2147483647"/>
+<pin id="520" dir="0" index="17" bw="1" slack="2147483647"/>
+<pin id="521" dir="0" index="18" bw="1" slack="2147483647"/>
+<pin id="522" dir="0" index="19" bw="1" slack="2147483647"/>
+<pin id="523" dir="0" index="20" bw="1" slack="2147483647"/>
+<pin id="524" dir="0" index="21" bw="1" slack="2147483647"/>
+<pin id="525" dir="0" index="22" bw="1" slack="2147483647"/>
+<pin id="526" dir="0" index="23" bw="1" slack="2147483647"/>
+<pin id="527" dir="0" index="24" bw="1" slack="2147483647"/>
+<pin id="528" dir="0" index="25" bw="1" slack="2147483647"/>
+<pin id="529" dir="0" index="26" bw="1" slack="2147483647"/>
+<pin id="530" dir="0" index="27" bw="1" slack="2147483647"/>
+<pin id="531" dir="0" index="28" bw="1" slack="2147483647"/>
+<pin id="532" dir="0" index="29" bw="1" slack="2147483647"/>
+<pin id="533" dir="0" index="30" bw="1" slack="2147483647"/>
+<pin id="534" dir="0" index="31" bw="1" slack="2147483647"/>
+<pin id="535" dir="0" index="32" bw="1" slack="2147483647"/>
+<pin id="536" dir="0" index="33" bw="1" slack="2147483647"/>
+<pin id="537" dir="0" index="34" bw="1" slack="2147483647"/>
+<pin id="538" dir="0" index="35" bw="1" slack="2147483647"/>
+<pin id="539" dir="0" index="36" bw="1" slack="2147483647"/>
+<pin id="540" dir="0" index="37" bw="1" slack="2147483647"/>
+<pin id="541" dir="0" index="38" bw="1" slack="2147483647"/>
+<pin id="542" dir="0" index="39" bw="1" slack="2147483647"/>
+<pin id="543" dir="0" index="40" bw="1" slack="2147483647"/>
+<pin id="544" dir="0" index="41" bw="1" slack="2147483647"/>
+<pin id="545" dir="0" index="42" bw="1" slack="2147483647"/>
+<pin id="546" dir="0" index="43" bw="1" slack="2147483647"/>
+<pin id="547" dir="0" index="44" bw="1" slack="2147483647"/>
+<pin id="548" dir="0" index="45" bw="1" slack="2147483647"/>
+<pin id="549" dir="0" index="46" bw="1" slack="2147483647"/>
+<pin id="550" dir="0" index="47" bw="1" slack="2147483647"/>
+<pin id="551" dir="0" index="48" bw="1" slack="2147483647"/>
+<pin id="552" dir="0" index="49" bw="1" slack="2147483647"/>
+<pin id="553" dir="0" index="50" bw="1" slack="2147483647"/>
+<pin id="554" dir="0" index="51" bw="1" slack="2147483647"/>
+<pin id="555" dir="0" index="52" bw="1" slack="2147483647"/>
+<pin id="556" dir="0" index="53" bw="1" slack="2147483647"/>
+<pin id="557" dir="0" index="54" bw="1" slack="2147483647"/>
+<pin id="558" dir="0" index="55" bw="1" slack="2147483647"/>
+<pin id="559" dir="0" index="56" bw="1" slack="2147483647"/>
+<pin id="560" dir="0" index="57" bw="1" slack="2147483647"/>
+<pin id="561" dir="0" index="58" bw="1" slack="2147483647"/>
+<pin id="562" dir="0" index="59" bw="1" slack="2147483647"/>
+<pin id="563" dir="0" index="60" bw="1" slack="2147483647"/>
+<pin id="564" dir="0" index="61" bw="1" slack="2147483647"/>
+<pin id="565" dir="0" index="62" bw="1" slack="2147483647"/>
+<pin id="566" dir="0" index="63" bw="1" slack="2147483647"/>
+<pin id="567" dir="0" index="64" bw="1" slack="2147483647"/>
+<pin id="568" dir="0" index="65" bw="1" slack="2147483647"/>
+<pin id="569" dir="0" index="66" bw="1" slack="2147483647"/>
+<pin id="570" dir="0" index="67" bw="1" slack="2147483647"/>
+<pin id="571" dir="0" index="68" bw="1" slack="2147483647"/>
+<pin id="572" dir="0" index="69" bw="1" slack="2147483647"/>
+<pin id="573" dir="0" index="70" bw="1" slack="2147483647"/>
+<pin id="574" dir="0" index="71" bw="1" slack="2147483647"/>
+<pin id="575" dir="0" index="72" bw="1" slack="2147483647"/>
+<pin id="576" dir="0" index="73" bw="448" slack="0"/>
+<pin id="577" dir="0" index="74" bw="1" slack="2"/>
+<pin id="578" dir="0" index="75" bw="1" slack="0"/>
+<pin id="579" dir="0" index="76" bw="1" slack="0"/>
+<pin id="580" dir="0" index="77" bw="1" slack="0"/>
+<pin id="581" dir="0" index="78" bw="1" slack="0"/>
+<pin id="582" dir="0" index="79" bw="1" slack="0"/>
+<pin id="583" dir="0" index="80" bw="1" slack="0"/>
+<pin id="584" dir="0" index="81" bw="1" slack="0"/>
+<pin id="585" dir="0" index="82" bw="1" slack="0"/>
+<pin id="586" dir="0" index="83" bw="1" slack="0"/>
+<pin id="587" dir="0" index="84" bw="1" slack="0"/>
+<pin id="588" dir="0" index="85" bw="1" slack="0"/>
+<pin id="589" dir="0" index="86" bw="1" slack="0"/>
+<pin id="590" dir="0" index="87" bw="1" slack="0"/>
+<pin id="591" dir="0" index="88" bw="1" slack="0"/>
+<pin id="592" dir="0" index="89" bw="1" slack="0"/>
+<pin id="593" dir="0" index="90" bw="1" slack="0"/>
+<pin id="594" dir="1" index="91" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/3 "/>
+</bind>
+</comp>
+
+<comp id="613" class="1004" name="grp_edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7_fu_613">
+<pin_list>
+<pin id="614" dir="0" index="0" bw="0" slack="0"/>
+<pin id="615" dir="0" index="1" bw="1" slack="2147483647"/>
+<pin id="616" dir="0" index="2" bw="1" slack="2147483647"/>
+<pin id="617" dir="0" index="3" bw="1" slack="2147483647"/>
+<pin id="618" dir="0" index="4" bw="1" slack="2147483647"/>
+<pin id="619" dir="0" index="5" bw="1" slack="2147483647"/>
+<pin id="620" dir="0" index="6" bw="1" slack="2147483647"/>
+<pin id="621" dir="0" index="7" bw="1" slack="2147483647"/>
+<pin id="622" dir="0" index="8" bw="1" slack="2147483647"/>
+<pin id="623" dir="0" index="9" bw="1" slack="2147483647"/>
+<pin id="624" dir="0" index="10" bw="1" slack="2147483647"/>
+<pin id="625" dir="0" index="11" bw="1" slack="2147483647"/>
+<pin id="626" dir="0" index="12" bw="1" slack="2147483647"/>
+<pin id="627" dir="0" index="13" bw="1" slack="2147483647"/>
+<pin id="628" dir="0" index="14" bw="1" slack="2147483647"/>
+<pin id="629" dir="0" index="15" bw="1" slack="2147483647"/>
+<pin id="630" dir="0" index="16" bw="1" slack="2147483647"/>
+<pin id="631" dir="0" index="17" bw="1" slack="2147483647"/>
+<pin id="632" dir="0" index="18" bw="1" slack="2147483647"/>
+<pin id="633" dir="0" index="19" bw="1" slack="2147483647"/>
+<pin id="634" dir="0" index="20" bw="1" slack="2147483647"/>
+<pin id="635" dir="0" index="21" bw="1" slack="2147483647"/>
+<pin id="636" dir="0" index="22" bw="1" slack="2147483647"/>
+<pin id="637" dir="0" index="23" bw="1" slack="2147483647"/>
+<pin id="638" dir="0" index="24" bw="1" slack="2147483647"/>
+<pin id="639" dir="0" index="25" bw="1" slack="2147483647"/>
+<pin id="640" dir="0" index="26" bw="1" slack="2147483647"/>
+<pin id="641" dir="0" index="27" bw="1" slack="2147483647"/>
+<pin id="642" dir="0" index="28" bw="1" slack="2147483647"/>
+<pin id="643" dir="0" index="29" bw="1" slack="2147483647"/>
+<pin id="644" dir="0" index="30" bw="1" slack="2147483647"/>
+<pin id="645" dir="0" index="31" bw="1" slack="2147483647"/>
+<pin id="646" dir="0" index="32" bw="1" slack="2147483647"/>
+<pin id="647" dir="0" index="33" bw="1" slack="2147483647"/>
+<pin id="648" dir="0" index="34" bw="1" slack="2147483647"/>
+<pin id="649" dir="0" index="35" bw="1" slack="2147483647"/>
+<pin id="650" dir="0" index="36" bw="1" slack="2147483647"/>
+<pin id="651" dir="0" index="37" bw="1" slack="2147483647"/>
+<pin id="652" dir="0" index="38" bw="1" slack="2147483647"/>
+<pin id="653" dir="0" index="39" bw="1" slack="2147483647"/>
+<pin id="654" dir="0" index="40" bw="1" slack="2147483647"/>
+<pin id="655" dir="0" index="41" bw="1" slack="2147483647"/>
+<pin id="656" dir="0" index="42" bw="1" slack="2147483647"/>
+<pin id="657" dir="0" index="43" bw="1" slack="2147483647"/>
+<pin id="658" dir="0" index="44" bw="1" slack="2147483647"/>
+<pin id="659" dir="0" index="45" bw="1" slack="2147483647"/>
+<pin id="660" dir="0" index="46" bw="1" slack="2147483647"/>
+<pin id="661" dir="0" index="47" bw="1" slack="2147483647"/>
+<pin id="662" dir="0" index="48" bw="1" slack="2147483647"/>
+<pin id="663" dir="0" index="49" bw="1" slack="2147483647"/>
+<pin id="664" dir="0" index="50" bw="1" slack="2147483647"/>
+<pin id="665" dir="0" index="51" bw="1" slack="2147483647"/>
+<pin id="666" dir="0" index="52" bw="1" slack="2147483647"/>
+<pin id="667" dir="0" index="53" bw="1" slack="2147483647"/>
+<pin id="668" dir="0" index="54" bw="1" slack="2147483647"/>
+<pin id="669" dir="0" index="55" bw="1" slack="2147483647"/>
+<pin id="670" dir="0" index="56" bw="1" slack="2147483647"/>
+<pin id="671" dir="0" index="57" bw="1" slack="2147483647"/>
+<pin id="672" dir="0" index="58" bw="1" slack="2147483647"/>
+<pin id="673" dir="0" index="59" bw="1" slack="2147483647"/>
+<pin id="674" dir="0" index="60" bw="1" slack="2147483647"/>
+<pin id="675" dir="0" index="61" bw="1" slack="2147483647"/>
+<pin id="676" dir="0" index="62" bw="1" slack="2147483647"/>
+<pin id="677" dir="0" index="63" bw="1" slack="2147483647"/>
+<pin id="678" dir="0" index="64" bw="1" slack="2147483647"/>
+<pin id="679" dir="0" index="65" bw="1" slack="2147483647"/>
+<pin id="680" dir="0" index="66" bw="1" slack="2147483647"/>
+<pin id="681" dir="0" index="67" bw="1" slack="2147483647"/>
+<pin id="682" dir="0" index="68" bw="1" slack="2147483647"/>
+<pin id="683" dir="0" index="69" bw="1" slack="2147483647"/>
+<pin id="684" dir="0" index="70" bw="1" slack="2147483647"/>
+<pin id="685" dir="0" index="71" bw="1" slack="2147483647"/>
+<pin id="686" dir="0" index="72" bw="1" slack="2147483647"/>
+<pin id="687" dir="0" index="73" bw="512" slack="4"/>
+<pin id="688" dir="1" index="74" bw="0" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="call(48) " fcode="call"/>
+<opset="call_ln0/5 "/>
+</bind>
+</comp>
+
+<comp id="690" class="1004" name="obs_parity_1_loc_load_load_fu_690">
+<pin_list>
+<pin id="691" dir="0" index="0" bw="1" slack="6"/>
+<pin id="692" dir="1" index="1" bw="1" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="obs_parity_1_loc_load/7 "/>
+</bind>
+</comp>
+
+<comp id="693" class="1004" name="beat_2_loc_load_load_fu_693">
+<pin_list>
+<pin id="694" dir="0" index="0" bw="512" slack="6"/>
+<pin id="695" dir="1" index="1" bw="512" slack="0"/>
+</pin_list>
+<bind>
+<opcode="load(27) " fcode="load"/>
+<opset="beat_2_loc_load/7 "/>
+</bind>
+</comp>
+
+<comp id="696" class="1004" name="beat_fu_696">
+<pin_list>
+<pin id="697" dir="0" index="0" bw="512" slack="0"/>
+<pin id="698" dir="0" index="1" bw="512" slack="0"/>
+<pin id="699" dir="0" index="2" bw="9" slack="0"/>
+<pin id="700" dir="0" index="3" bw="1" slack="0"/>
+<pin id="701" dir="1" index="4" bw="512" slack="2147483647"/>
+</pin_list>
+<bind>
+<opcode="bitset(1001) " fcode="bitset"/>
+<opset="beat/7 "/>
+</bind>
+</comp>
+
+<comp id="706" class="1005" name="beat_2_loc_reg_706">
+<pin_list>
+<pin id="707" dir="0" index="0" bw="512" slack="4"/>
+<pin id="708" dir="1" index="1" bw="512" slack="4"/>
+</pin_list>
+<bind>
+<opset="beat_2_loc "/>
+</bind>
+</comp>
+
+<comp id="712" class="1005" name="obs_parity_1_loc_reg_712">
+<pin_list>
+<pin id="713" dir="0" index="0" bw="1" slack="2"/>
+<pin id="714" dir="1" index="1" bw="1" slack="2"/>
+</pin_list>
+<bind>
+<opset="obs_parity_1_loc "/>
+</bind>
+</comp>
+
+</comp_list>
+
+<net_list>
+<net id="61"><net_src comp="34" pin="0"/><net_sink comp="58" pin=0"/></net>
+
+<net id="65"><net_src comp="34" pin="0"/><net_sink comp="62" pin=0"/></net>
+
+<net id="69"><net_src comp="34" pin="0"/><net_sink comp="66" pin=0"/></net>
+
+<net id="73"><net_src comp="34" pin="0"/><net_sink comp="70" pin=0"/></net>
+
+<net id="77"><net_src comp="34" pin="0"/><net_sink comp="74" pin=0"/></net>
+
+<net id="81"><net_src comp="34" pin="0"/><net_sink comp="78" pin=0"/></net>
+
+<net id="85"><net_src comp="34" pin="0"/><net_sink comp="82" pin=0"/></net>
+
+<net id="89"><net_src comp="34" pin="0"/><net_sink comp="86" pin=0"/></net>
+
+<net id="93"><net_src comp="34" pin="0"/><net_sink comp="90" pin=0"/></net>
+
+<net id="97"><net_src comp="34" pin="0"/><net_sink comp="94" pin=0"/></net>
+
+<net id="101"><net_src comp="34" pin="0"/><net_sink comp="98" pin=0"/></net>
+
+<net id="105"><net_src comp="34" pin="0"/><net_sink comp="102" pin=0"/></net>
+
+<net id="109"><net_src comp="34" pin="0"/><net_sink comp="106" pin=0"/></net>
+
+<net id="113"><net_src comp="34" pin="0"/><net_sink comp="110" pin=0"/></net>
+
+<net id="117"><net_src comp="34" pin="0"/><net_sink comp="114" pin=0"/></net>
+
+<net id="121"><net_src comp="34" pin="0"/><net_sink comp="118" pin=0"/></net>
+
+<net id="125"><net_src comp="34" pin="0"/><net_sink comp="122" pin=0"/></net>
+
+<net id="129"><net_src comp="34" pin="0"/><net_sink comp="126" pin=0"/></net>
+
+<net id="133"><net_src comp="34" pin="0"/><net_sink comp="130" pin=0"/></net>
+
+<net id="137"><net_src comp="34" pin="0"/><net_sink comp="134" pin=0"/></net>
+
+<net id="141"><net_src comp="34" pin="0"/><net_sink comp="138" pin=0"/></net>
+
+<net id="145"><net_src comp="34" pin="0"/><net_sink comp="142" pin=0"/></net>
+
+<net id="149"><net_src comp="34" pin="0"/><net_sink comp="146" pin=0"/></net>
+
+<net id="153"><net_src comp="34" pin="0"/><net_sink comp="150" pin=0"/></net>
+
+<net id="157"><net_src comp="34" pin="0"/><net_sink comp="154" pin=0"/></net>
+
+<net id="161"><net_src comp="34" pin="0"/><net_sink comp="158" pin=0"/></net>
+
+<net id="165"><net_src comp="34" pin="0"/><net_sink comp="162" pin=0"/></net>
+
+<net id="169"><net_src comp="34" pin="0"/><net_sink comp="166" pin=0"/></net>
+
+<net id="173"><net_src comp="34" pin="0"/><net_sink comp="170" pin=0"/></net>
+
+<net id="177"><net_src comp="34" pin="0"/><net_sink comp="174" pin=0"/></net>
+
+<net id="181"><net_src comp="34" pin="0"/><net_sink comp="178" pin=0"/></net>
+
+<net id="185"><net_src comp="34" pin="0"/><net_sink comp="182" pin=0"/></net>
+
+<net id="189"><net_src comp="34" pin="0"/><net_sink comp="186" pin=0"/></net>
+
+<net id="193"><net_src comp="34" pin="0"/><net_sink comp="190" pin=0"/></net>
+
+<net id="197"><net_src comp="34" pin="0"/><net_sink comp="194" pin=0"/></net>
+
+<net id="201"><net_src comp="34" pin="0"/><net_sink comp="198" pin=0"/></net>
+
+<net id="205"><net_src comp="34" pin="0"/><net_sink comp="202" pin=0"/></net>
+
+<net id="209"><net_src comp="34" pin="0"/><net_sink comp="206" pin=0"/></net>
+
+<net id="213"><net_src comp="34" pin="0"/><net_sink comp="210" pin=0"/></net>
+
+<net id="217"><net_src comp="34" pin="0"/><net_sink comp="214" pin=0"/></net>
+
+<net id="221"><net_src comp="34" pin="0"/><net_sink comp="218" pin=0"/></net>
+
+<net id="225"><net_src comp="34" pin="0"/><net_sink comp="222" pin=0"/></net>
+
+<net id="229"><net_src comp="34" pin="0"/><net_sink comp="226" pin=0"/></net>
+
+<net id="233"><net_src comp="34" pin="0"/><net_sink comp="230" pin=0"/></net>
+
+<net id="237"><net_src comp="34" pin="0"/><net_sink comp="234" pin=0"/></net>
+
+<net id="241"><net_src comp="34" pin="0"/><net_sink comp="238" pin=0"/></net>
+
+<net id="245"><net_src comp="34" pin="0"/><net_sink comp="242" pin=0"/></net>
+
+<net id="249"><net_src comp="34" pin="0"/><net_sink comp="246" pin=0"/></net>
+
+<net id="253"><net_src comp="34" pin="0"/><net_sink comp="250" pin=0"/></net>
+
+<net id="257"><net_src comp="34" pin="0"/><net_sink comp="254" pin=0"/></net>
+
+<net id="261"><net_src comp="34" pin="0"/><net_sink comp="258" pin=0"/></net>
+
+<net id="265"><net_src comp="34" pin="0"/><net_sink comp="262" pin=0"/></net>
+
+<net id="269"><net_src comp="34" pin="0"/><net_sink comp="266" pin=0"/></net>
+
+<net id="273"><net_src comp="34" pin="0"/><net_sink comp="270" pin=0"/></net>
+
+<net id="277"><net_src comp="34" pin="0"/><net_sink comp="274" pin=0"/></net>
+
+<net id="281"><net_src comp="34" pin="0"/><net_sink comp="278" pin=0"/></net>
+
+<net id="285"><net_src comp="34" pin="0"/><net_sink comp="282" pin=0"/></net>
+
+<net id="289"><net_src comp="34" pin="0"/><net_sink comp="286" pin=0"/></net>
+
+<net id="293"><net_src comp="34" pin="0"/><net_sink comp="290" pin=0"/></net>
+
+<net id="297"><net_src comp="34" pin="0"/><net_sink comp="294" pin=0"/></net>
+
+<net id="301"><net_src comp="34" pin="0"/><net_sink comp="298" pin=0"/></net>
+
+<net id="305"><net_src comp="34" pin="0"/><net_sink comp="302" pin=0"/></net>
+
+<net id="309"><net_src comp="34" pin="0"/><net_sink comp="306" pin=0"/></net>
+
+<net id="313"><net_src comp="34" pin="0"/><net_sink comp="310" pin=0"/></net>
+
+<net id="317"><net_src comp="34" pin="0"/><net_sink comp="314" pin=0"/></net>
+
+<net id="321"><net_src comp="34" pin="0"/><net_sink comp="318" pin=0"/></net>
+
+<net id="325"><net_src comp="34" pin="0"/><net_sink comp="322" pin=0"/></net>
+
+<net id="329"><net_src comp="34" pin="0"/><net_sink comp="326" pin=0"/></net>
+
+<net id="333"><net_src comp="34" pin="0"/><net_sink comp="330" pin=0"/></net>
+
+<net id="337"><net_src comp="34" pin="0"/><net_sink comp="334" pin=0"/></net>
+
+<net id="341"><net_src comp="34" pin="0"/><net_sink comp="338" pin=0"/></net>
+
+<net id="345"><net_src comp="34" pin="0"/><net_sink comp="342" pin=0"/></net>
+
+<net id="349"><net_src comp="34" pin="0"/><net_sink comp="346" pin=0"/></net>
+
+<net id="353"><net_src comp="34" pin="0"/><net_sink comp="350" pin=0"/></net>
+
+<net id="429"><net_src comp="36" pin="0"/><net_sink comp="354" pin=0"/></net>
+
+<net id="430"><net_src comp="66" pin="1"/><net_sink comp="354" pin=1"/></net>
+
+<net id="431"><net_src comp="70" pin="1"/><net_sink comp="354" pin=2"/></net>
+
+<net id="432"><net_src comp="74" pin="1"/><net_sink comp="354" pin=3"/></net>
+
+<net id="433"><net_src comp="78" pin="1"/><net_sink comp="354" pin=4"/></net>
+
+<net id="434"><net_src comp="82" pin="1"/><net_sink comp="354" pin=5"/></net>
+
+<net id="435"><net_src comp="86" pin="1"/><net_sink comp="354" pin=6"/></net>
+
+<net id="436"><net_src comp="90" pin="1"/><net_sink comp="354" pin=7"/></net>
+
+<net id="437"><net_src comp="94" pin="1"/><net_sink comp="354" pin=8"/></net>
+
+<net id="438"><net_src comp="98" pin="1"/><net_sink comp="354" pin=9"/></net>
+
+<net id="439"><net_src comp="102" pin="1"/><net_sink comp="354" pin=10"/></net>
+
+<net id="440"><net_src comp="106" pin="1"/><net_sink comp="354" pin=11"/></net>
+
+<net id="441"><net_src comp="110" pin="1"/><net_sink comp="354" pin=12"/></net>
+
+<net id="442"><net_src comp="114" pin="1"/><net_sink comp="354" pin=13"/></net>
+
+<net id="443"><net_src comp="118" pin="1"/><net_sink comp="354" pin=14"/></net>
+
+<net id="444"><net_src comp="122" pin="1"/><net_sink comp="354" pin=15"/></net>
+
+<net id="445"><net_src comp="126" pin="1"/><net_sink comp="354" pin=16"/></net>
+
+<net id="446"><net_src comp="130" pin="1"/><net_sink comp="354" pin=17"/></net>
+
+<net id="447"><net_src comp="134" pin="1"/><net_sink comp="354" pin=18"/></net>
+
+<net id="448"><net_src comp="138" pin="1"/><net_sink comp="354" pin=19"/></net>
+
+<net id="449"><net_src comp="142" pin="1"/><net_sink comp="354" pin=20"/></net>
+
+<net id="450"><net_src comp="146" pin="1"/><net_sink comp="354" pin=21"/></net>
+
+<net id="451"><net_src comp="150" pin="1"/><net_sink comp="354" pin=22"/></net>
+
+<net id="452"><net_src comp="154" pin="1"/><net_sink comp="354" pin=23"/></net>
+
+<net id="453"><net_src comp="158" pin="1"/><net_sink comp="354" pin=24"/></net>
+
+<net id="454"><net_src comp="162" pin="1"/><net_sink comp="354" pin=25"/></net>
+
+<net id="455"><net_src comp="166" pin="1"/><net_sink comp="354" pin=26"/></net>
+
+<net id="456"><net_src comp="170" pin="1"/><net_sink comp="354" pin=27"/></net>
+
+<net id="457"><net_src comp="174" pin="1"/><net_sink comp="354" pin=28"/></net>
+
+<net id="458"><net_src comp="178" pin="1"/><net_sink comp="354" pin=29"/></net>
+
+<net id="459"><net_src comp="182" pin="1"/><net_sink comp="354" pin=30"/></net>
+
+<net id="460"><net_src comp="186" pin="1"/><net_sink comp="354" pin=31"/></net>
+
+<net id="461"><net_src comp="190" pin="1"/><net_sink comp="354" pin=32"/></net>
+
+<net id="462"><net_src comp="194" pin="1"/><net_sink comp="354" pin=33"/></net>
+
+<net id="463"><net_src comp="198" pin="1"/><net_sink comp="354" pin=34"/></net>
+
+<net id="464"><net_src comp="202" pin="1"/><net_sink comp="354" pin=35"/></net>
+
+<net id="465"><net_src comp="206" pin="1"/><net_sink comp="354" pin=36"/></net>
+
+<net id="466"><net_src comp="210" pin="1"/><net_sink comp="354" pin=37"/></net>
+
+<net id="467"><net_src comp="214" pin="1"/><net_sink comp="354" pin=38"/></net>
+
+<net id="468"><net_src comp="218" pin="1"/><net_sink comp="354" pin=39"/></net>
+
+<net id="469"><net_src comp="222" pin="1"/><net_sink comp="354" pin=40"/></net>
+
+<net id="470"><net_src comp="226" pin="1"/><net_sink comp="354" pin=41"/></net>
+
+<net id="471"><net_src comp="230" pin="1"/><net_sink comp="354" pin=42"/></net>
+
+<net id="472"><net_src comp="234" pin="1"/><net_sink comp="354" pin=43"/></net>
+
+<net id="473"><net_src comp="238" pin="1"/><net_sink comp="354" pin=44"/></net>
+
+<net id="474"><net_src comp="242" pin="1"/><net_sink comp="354" pin=45"/></net>
+
+<net id="475"><net_src comp="246" pin="1"/><net_sink comp="354" pin=46"/></net>
+
+<net id="476"><net_src comp="250" pin="1"/><net_sink comp="354" pin=47"/></net>
+
+<net id="477"><net_src comp="254" pin="1"/><net_sink comp="354" pin=48"/></net>
+
+<net id="478"><net_src comp="258" pin="1"/><net_sink comp="354" pin=49"/></net>
+
+<net id="479"><net_src comp="262" pin="1"/><net_sink comp="354" pin=50"/></net>
+
+<net id="480"><net_src comp="266" pin="1"/><net_sink comp="354" pin=51"/></net>
+
+<net id="481"><net_src comp="270" pin="1"/><net_sink comp="354" pin=52"/></net>
+
+<net id="482"><net_src comp="274" pin="1"/><net_sink comp="354" pin=53"/></net>
+
+<net id="483"><net_src comp="278" pin="1"/><net_sink comp="354" pin=54"/></net>
+
+<net id="484"><net_src comp="282" pin="1"/><net_sink comp="354" pin=55"/></net>
+
+<net id="485"><net_src comp="286" pin="1"/><net_sink comp="354" pin=56"/></net>
+
+<net id="486"><net_src comp="290" pin="1"/><net_sink comp="354" pin=57"/></net>
+
+<net id="487"><net_src comp="294" pin="1"/><net_sink comp="354" pin=58"/></net>
+
+<net id="488"><net_src comp="298" pin="1"/><net_sink comp="354" pin=59"/></net>
+
+<net id="489"><net_src comp="302" pin="1"/><net_sink comp="354" pin=60"/></net>
+
+<net id="490"><net_src comp="306" pin="1"/><net_sink comp="354" pin=61"/></net>
+
+<net id="491"><net_src comp="310" pin="1"/><net_sink comp="354" pin=62"/></net>
+
+<net id="492"><net_src comp="314" pin="1"/><net_sink comp="354" pin=63"/></net>
+
+<net id="493"><net_src comp="318" pin="1"/><net_sink comp="354" pin=64"/></net>
+
+<net id="494"><net_src comp="322" pin="1"/><net_sink comp="354" pin=65"/></net>
+
+<net id="495"><net_src comp="326" pin="1"/><net_sink comp="354" pin=66"/></net>
+
+<net id="496"><net_src comp="330" pin="1"/><net_sink comp="354" pin=67"/></net>
+
+<net id="497"><net_src comp="334" pin="1"/><net_sink comp="354" pin=68"/></net>
+
+<net id="498"><net_src comp="338" pin="1"/><net_sink comp="354" pin=69"/></net>
+
+<net id="499"><net_src comp="342" pin="1"/><net_sink comp="354" pin=70"/></net>
+
+<net id="500"><net_src comp="346" pin="1"/><net_sink comp="354" pin=71"/></net>
+
+<net id="501"><net_src comp="350" pin="1"/><net_sink comp="354" pin=72"/></net>
+
+<net id="595"><net_src comp="40" pin="0"/><net_sink comp="502" pin=0"/></net>
+
+<net id="596"><net_src comp="0" pin="0"/><net_sink comp="502" pin=73"/></net>
+
+<net id="597"><net_src comp="2" pin="0"/><net_sink comp="502" pin=75"/></net>
+
+<net id="598"><net_src comp="4" pin="0"/><net_sink comp="502" pin=76"/></net>
+
+<net id="599"><net_src comp="6" pin="0"/><net_sink comp="502" pin=77"/></net>
+
+<net id="600"><net_src comp="8" pin="0"/><net_sink comp="502" pin=78"/></net>
+
+<net id="601"><net_src comp="10" pin="0"/><net_sink comp="502" pin=79"/></net>
+
+<net id="602"><net_src comp="12" pin="0"/><net_sink comp="502" pin=80"/></net>
+
+<net id="603"><net_src comp="14" pin="0"/><net_sink comp="502" pin=81"/></net>
+
+<net id="604"><net_src comp="16" pin="0"/><net_sink comp="502" pin=82"/></net>
+
+<net id="605"><net_src comp="18" pin="0"/><net_sink comp="502" pin=83"/></net>
+
+<net id="606"><net_src comp="20" pin="0"/><net_sink comp="502" pin=84"/></net>
+
+<net id="607"><net_src comp="22" pin="0"/><net_sink comp="502" pin=85"/></net>
+
+<net id="608"><net_src comp="24" pin="0"/><net_sink comp="502" pin=86"/></net>
+
+<net id="609"><net_src comp="26" pin="0"/><net_sink comp="502" pin=87"/></net>
+
+<net id="610"><net_src comp="28" pin="0"/><net_sink comp="502" pin=88"/></net>
+
+<net id="611"><net_src comp="30" pin="0"/><net_sink comp="502" pin=89"/></net>
+
+<net id="612"><net_src comp="32" pin="0"/><net_sink comp="502" pin=90"/></net>
+
+<net id="689"><net_src comp="42" pin="0"/><net_sink comp="613" pin=0"/></net>
+
+<net id="702"><net_src comp="54" pin="0"/><net_sink comp="696" pin=0"/></net>
+
+<net id="703"><net_src comp="693" pin="1"/><net_sink comp="696" pin=1"/></net>
+
+<net id="704"><net_src comp="56" pin="0"/><net_sink comp="696" pin=2"/></net>
+
+<net id="705"><net_src comp="690" pin="1"/><net_sink comp="696" pin=3"/></net>
+
+<net id="709"><net_src comp="58" pin="1"/><net_sink comp="706" pin=0"/></net>
+
+<net id="710"><net_src comp="706" pin="1"/><net_sink comp="613" pin=73"/></net>
+
+<net id="711"><net_src comp="706" pin="1"/><net_sink comp="693" pin=0"/></net>
+
+<net id="715"><net_src comp="62" pin="1"/><net_sink comp="712" pin=0"/></net>
+
+<net id="716"><net_src comp="712" pin="1"/><net_sink comp="502" pin=74"/></net>
+
+<net id="717"><net_src comp="712" pin="1"/><net_sink comp="690" pin=0"/></net>
+
+</net_list>
+
+</model> 
+---------------- Datapath Model END ------------------
+
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+	Port: edge_correction : s3 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15 | {3 4 }
+	Port: edge_correction : p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16 | {3 4 }
+  - Chain level:
+	State 1
+		call_ln0 : 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+		beat : 1
+		ret_ln221 : 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+
+* Functional unit list:
+|----------|----------------------------------------------------------------------------------------|---------|---------|---------|---------|
+| Operation|                                     Functional Unit                                    |   DSP   |  Delay  |    FF   |   LUT   |
+|----------|----------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|          |       grp_edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2_fu_354       |    0    |    0    |    32   |   120   |
+|   call   |      grp_edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4_fu_502     |    29   | 190.748 |  128472 |  124892 |
+|          | grp_edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7_fu_613 |    0    |  27.864 |   689   |   1269  |
+|----------|----------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|  bitset  |                                       beat_fu_696                                      |    0    |    0    |    0    |    0    |
+|----------|----------------------------------------------------------------------------------------|---------|---------|---------|---------|
+|   Total  |                                                                                        |    29   | 218.612 |  129193 |  126281 |
+|----------|----------------------------------------------------------------------------------------|---------|---------|---------|---------|
+
+Memories:
++-------------+--------+--------+--------+--------+
+|             |  BRAM  |   FF   |   LUT  |  URAM  |
++-------------+--------+--------+--------+--------+
+|  correction |    0   |    2   |    3   |    0   |
+| correction_1|    0   |    2   |    3   |    0   |
+|correction_10|    0   |    2   |    3   |    0   |
+|correction_11|    0   |    2   |    3   |    0   |
+|correction_12|    0   |    2   |    3   |    0   |
+|correction_13|    0   |    2   |    3   |    0   |
+|correction_14|    0   |    2   |    3   |    0   |
+|correction_15|    0   |    2   |    3   |    0   |
+|correction_16|    0   |    2   |    3   |    0   |
+|correction_17|    0   |    2   |    3   |    0   |
+|correction_18|    0   |    2   |    3   |    0   |
+|correction_19|    0   |    2   |    3   |    0   |
+| correction_2|    0   |    2   |    3   |    0   |
+|correction_20|    0   |    2   |    3   |    0   |
+|correction_21|    0   |    2   |    3   |    0   |
+|correction_22|    0   |    2   |    3   |    0   |
+|correction_23|    0   |    2   |    3   |    0   |
+|correction_24|    0   |    2   |    3   |    0   |
+|correction_25|    0   |    2   |    3   |    0   |
+|correction_26|    0   |    2   |    3   |    0   |
+|correction_27|    0   |    2   |    3   |    0   |
+|correction_28|    0   |    2   |    3   |    0   |
+|correction_29|    0   |    2   |    3   |    0   |
+| correction_3|    0   |    2   |    3   |    0   |
+|correction_30|    0   |    2   |    3   |    0   |
+|correction_31|    0   |    2   |    3   |    0   |
+|correction_32|    0   |    2   |    3   |    0   |
+|correction_33|    0   |    2   |    3   |    0   |
+|correction_34|    0   |    2   |    3   |    0   |
+|correction_35|    0   |    2   |    3   |    0   |
+|correction_36|    0   |    2   |    3   |    0   |
+|correction_37|    0   |    2   |    3   |    0   |
+|correction_38|    0   |    2   |    3   |    0   |
+|correction_39|    0   |    2   |    3   |    0   |
+| correction_4|    0   |    2   |    3   |    0   |
+|correction_40|    0   |    2   |    3   |    0   |
+|correction_41|    0   |    2   |    3   |    0   |
+|correction_42|    0   |    2   |    3   |    0   |
+|correction_43|    0   |    2   |    3   |    0   |
+|correction_44|    0   |    2   |    3   |    0   |
+|correction_45|    0   |    2   |    3   |    0   |
+|correction_46|    0   |    2   |    3   |    0   |
+|correction_47|    0   |    2   |    3   |    0   |
+|correction_48|    0   |    2   |    3   |    0   |
+|correction_49|    0   |    2   |    3   |    0   |
+| correction_5|    0   |    2   |    3   |    0   |
+|correction_50|    0   |    2   |    3   |    0   |
+|correction_51|    0   |    2   |    3   |    0   |
+|correction_52|    0   |    2   |    3   |    0   |
+|correction_53|    0   |    2   |    3   |    0   |
+|correction_54|    0   |    2   |    3   |    0   |
+|correction_55|    0   |    2   |    3   |    0   |
+|correction_56|    0   |    2   |    3   |    0   |
+|correction_57|    0   |    2   |    3   |    0   |
+|correction_58|    0   |    2   |    3   |    0   |
+|correction_59|    0   |    2   |    3   |    0   |
+| correction_6|    0   |    2   |    3   |    0   |
+|correction_60|    0   |    2   |    3   |    0   |
+|correction_61|    0   |    2   |    3   |    0   |
+|correction_62|    0   |    2   |    3   |    0   |
+|correction_63|    0   |    2   |    3   |    0   |
+|correction_64|    0   |    2   |    3   |    0   |
+|correction_65|    0   |    2   |    3   |    0   |
+|correction_66|    0   |    2   |    3   |    0   |
+|correction_67|    0   |    2   |    3   |    0   |
+|correction_68|    0   |    2   |    3   |    0   |
+|correction_69|    0   |    2   |    3   |    0   |
+| correction_7|    0   |    2   |    3   |    0   |
+|correction_70|    0   |    2   |    3   |    0   |
+|correction_71|    0   |    2   |    3   |    0   |
+| correction_8|    0   |    2   |    3   |    0   |
+| correction_9|    0   |    2   |    3   |    0   |
++-------------+--------+--------+--------+--------+
+|    Total    |    0   |   144  |   216  |    0   |
++-------------+--------+--------+--------+--------+
+
+* Register list:
++------------------------+--------+
+|                        |   FF   |
++------------------------+--------+
+|   beat_2_loc_reg_706   |   512  |
+|obs_parity_1_loc_reg_712|    1   |
++------------------------+--------+
+|          Total         |   513  |
++------------------------+--------+
+
+* Multiplexer (MUX) list: 
+|--------|------|------|------|--------|
+|  Comp  |  Pin | Size |  BW  | S x BW |
+|--------|------|------|------|--------|
+|  Total |      |      |      |    0   |
+|--------|------|------|------|--------|
+
+
+
+* Summary:
++-----------+--------+--------+--------+--------+--------+--------+
+|           |  BRAM  |   DSP  |  Delay |   FF   |   LUT  |  URAM  |
++-----------+--------+--------+--------+--------+--------+--------+
+|  Function |    -   |   29   |   218  | 129193 | 126281 |    -   |
+|   Memory  |    0   |    -   |    -   |   144  |   216  |    0   |
+|Multiplexer|    -   |    -   |    -   |    -   |    -   |    -   |
+|  Register |    -   |    -   |    -   |   513  |    -   |    -   |
++-----------+--------+--------+--------+--------+--------+--------+
+|   Total   |    0   |   29   |   218  | 129850 | 126497 |    0   |
++-----------+--------+--------+--------+--------+--------+--------+

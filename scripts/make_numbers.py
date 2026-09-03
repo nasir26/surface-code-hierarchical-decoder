@@ -233,6 +233,26 @@ def main() -> None:
                 n.add("hierTauFullEscalation", fmt(r["tau"], 4), "same")
                 break
 
+    # ---- HLS C-synthesis --------------------------------------------------
+    hls = load(REPO_ROOT / "results" / "hw" / "csynth_w12.json")
+    if hls:
+        cs, rc = hls["csynth"], hls["roofline_comparison"]
+        n.add("hlsWidth", str(hls["config"]["width"]), "results/hw/csynth_w12.json, T3")
+        n.add("hlsClockTarget", fmt(hls["config"]["clock_target_ns"]), "same, ns")
+        n.add("hlsClockEstimated", fmt(cs["clock_estimated_ns"]), "same, ns")
+        n.add("hlsLatencyUs", fmt(rc["csynth_latency_us_worst_case"]), "same, worst case")
+        n.add("hlsLUT", f"{cs['resources']['lut']:,}", "same")
+        n.add("hlsLUTpct", fmt(cs["utilisation_pct"]["lut"], 2), "same, % of device")
+        n.add("hlsFF", f"{cs['resources']['ff']:,}", "same")
+        n.add("hlsDSP", f"{cs['resources']['dsp']:,}", "same")
+        n.add("hlsDSPpct", fmt(cs["utilisation_pct"]["dsp"], 2), "same, % of device")
+        n.add("hlsBRAM", f"{cs['resources']['bram_18k']:,}", "same")
+        n.add("hlsRooflineUs", fmt(rc["roofline_min_latency_us_int8_50pct_dsp"]), "same, T4 bound")
+        n.add("hlsGap", f"{rc['implementation_gap_x']:,.0f}",
+              "same, synthesised latency over the roofline bound")
+        n.add("hlsDSPShortfall", fmt(rc["dsp_provisioning_shortfall_x"], 2),
+              "same, DSP budget over DSPs actually instantiated")
+
     # ---- training trajectory ---------------------------------------------
     traj = load(REPO_ROOT / "results" / "trajectory_traj.json")
     if traj and traj.get("trajectory"):

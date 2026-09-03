@@ -1,0 +1,232 @@
+
+
+================================================================
+== Vitis HLS Report for 'edge_correction'
+================================================================
+* Date:           Thu Sep  3 17:10:49 2026
+
+* Version:        2023.2 (Build 4023990 on Oct 11 2023)
+* Project:        predecoder_csynth_proj
+* Solution:       solution1 (Vitis Kernel Flow Target)
+* Product family: virtexuplusHBM
+* Target device:  xcu55c-fsvh2892-2L-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.608 ns|     0.90 ns|
+    +--------+---------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |  Latency (cycles) |   Latency (absolute)  |    Interval   | Pipeline|
+    |   min   |   max   |    min    |    max    |  min  |  max  |   Type  |
+    +---------+---------+-----------+-----------+-------+-------+---------+
+    |    12782|    12782|  42.564 us|  42.564 us|  12782|  12782|       no|
+    +---------+---------+-----------+-----------+-------+-------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 7
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%beat_2_loc = alloca i64 1"   --->   Operation 8 'alloca' 'beat_2_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%obs_parity_1_loc = alloca i64 1"   --->   Operation 9 'alloca' 'obs_parity_1_loc' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%correction = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 10 'alloca' 'correction' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%correction_1 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 11 'alloca' 'correction_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%correction_2 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 12 'alloca' 'correction_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%correction_3 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 13 'alloca' 'correction_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%correction_4 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 14 'alloca' 'correction_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%correction_5 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 15 'alloca' 'correction_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%correction_6 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 16 'alloca' 'correction_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%correction_7 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 17 'alloca' 'correction_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%correction_8 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 18 'alloca' 'correction_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%correction_9 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 19 'alloca' 'correction_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%correction_10 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 20 'alloca' 'correction_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%correction_11 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 21 'alloca' 'correction_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%correction_12 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 22 'alloca' 'correction_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%correction_13 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 23 'alloca' 'correction_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%correction_14 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 24 'alloca' 'correction_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%correction_15 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 25 'alloca' 'correction_15' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%correction_16 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 26 'alloca' 'correction_16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%correction_17 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 27 'alloca' 'correction_17' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%correction_18 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 28 'alloca' 'correction_18' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%correction_19 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 29 'alloca' 'correction_19' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%correction_20 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 30 'alloca' 'correction_20' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%correction_21 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 31 'alloca' 'correction_21' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%correction_22 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 32 'alloca' 'correction_22' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%correction_23 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 33 'alloca' 'correction_23' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%correction_24 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 34 'alloca' 'correction_24' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%correction_25 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 35 'alloca' 'correction_25' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%correction_26 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 36 'alloca' 'correction_26' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%correction_27 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 37 'alloca' 'correction_27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%correction_28 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 38 'alloca' 'correction_28' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.00ns)   --->   "%correction_29 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 39 'alloca' 'correction_29' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%correction_30 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 40 'alloca' 'correction_30' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.00ns)   --->   "%correction_31 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 41 'alloca' 'correction_31' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 42 [1/1] (0.00ns)   --->   "%correction_32 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 42 'alloca' 'correction_32' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns)   --->   "%correction_33 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 43 'alloca' 'correction_33' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns)   --->   "%correction_34 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 44 'alloca' 'correction_34' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 45 [1/1] (0.00ns)   --->   "%correction_35 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 45 'alloca' 'correction_35' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 46 [1/1] (0.00ns)   --->   "%correction_36 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 46 'alloca' 'correction_36' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 47 [1/1] (0.00ns)   --->   "%correction_37 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 47 'alloca' 'correction_37' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 48 [1/1] (0.00ns)   --->   "%correction_38 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 48 'alloca' 'correction_38' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 49 [1/1] (0.00ns)   --->   "%correction_39 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 49 'alloca' 'correction_39' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns)   --->   "%correction_40 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 50 'alloca' 'correction_40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns)   --->   "%correction_41 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 51 'alloca' 'correction_41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 52 [1/1] (0.00ns)   --->   "%correction_42 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 52 'alloca' 'correction_42' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 53 [1/1] (0.00ns)   --->   "%correction_43 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 53 'alloca' 'correction_43' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 54 [1/1] (0.00ns)   --->   "%correction_44 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 54 'alloca' 'correction_44' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 55 [1/1] (0.00ns)   --->   "%correction_45 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 55 'alloca' 'correction_45' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 56 [1/1] (0.00ns)   --->   "%correction_46 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 56 'alloca' 'correction_46' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns)   --->   "%correction_47 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 57 'alloca' 'correction_47' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns)   --->   "%correction_48 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 58 'alloca' 'correction_48' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 59 [1/1] (0.00ns)   --->   "%correction_49 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 59 'alloca' 'correction_49' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 60 [1/1] (0.00ns)   --->   "%correction_50 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 60 'alloca' 'correction_50' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 61 [1/1] (0.00ns)   --->   "%correction_51 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 61 'alloca' 'correction_51' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 62 [1/1] (0.00ns)   --->   "%correction_52 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 62 'alloca' 'correction_52' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 63 [1/1] (0.00ns)   --->   "%correction_53 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 63 'alloca' 'correction_53' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns)   --->   "%correction_54 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 64 'alloca' 'correction_54' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns)   --->   "%correction_55 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 65 'alloca' 'correction_55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%correction_56 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 66 'alloca' 'correction_56' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%correction_57 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 67 'alloca' 'correction_57' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%correction_58 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 68 'alloca' 'correction_58' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%correction_59 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 69 'alloca' 'correction_59' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%correction_60 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 70 'alloca' 'correction_60' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%correction_61 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 71 'alloca' 'correction_61' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%correction_62 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 72 'alloca' 'correction_62' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%correction_63 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 73 'alloca' 'correction_63' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%correction_64 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 74 'alloca' 'correction_64' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%correction_65 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 75 'alloca' 'correction_65' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%correction_66 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 76 'alloca' 'correction_66' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%correction_67 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 77 'alloca' 'correction_67' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%correction_68 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 78 'alloca' 'correction_68' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%correction_69 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 79 'alloca' 'correction_69' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%correction_70 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 80 'alloca' 'correction_70' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%correction_71 = alloca i64 1" [predecoder_kernel.cpp:162]   --->   Operation 81 'alloca' 'correction_71' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [2/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71"   --->   Operation 82 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 2 <SV = 1> <Delay = 0.00>
+ST_2 : Operation 83 [1/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_INIT_VITIS_LOOP_167_1_VITIS_LOOP_168_2, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71"   --->   Operation 83 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 3 <SV = 2> <Delay = 0.00>
+ST_3 : Operation 84 [1/1] (0.00ns)   --->   "%empty = wait i32 @_ssdm_op_Wait"   --->   Operation 84 'wait' 'empty' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 85 [2/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i448 %s3, i1 %obs_parity_1_loc, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16"   --->   Operation 85 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 4 <SV = 3> <Delay = 0.00>
+ST_4 : Operation 86 [1/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_EC_LOOP_VITIS_LOOP_174_3_VITIS_LOOP_175_4, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i448 %s3, i1 %obs_parity_1_loc, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_0, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_1, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_2, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_3, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_4, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_5, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_6, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_7, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_9, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_10, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_11, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_12, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_13, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_14, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_15, i1 %p_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE_16"   --->   Operation 86 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 5 <SV = 4> <Delay = 0.00>
+ST_5 : Operation 87 [2/2] (0.00ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i512 %beat_2_loc"   --->   Operation 87 'call' 'call_ln0' <Predicate = true> <Delay = 0.00> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 6 <SV = 5> <Delay = 1.09>
+ST_6 : Operation 88 [1/2] (1.09ns)   --->   "%call_ln0 = call void @edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7, i1 %correction, i1 %correction_1, i1 %correction_2, i1 %correction_3, i1 %correction_4, i1 %correction_5, i1 %correction_6, i1 %correction_7, i1 %correction_8, i1 %correction_9, i1 %correction_10, i1 %correction_11, i1 %correction_12, i1 %correction_13, i1 %correction_14, i1 %correction_15, i1 %correction_16, i1 %correction_17, i1 %correction_18, i1 %correction_19, i1 %correction_20, i1 %correction_21, i1 %correction_22, i1 %correction_23, i1 %correction_24, i1 %correction_25, i1 %correction_26, i1 %correction_27, i1 %correction_28, i1 %correction_29, i1 %correction_30, i1 %correction_31, i1 %correction_32, i1 %correction_33, i1 %correction_34, i1 %correction_35, i1 %correction_36, i1 %correction_37, i1 %correction_38, i1 %correction_39, i1 %correction_40, i1 %correction_41, i1 %correction_42, i1 %correction_43, i1 %correction_44, i1 %correction_45, i1 %correction_46, i1 %correction_47, i1 %correction_48, i1 %correction_49, i1 %correction_50, i1 %correction_51, i1 %correction_52, i1 %correction_53, i1 %correction_54, i1 %correction_55, i1 %correction_56, i1 %correction_57, i1 %correction_58, i1 %correction_59, i1 %correction_60, i1 %correction_61, i1 %correction_62, i1 %correction_63, i1 %correction_64, i1 %correction_65, i1 %correction_66, i1 %correction_67, i1 %correction_68, i1 %correction_69, i1 %correction_70, i1 %correction_71, i512 %beat_2_loc"   --->   Operation 88 'call' 'call_ln0' <Predicate = true> <Delay = 1.09> <CoreType = "Generic">   --->   Core 0 '' <Latency = 0> <II = 1> <Delay = 1.00> <Generic> <Opcode : >
+
+State 7 <SV = 6> <Delay = 0.00>
+ST_7 : Operation 89 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i448 %s3, void @empty_1, i32 0, i32 0, void @empty_5, i32 0, i32 0, void @empty_5, void @empty_5, void @empty_5, i32 0, i32 0, i32 0, i32 0, void @empty_5, void @empty_5, i32 4294967295, i32 0"   --->   Operation 89 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 90 [1/1] (0.00ns)   --->   "%obs_parity_1_loc_load = load i1 %obs_parity_1_loc"   --->   Operation 90 'load' 'obs_parity_1_loc_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 91 [1/1] (0.00ns)   --->   "%beat_2_loc_load = load i512 %beat_2_loc"   --->   Operation 91 'load' 'beat_2_loc_load' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 92 [1/1] (0.00ns)   --->   "%beat = bitset i512 @_ssdm_op_BitSet.i512.i512.i32.i1, i512 %beat_2_loc_load, i32 216, i1 %obs_parity_1_loc_load" [predecoder_kernel.cpp:219]   --->   Operation 92 'bitset' 'beat' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 93 [1/1] (0.00ns)   --->   "%ret_ln221 = ret i512 %beat" [predecoder_kernel.cpp:221]   --->   Operation 93 'ret' 'ret_ln221' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 3.330ns, clock uncertainty: 0.899ns.
+
+ <State 1>: 0.000ns
+The critical path consists of the following:
+
+ <State 2>: 0.000ns
+The critical path consists of the following:
+
+ <State 3>: 0.000ns
+The critical path consists of the following:
+
+ <State 4>: 0.000ns
+The critical path consists of the following:
+
+ <State 5>: 0.000ns
+The critical path consists of the following:
+
+ <State 6>: 1.092ns
+The critical path consists of the following:
+	'call' operation 0 bit ('call_ln0') to 'edge_correction_Pipeline_VITIS_LOOP_213_5_VITIS_LOOP_214_6_VITIS_LOOP_215_7' [97]  (1.092 ns)
+
+ <State 7>: 0.000ns
+The critical path consists of the following:
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

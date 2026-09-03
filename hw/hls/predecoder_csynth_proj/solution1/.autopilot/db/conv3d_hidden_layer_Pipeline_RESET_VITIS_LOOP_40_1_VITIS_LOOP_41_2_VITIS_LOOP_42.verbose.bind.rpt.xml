@@ -1,0 +1,46 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'conv3d_hidden_layer_Pipeline_RESET_VITIS_LOOP_40_1_VITIS_LOOP_41_2_VITIS_LOOP_42'" level="0">
+<item name = "Date">Thu Sep  3 17:05:57 2026
+</item>
+<item name = "Version">2023.2 (Build 4023990 on Oct 11 2023)</item>
+<item name = "Project">predecoder_csynth_proj</item>
+<item name = "Solution">solution1 (Vitis Kernel Flow Target)</item>
+<item name = "Product family">virtexuplusHBM</item>
+<item name = "Target device">xcu55c-fsvh2892-2L-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">3.33 ns, 2.415 ns, 0.90 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">1298, 1298, 4.322 us, 4.322 us, 1298, 1298, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+<column name="- RESET_VITIS_LOOP_40_1_VITIS_LOOP_41_2_VITIS_LOOP_42_3">1296, 1296, 2, 1, 1, 1296, yes</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
