@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import glob
 import json
+import re
 from pathlib import Path
 from typing import Dict, List
 
@@ -228,6 +229,77 @@ def fig_roofline(record: dict, name: str = "Fig9") -> None:
     save(fig, name)
 
 
+def fig_width_sweep(records: List[dict], name: str = "Fig12") -> None:
+    """Accuracy and deployability against network width.
+
+    The point of the figure is the contrast between the two axes: logical
+    error rate is flat in width, while sustainable qubits per card falls by
+    more than an order of magnitude across the same range. Capacity buys
+    nothing here, so the cheapest model is the right one.
+    """
+    records = sorted(records, key=lambda r: r["width"])
+    widths = [r["width"] for r in records]
+    ratios = [r["ler_ratio"] for r in records]
+    qubits = [r["qubits_per_card"] for r in records]
+
+    fig, ax = plt.subplots(figsize=(SINGLE_COL, SINGLE_COL * 0.8))
+
+    ax.plot(widths, ratios, color=COLORS[1], marker=MARKERS[0], linestyle=LINESTYLES[0],
+            label="pre-decoder LER / baseline")
+    ax.axhline(1.0, color="0.3", linewidth=0.8, linestyle=(0, (2, 2)), zorder=0)
+    ax.annotate("baseline", xy=(widths[-1], 1.0), xytext=(-2, 3),
+                textcoords="offset points", fontsize=6.5, color="0.3",
+                ha="right", va="bottom")
+    ax.set_xlabel("Convolution channel width")
+    ax.set_ylabel("Logical error rate $/$ baseline", color=COLORS[1])
+    ax.tick_params(axis="y", labelcolor=COLORS[1])
+    ax.set_ylim(0, max(ratios) * 1.25)
+
+    ax2 = ax.twinx()
+    ax2.plot(widths, qubits, color=COLORS[0], marker=MARKERS[1], linestyle=LINESTYLES[1],
+             label="sustainable qubits per card")
+    ax2.set_yscale("log")
+    ax2.set_ylabel("Logical qubits per card", color=COLORS[0])
+    ax2.tick_params(axis="y", labelcolor=COLORS[0])
+
+    lines = ax.get_lines()[:1] + ax2.get_lines()[:1]
+    ax.legend(lines, [l.get_label() for l in lines], frameon=False,
+              loc="center right", fontsize=6.5)
+    ax.grid(True, alpha=0.3)
+    save(fig, name)
+
+
+def load_width_records(pattern: str, roofline_cfg: dict | None) -> List[dict]:
+    from src.pipeline.roofline import architecture_macs, roofline
+
+    out = []
+    for path in sorted(glob.glob(pattern)):
+        rec = json.load(open(path))
+        cfg = rec["config"]
+        ckpt = Path(cfg.get("checkpoint", ""))
+        m = re.search(r"_w(\d+)\.pt$", ckpt.name)
+        if not m:
+            continue
+        width = int(m.group(1))
+        sweep = rec["tau_sweep"]
+        base = sweep[0]["ler_baseline"]
+        entry = {
+            "width": width,
+            "ler_ratio": sweep[0]["ler_predecoder_only"] / base if base else float("nan"),
+            "oracle_ratio": rec["oracle"]["ler_oracle"] / base if base else float("nan"),
+        }
+        if roofline_cfg:
+            macs = architecture_macs(roofline_cfg["depth"], width,
+                                     roofline_cfg["out_channels"], roofline_cfg["volume"])
+            r = roofline(macs, roofline_cfg["rounds_per_shot"], "int8",
+                         roofline_cfg["clock_mhz"], 0.5, roofline_cfg["round_period_us"],
+                         {"resources": {"dsp": roofline_cfg["dsp_total"]}})
+            entry["macs"] = macs
+            entry["qubits_per_card"] = r.logical_qubits_per_card
+        out.append(entry)
+    return out
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--baselines", default=str(REPO_ROOT / "results" / "baselines" / "*.json"))
@@ -250,10 +322,20 @@ def main() -> None:
         fig_threshold_collapse(by_d, threshold)
 
     rpath = Path(args.roofline)
+    roofline_cfg = None
     if rpath.exists():
-        fig_roofline(json.load(open(rpath)))
+        rec = json.load(open(rpath))
+        roofline_cfg = rec["config"]
+        fig_roofline(rec)
     else:
         print(f"skipping Fig9: {rpath} not found")
+
+    width_records = load_width_records(
+        str(REPO_ROOT / "results" / "hierarchical" / "*_hierarchical_w*.json"), roofline_cfg)
+    if len(width_records) >= 2:
+        fig_width_sweep(width_records)
+    else:
+        print(f"skipping Fig12: only {len(width_records)} width records")
 
 
 if __name__ == "__main__":

@@ -23,5 +23,55 @@
       "meets_round_budget": true,
       "note": "Compute-only bound: multiply-accumulates at the stated precision, ignoring data movement, activations, control and matching. A real implementation is strictly slower."
     }
+  },
+  {
+    "width": 25,
+    "macs_per_shot": 3866400,
+    "checkpoint": "/home/cdac/Music/surface-code-hierarchical-decoder/models/predecoder_R5_w25.pt",
+    "shots_trained": 100007936,
+    "train_seconds": 854.5566148757935,
+    "final_loss": 0.0024174034673608304,
+    "roofline_int8_50pct": {
+      "precision": "int8",
+      "macs_per_shot": 3866400,
+      "rounds_per_shot": 6,
+      "macs_per_round": 644400.0,
+      "dsp_total": 9024,
+      "dsp_used": 4512,
+      "dsp_utilisation": 0.5,
+      "clock_mhz": 300.0,
+      "peak_mac_per_s": 2707200000000.0,
+      "min_shot_latency_us": 1.4281914893617023,
+      "max_throughput_shots_per_s": 700186.2197392924,
+      "round_period_us": 1.0,
+      "logical_qubits_per_card": 4.201117318435754,
+      "meets_round_budget": false,
+      "note": "Compute-only bound: multiply-accumulates at the stated precision, ignoring data movement, activations, control and matching. A real implementation is strictly slower."
+    }
+  },
+  {
+    "width": 52,
+    "macs_per_shot": 16230240,
+    "checkpoint": "/home/cdac/Music/surface-code-hierarchical-decoder/models/predecoder_R5_w52.pt",
+    "shots_trained": 100007936,
+    "train_seconds": 849.3663423061371,
+    "final_loss": 0.0022893605038504143,
+    "roofline_int8_50pct": {
+      "precision": "int8",
+      "macs_per_shot": 16230240,
+      "rounds_per_shot": 6,
+      "macs_per_round": 2705040.0,
+      "dsp_total": 9024,
+      "dsp_used": 4512,
+      "dsp_utilisation": 0.5,
+      "clock_mhz": 300.0,
+      "peak_mac_per_s": 2707200000000.0,
+      "min_shot_latency_us": 5.995212765957446,
+      "max_throughput_shots_per_s": 166799.75157483807,
+      "round_period_us": 1.0,
+      "logical_qubits_per_card": 1.0007985094490284,
+      "meets_round_budget": false,
+      "note": "Compute-only bound: multiply-accumulates at the stated precision, ignoring data movement, activations, control and matching. A real implementation is strictly slower."
+    }
   }
 ]

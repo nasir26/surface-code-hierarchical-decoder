@@ -230,6 +230,32 @@ def main() -> None:
                 n.add("hierTauFullEscalation", fmt(r["tau"], 4), "same")
                 break
 
+    # ---- width sweep ------------------------------------------------------
+    import re as _re
+
+    width_rows = []
+    for path in sorted(glob.glob(str(REPO_ROOT / "results" / "hierarchical" / "*_hierarchical_w*.json"))):
+        rec = json.load(open(path))
+        m = _re.search(r"_w(\d+)\.pt$", str(rec["config"].get("checkpoint", "")))
+        if not m:
+            continue
+        sweep = rec["tau_sweep"]
+        base = sweep[0]["ler_baseline"]
+        width_rows.append({
+            "width": int(m.group(1)),
+            "ratio": sweep[0]["ler_predecoder_only"] / base if base else float("nan"),
+        })
+    if width_rows:
+        width_rows.sort(key=lambda r: r["width"])
+        lo, hi = width_rows[0], width_rows[-1]
+        n.add("widthSweepMin", str(lo["width"]), "results/hierarchical/*_w*.json, T4")
+        n.add("widthSweepMax", str(hi["width"]), "same")
+        n.add("widthSweepMinRatio", fmt(lo["ratio"]), "same, narrowest model vs baseline")
+        n.add("widthSweepMaxRatio", fmt(hi["ratio"]), "same, widest model vs baseline")
+        n.add("widthSweepCount", str(len(width_rows)), "same")
+        spread = max(r["ratio"] for r in width_rows) - min(r["ratio"] for r in width_rows)
+        n.add("widthSweepSpread", fmt(spread, 2), "same, range of LER ratio across widths")
+
     # ---- training ---------------------------------------------------------
     tr = load(REPO_ROOT / "results" / "training" / "train_R5_scale500m.json")
     if tr and tr.get("history"):

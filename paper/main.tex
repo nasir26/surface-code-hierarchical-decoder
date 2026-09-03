@@ -177,6 +177,27 @@ undertraining: the per-mechanism objective is misaligned with logical error rate
 and optimising it harder makes the network apply more confident wrong
 corrections.
 
+\subsection{Capacity does not help either}\label{sec:width}
+
+Training budget is one axis; model capacity is another. We trained
+\widthSweepCount{} further networks spanning widths \widthSweepMin{} to
+\widthSweepMax, covering more than an order of magnitude in
+multiply-accumulates, and evaluated each identically. The logical
+error rate is flat: the narrowest model reaches \widthSweepMinRatio$\times$
+baseline and the widest \widthSweepMaxRatio$\times$, a spread of only
+\widthSweepSpread{} (Fig.~\ref{fig:width}). The narrowest network is in fact
+marginally the best of the four.
+
+This matters twice over. Scientifically, it is a second independent axis on
+which the failure does not move, which together with the training-budget result
+rules out both undertraining and insufficient capacity and leaves the objective
+as the explanation. Practically, it inverts the deployment argument: since
+accuracy is indifferent to width while sustainable qubits per card is not
+(Section~\ref{sec:roofline}), the cheapest network dominates. Width
+\widthSweepMin{} is precisely the width the roofline identifies as sustaining
+sixteen logical qubits per card, against under one at the width the model was
+originally sized at, for no measurable accuracy cost.
+
 \subsection{The gate bounds the damage, and the oracle bounds the gate}
 
 Sweeping $\tau$ moves the decoder monotonically from the unconditional result to
@@ -210,6 +231,15 @@ line marks the fitted threshold. Provenance: T4}\label{fig:ler}
 \includegraphics[width=0.7\textwidth]{Fig7.pdf}
 \caption{Finite-size-scaling collapse of the baseline data onto a single
 quadratic. Provenance: T4}\label{fig:collapse}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{Fig12.pdf}
+\caption{Logical error rate relative to baseline (left axis) and sustainable
+logical qubits per card (right axis) against convolution width. Accuracy is
+flat while deployability varies by more than an order of magnitude.
+Provenance: T4}\label{fig:width}
 \end{figure}
 
 \begin{figure}[t]
