@@ -25,3 +25,12 @@ results/hw/*.rpt.raw
 # they live in otherwise-ignored build directories and must survive a clean.
 !hw_reports/
 !hw_reports/**
+
+# Vitis HLS project directories. These hold the synthesis databases
+# (.autopilot/db/*.adb and friends) which reach hundreds of megabytes for a
+# single run and are pure build output. Omitting these rules put 364MB of
+# them into this repository's history; the reports worth keeping are copied
+# into hw_reports/ instead.
+hw/hls/*_proj/
+hw/hls/*_hls/
+*.autopilot/
