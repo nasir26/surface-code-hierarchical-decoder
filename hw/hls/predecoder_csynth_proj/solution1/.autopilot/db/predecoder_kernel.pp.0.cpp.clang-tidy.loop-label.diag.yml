@@ -1,0 +1,310 @@
+---
+MainSourceFile:  /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1207_1:  '
+    FileOffset:      1207
+    FilePath:        /tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_base.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          55707
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1207_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          283115
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          283579
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          284044
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1247_1:  '
+    FileOffset:      1247
+    FilePath:        /tools/Xilinx/Vitis_HLS/2023.2/common/technology/autopilot/etc/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          567020
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_40_1:  '
+    FileOffset:      40
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          958427
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_40_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_41_2:  '
+    FileOffset:      41
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          958475
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_41_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_42_3:  '
+    FileOffset:      42
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          958527
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_42_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_53_1:  '
+    FileOffset:      53
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          958750
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_53_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_67_1:  '
+    FileOffset:      67
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          959102
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_67_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_89_1:  '
+    FileOffset:      89
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          959501
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_89_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_90_2:  '
+    FileOffset:      90
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          959542
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_90_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_91_3:  '
+    FileOffset:      91
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          959587
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_91_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_95_4:  '
+    FileOffset:      95
+    FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/line_buffer.h
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          959749
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_95_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_19_1:  '
+    FileOffset:      19
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          982895
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_19_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_20_2:  '
+    FileOffset:      20
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          982937
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_20_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_25_3:  '
+    FileOffset:      25
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          983125
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_25_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_46_1:  '
+    FileOffset:      46
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          983583
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_46_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_47_2:  '
+    FileOffset:      47
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          983629
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_47_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_51_3:  '
+    FileOffset:      51
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          983774
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_51_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_63_4:  '
+    FileOffset:      63
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          984089
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_63_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_87_5:  '
+    FileOffset:      87
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          984554
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_87_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_88_6:  '
+    FileOffset:      88
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          984613
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_88_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_98_7:  '
+    FileOffset:      98
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          984918
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_98_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_99_8:  '
+    FileOffset:      99
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          984981
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_99_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_109_9:  '
+    FileOffset:      109
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          985416
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_109_9: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_110_10:  '
+    FileOffset:      110
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          985475
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_110_10: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_167_1:  '
+    FileOffset:      167
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          986896
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_167_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_168_2:  '
+    FileOffset:      168
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          986936
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_168_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_174_3:  '
+    FileOffset:      174
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          987073
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_174_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_175_4:  '
+    FileOffset:      175
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          987115
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_175_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_213_5:  '
+    FileOffset:      213
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          988302
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_213_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_214_6:  '
+    FileOffset:      214
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          988338
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_214_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_215_7:  '
+    FileOffset:      215
+    FilePath:        predecoder_kernel.cpp
+    Replacements:    
+      - FilePath:        /home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/predecoder_csynth_proj/solution1/.autopilot/db/predecoder_kernel.pp.0.cpp
+        Offset:          988378
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_215_7: '
+...

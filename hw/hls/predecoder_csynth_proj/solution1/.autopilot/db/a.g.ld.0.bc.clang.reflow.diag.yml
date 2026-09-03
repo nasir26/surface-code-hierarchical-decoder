@@ -1,0 +1,2920 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: ./line_buffer.h, Line: 94, Column: 20 }
+Function:        _Z11form_windowI7ap_uintILi8EELi1ELi6ELi6EEvRK13FrameBuffer3DIT_XT0_EXT1_EXT2_EEiiiiiiPA3_A3_AT0__S3_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 1, 6, 6>::read(int, int, int, int, int, int, ap_uint<8>*) const'
+    DebugLoc:        { File: ./line_buffer.h, Line: 63, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void form_window<ap_uint<8>, 1, 6, 6>(FrameBuffer3D<ap_uint<8>, 1, 6, 6> const&, int, int, int, int, int, int, ap_uint<8> (*) [3][3][1])'
+    DebugLoc:        { File: ./line_buffer.h, Line: 87, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 55, Column: 24 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 1, 6, 6>::write_voxel(int, int, int, ap_uint<8> const*)'
+    DebugLoc:        { File: ./line_buffer.h, Line: 50, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void conv3d_hidden_layer<1>(hls::stream<ActVec, 0>&, hls::stream<ActVec, 0>&, signed char const*, int const*, ap_fixed<48, 8, (ap_q_mode)5, (ap_o_mode)3, 0> const*)'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 65, Column: 17 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void form_window<ap_uint<8>, 1, 6, 6>(FrameBuffer3D<ap_uint<8>, 1, 6, 6> const&, int, int, int, int, int, int, ap_uint<8> (*) [3][3][1])'
+    DebugLoc:        { File: ./line_buffer.h, Line: 87, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void conv3d_hidden_layer<1>(hls::stream<ActVec, 0>&, hls::stream<ActVec, 0>&, signed char const*, int const*, ap_fixed<48, 8, (ap_q_mode)5, (ap_o_mode)3, 0> const*)'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: ./line_buffer.h, Line: 94, Column: 20 }
+Function:        _Z11form_windowI7ap_uintILi8EELi12ELi6ELi6EEvRK13FrameBuffer3DIT_XT0_EXT1_EXT2_EEiiiiiiPA3_A3_AT0__S3_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 12, 6, 6>::read(int, int, int, int, int, int, ap_uint<8>*) const'
+    DebugLoc:        { File: ./line_buffer.h, Line: 63, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void form_window<ap_uint<8>, 12, 6, 6>(FrameBuffer3D<ap_uint<8>, 12, 6, 6> const&, int, int, int, int, int, int, ap_uint<8> (*) [3][3][12])'
+    DebugLoc:        { File: ./line_buffer.h, Line: 87, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 55, Column: 24 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 12, 6, 6>::write_voxel(int, int, int, ap_uint<8> const*)'
+    DebugLoc:        { File: ./line_buffer.h, Line: 50, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void conv3d_hidden_layer<12>(hls::stream<ActVec, 0>&, hls::stream<ActVec, 0>&, signed char const*, int const*, ap_fixed<48, 8, (ap_q_mode)5, (ap_o_mode)3, 0> const*)'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 65, Column: 17 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'void form_window<ap_uint<8>, 12, 6, 6>(FrameBuffer3D<ap_uint<8>, 12, 6, 6> const&, int, int, int, int, int, int, ap_uint<8> (*) [3][3][12])'
+    DebugLoc:        { File: ./line_buffer.h, Line: 87, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void conv3d_hidden_layer<12>(hls::stream<ActVec, 0>&, hls::stream<ActVec, 0>&, signed char const*, int const*, ap_fixed<48, 8, (ap_q_mode)5, (ap_o_mode)3, 0> const*)'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+DebugLoc:        { File: ./line_buffer.h, Line: 37, Column: 9 }
+Function:        _ZN13FrameBuffer3DI7ap_uintILi8EELi1ELi6ELi6EE5resetEv
+Args:            
+  - String:          'Adding '''
+  - Name:            fb
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-reg2mem-ssa
+Name:            DisaggrReason
+DebugLoc:        { File: ./line_buffer.h, Line: 37, Column: 9 }
+Function:        _ZN13FrameBuffer3DI7ap_uintILi8EELi12ELi6ELi6EE5resetEv
+Args:            
+  - String:          'Adding '''
+  - Name:            fb
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Adding '''
+  - Name:            fb
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrReason
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Adding '''
+  - Name:            fb
+  - String:          ''' into disaggregation list because there''s '
+  - String:          array-partition pragma applied on the struct field
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrSucc
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Disaggregating variable '''
+  - Name:            fb
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-disaggr
+Name:            DisaggrSucc
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Disaggregating variable '''
+  - Name:            fb
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 136, Column: 9 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        OC2_LOOP
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 139, Column: 13 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        MAC2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 51, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_51_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: ./line_buffer.h, Line: 53, Column: 26 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 97, Column: 25 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        MAC
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 98, Column: 46 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 99, Column: 50 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 51, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_51_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: ./line_buffer.h, Line: 53, Column: 26 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 97, Column: 25 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        MAC
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 98, Column: 46 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 99, Column: 50 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 25, Column: 34 }
+Function:        _ZL12unpack_inputRK7ap_uintILi512EERN3hls6streamI6ActVecLi0EEE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_25_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        OC2_LOOP
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:136:9'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '14'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 129, Column: 0 }
+Function:        _ZL20conv1x1_output_layerRN3hls6streamI6ActVecLi0EEERNS0_I6LogitsLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC2
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:139:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          conv1x1_output_layer
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_51_3
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:51:38'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:53:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_91_3
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:91:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_95_4
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:95:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:67:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_95_4
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:95:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:67:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_95_4
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:95:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:67:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '12'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_88_6
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:88:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:97:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:98:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:98:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:98:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_110_10
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:110:48'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<12>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_51_3
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:51:38'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_53_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:53:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_91_3
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:91:30'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_95_4
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:95:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:67:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_95_4
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:95:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:67:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_95_4
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:95:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_67_1
+  - String:          ''' ('
+  - LoopLoc:         './line_buffer.h:67:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '1'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_88_6
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:88:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        MAC
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:97:25'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:98:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:98:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_98_7
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:98:46'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_99_8
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:99:50'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_110_10
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:110:48'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 16, Column: 0 }
+Function:        _ZL12unpack_inputRK7ap_uintILi512EERN3hls6streamI6ActVecLi0EEE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_25_3
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:25:34'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          unpack_input
+  - String:          ''' completely with a factor of '
+  - Factor:          '11'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ./line_buffer.h, Line: 34, Column: 0 }
+Function:        _ZN13FrameBuffer3DI7ap_uintILi8EELi1ELi6ELi6EEC2Ev
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 1, 6, 6>::reset()'
+    DebugLoc:        { File: ./line_buffer.h, Line: 36, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'FrameBuffer3D<ap_uint<8>, 1, 6, 6>::FrameBuffer3D()'
+    DebugLoc:        { File: ./line_buffer.h, Line: 34, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 1, 6, 6>::FrameBuffer3D()'
+    DebugLoc:        { File: ./line_buffer.h, Line: 34, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void conv3d_hidden_layer<1>(hls::stream<ActVec, 0>&, hls::stream<ActVec, 0>&, signed char const*, int const*, ap_fixed<48, 8, (ap_q_mode)5, (ap_o_mode)3, 0> const*)'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: ./line_buffer.h, Line: 34, Column: 0 }
+Function:        _ZN13FrameBuffer3DI7ap_uintILi8EELi12ELi6ELi6EEC2Ev
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 12, 6, 6>::reset()'
+    DebugLoc:        { File: ./line_buffer.h, Line: 36, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'FrameBuffer3D<ap_uint<8>, 12, 6, 6>::FrameBuffer3D()'
+    DebugLoc:        { File: ./line_buffer.h, Line: 34, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'FrameBuffer3D<ap_uint<8>, 12, 6, 6>::FrameBuffer3D()'
+    DebugLoc:        { File: ./line_buffer.h, Line: 34, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'void conv3d_hidden_layer<12>(hls::stream<ActVec, 0>&, hls::stream<ActVec, 0>&, signed char const*, int const*, ap_fixed<48, 8, (ap_q_mode)5, (ap_o_mode)3, 0> const*)'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 83, Column: 27 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          partial
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 83, Column: 27 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          partial
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 232, Column: 25 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            s3
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '448'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 231, Column: 25 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            s2
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '96'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 230, Column: 25 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            s1
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '96'
+  - String:          '-bits'
+...
+--- !Passed
+Pass:            reflow-aggr
+Name:            AggrSucc
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 229, Column: 22 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Aggregating '
+  - HwTyName:        'fifo (hls::stream)'
+  - String:          ' variable '''
+  - Name:            s0
+  - String:          ''' with '
+  - AggregateTypeName: 'compact=bit'
+  - String:          ' mode in '
+  - Bitwidth:        '96'
+  - String:          '-bits'
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_168_2
+  - String:          '> at '
+  - LoopLoc:         'predecoder_kernel.cpp:168:31'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_175_4
+  - String:          '> at '
+  - LoopLoc:         'predecoder_kernel.cpp:175:31'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_215_7
+  - String:          '> at '
+  - LoopLoc:         'predecoder_kernel.cpp:215:31'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_109_9
+  - String:          '> at '
+  - LoopLoc:         'predecoder_kernel.cpp:109:43'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_87_5
+  - String:          '> at '
+  - LoopLoc:         'predecoder_kernel.cpp:87:42'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_90_2
+  - String:          '> at '
+  - LoopLoc:         './line_buffer.h:90:26'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_41_2
+  - String:          '> at '
+  - LoopLoc:         './line_buffer.h:41:34'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        OC_LOOP
+  - String:          '> at '
+  - LoopLoc:         'predecoder_kernel.cpp:69:17'
+  - String:          ' '
+...
+--- !HLSReportInfo
+Pass:            auto-loop-pipeline
+Name:            AutoLoopPipeline
+Args:            
+  - String:          'automatically set the pipeline for Loop< '
+  - LoopName:        VITIS_LOOP_90_2
+  - String:          '> at '
+  - LoopLoc:         './line_buffer.h:90:26'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 187, Column: 17 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        EDGE_CH
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 86, Column: 21 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        PARTIAL_INIT
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 87, Column: 42 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_87_5
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 108, Column: 21 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        SUM_PARTIAL
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 109, Column: 43 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_109_9
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 151, Column: 0 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        EDGE_CH
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:187:17'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          edge_correction
+  - String:          ''' completely with a factor of '
+  - Factor:          '13'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        PARTIAL_INIT
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:86:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_87_5
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:87:42'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_87_5
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:87:42'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_87_5
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:87:42'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        SUM_PARTIAL
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:108:21'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_9
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:109:43'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_9
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:109:43'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 39, Column: 0 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_109_9
+  - String:          ''' ('
+  - LoopLoc:         'predecoder_kernel.cpp:109:43'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          'conv3d_hidden_layer<1>'
+  - String:          ''' completely with a factor of '
+  - Factor:          '3'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./weights_int8.h, Line: 21, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=27 variable=_ZN18predecoder_weightsL13LAYER0_WEIGHTE'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  predecoder_kernel
+  - String:          ' '
+  - varLoc:          './weights_int8.h:21:0'
+  - String:          ' '
+  - VarName:         'predecoder_weights::LAYER0_WEIGHT'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: ./weights_int8.h, Line: 21, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '27'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'predecoder_weights::LAYER0_WEIGHT'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./weights_int8.h, Line: 61, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=27 variable=_ZN18predecoder_weightsL13LAYER1_WEIGHTE'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  predecoder_kernel
+  - String:          ' '
+  - varLoc:          './weights_int8.h:61:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:95:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+  - VarName:         'predecoder_weights::LAYER1_WEIGHT'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '27'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'predecoder_weights::LAYER1_WEIGHT'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: ./kernel_config.h, Line: 42, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=17 variable=_ZN24predecoder_kernel_configL14OBS_PARITY_LUTE'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  predecoder_kernel
+  - String:          ' '
+  - varLoc:          './kernel_config.h:42:0'
+  - String:          ' '
+  - VarName:         'predecoder_kernel_config::OBS_PARITY_LUT'
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: ./kernel_config.h, Line: 42, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '17'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            'predecoder_kernel_config::OBS_PARITY_LUT'
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=fb_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<1>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - VarName:         fb_0
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            fb_0
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=fb_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:48:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+  - VarName:         fb_0
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            fb_0
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=fb_0'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:48:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+  - VarName:         fb_0
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            fb_0
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=fb_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<1>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - VarName:         fb_1
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            fb_1
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=fb_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:48:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+  - VarName:         fb_1
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            fb_1
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=fb_1'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:48:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+  - VarName:         fb_1
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            fb_1
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=fb_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<1>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - VarName:         fb_2
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            fb_2
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=fb_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:48:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+  - VarName:         fb_2
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            fb_2
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=fb_2'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:40:38'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:48:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+  - VarName:         fb_2
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 48, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            fb_2
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=window'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<1>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:64:23'
+  - String:          ' '
+  - VarName:         window
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            window
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=window'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:64:23'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:95:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+  - VarName:         window
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            window
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=window'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:64:23'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:95:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+  - VarName:         window
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            window
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=window'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:64:23'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:95:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+  - VarName:         window
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            window
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=4 type=complete  variable=window'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  'conv3d_hidden_layer<12>'
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:64:23'
+  - String:          ' '
+  - PragmaSrcLoc:    'predecoder_kernel.cpp:95:9'
+    DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+  - VarName:         window
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 95, Column: 9 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '4'
+  - String:          ''' for array '''
+  - Name:            window
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=cyclic factor=2 variable=correction'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  edge_correction
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:162:16'
+  - String:          ' '
+  - VarName:         correction
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            cyclic
+  - String:          ' factor='
+  - Factor:          '2'
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            correction
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=3 type=complete  variable=correction'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  edge_correction
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:162:16'
+  - String:          ' '
+  - VarName:         correction
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '3'
+  - String:          ''' for array '''
+  - Name:            correction
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=2 type=complete  variable=correction'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  edge_correction
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:162:16'
+  - String:          ' '
+  - VarName:         correction
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '2'
+  - String:          ''' for array '''
+  - Name:            correction
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 176, Column: 24 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=lg'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  edge_correction
+  - String:          ' '
+  - varLoc:          'predecoder_kernel.cpp:176:24'
+  - String:          ' '
+  - VarName:         lg
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 176, Column: 24 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            lg
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./kernel_config.h, Line: 42, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZN24predecoder_kernel_configL14OBS_PARITY_LUTE
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '17'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./weights_int8.h, Line: 61, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZN18predecoder_weightsL13LAYER1_WEIGHTE
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '27'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: ./weights_int8.h, Line: 21, Column: 0 }
+Function:        _Z17predecoder_kernelPK7ap_uintILi512EEPS0_
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZN18predecoder_weightsL13LAYER0_WEIGHTE
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '27'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi1EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          window
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb_0
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb_1
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 40, Column: 38 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          fb_2
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 64, Column: 23 }
+Function:        _ZL19conv3d_hidden_layerILi12EEvRN3hls6streamI6ActVecLi0EEES4_PKaPKiPK8ap_fixedILi48ELi8EL9ap_q_mode5EL9ap_o_mode3ELi0EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          window
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '4'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 162, Column: 16 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          correction
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Cyclic
+  - String:          ' partitioning'
+  - String:          ' with factor '
+  - Factor:          '2'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '2'
+  - String:          .
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '3'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: predecoder_kernel.cpp, Line: 176, Column: 24 }
+Function:        _ZL15edge_correctionRN3hls6streamI6LogitsLi0EEER7ap_uintILi512EE
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          lg
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...

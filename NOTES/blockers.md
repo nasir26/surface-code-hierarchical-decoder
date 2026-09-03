@@ -32,3 +32,43 @@ Resolved 2026-09-02. Author block confirmed by the author as:
 ```
 
 To be used verbatim in `paper/main.tex`. Recorded in `config/project.yaml`.
+
+## B5 — HLS kernel csim mismatches the golden model at width 12 (OPEN)
+
+**Status: open, 2026-09-03.** Does not affect any claim currently in the paper.
+
+The HLS kernel was parameterised by channel width so that a width-12 design --
+the width the roofline identifies as deployable -- can be synthesised. After
+that change `csim` runs cleanly but disagrees with the Python golden model on
+essentially every shot (320 mismatch lines over 200 vectors, both the
+correction bitmap and the observable-parity bit).
+
+**Ruled out so far:**
+
+- *Weights/scales.* The generated `weights_int8.h` was compared entry by entry
+  against `extract_golden_layers()`: all three layers' `weight_int` and
+  `bias_int` arrays are identical, and the requantisation scales match. The
+  export is faithful.
+- *Vector provenance.* `scripts/export_test_vectors.py` builds its expected
+  outputs with `golden_forward()`, the same integer arithmetic the kernel
+  implements, from the same checkpoint. It is not a float-vs-integer
+  comparison.
+- *The earlier NaN.* A first parameterisation pass left `mult_t
+  layer0_mult[64]` and a loop to 64 while the requant array had 12 entries,
+  reading past its end. That is fixed and the NaN warnings are gone; the
+  mismatch survives it.
+
+**Not yet done:** the controlled experiment that would localise this is to run
+csim at width 64 -- the configuration the predecessor verified bit-exactly --
+against the same harness, which separates "the width parameterisation is
+wrong" from "something in the port or the environment is". That needs a
+width-64 INT8 QAT checkpoint, which has not been trained here.
+
+**Consequence for the paper.** None as it stands. The manuscript's hardware
+content is the analytical roofline, which is derived from device counts and
+the architecture's MAC count and does not depend on this kernel. No HLS
+resource or latency number is currently cited. If csynth figures are added,
+they must be labelled T3 estimates with functional verification explicitly
+outstanding, since a datapath can have the right shape -- and therefore
+representative resource and latency figures -- while still computing the wrong
+values.

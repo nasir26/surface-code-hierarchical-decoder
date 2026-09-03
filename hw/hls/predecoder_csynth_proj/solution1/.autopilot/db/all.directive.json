@@ -1,0 +1,23 @@
+[
+  {
+    "functionLabel": "",
+    "functionName": "predecoder_kernel",
+    "id": 0,
+    "ifcond": "",
+    "insert_position": "",
+    "label": "",
+    "pragma": {
+      "name": "TOP",
+      "option": [
+        {
+          "name": "name",
+          "value": "predecoder_kernel"
+        }
+      ]
+    },
+    "slx": false,
+    "sourceFile": "/home/cdac/Music/surface-code-hierarchical-decoder/hw/hls/run_csynth_only.tcl",
+    "sourceLine": 14,
+    "success": true
+  }
+]

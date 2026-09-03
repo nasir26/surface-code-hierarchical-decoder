@@ -1,0 +1,130 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "4 5 1 8 9",
+    "file": "predecoder_kernel.cpp",
+    "fileloc": 223,
+    "instructions": 55,
+    "loads": {
+      "L": 1,
+      "T": 1
+    },
+    "name": "predecoder_kernel",
+    "stores": {
+      "L": 1,
+      "T": 1
+    },
+    "total_instructions": 2257
+  },
+  "1": {
+    "basicblocks": 104,
+    "calls": "2",
+    "file": "predecoder_kernel.cpp",
+    "fileloc": 33,
+    "instructions": 990,
+    "loads": {
+      "G": 29,
+      "L": 105
+    },
+    "name": "conv3d_hidden_layer<12>",
+    "stores": {
+      "L": 79
+    },
+    "total_instructions": 1021
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "line_buffer.h",
+    "fileloc": 34,
+    "instructions": 2,
+    "name": "FrameBuffer3D",
+    "total_instructions": 31
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "7",
+    "file": "line_buffer.h",
+    "fileloc": 34,
+    "instructions": 2,
+    "name": "FrameBuffer3D",
+    "total_instructions": 25
+  },
+  "4": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "predecoder_kernel.cpp",
+    "fileloc": 16,
+    "instructions": 62,
+    "loads": {
+      "L": 1
+    },
+    "name": "unpack_input",
+    "total_instructions": 62
+  },
+  "5": {
+    "basicblocks": 36,
+    "calls": "3",
+    "file": "predecoder_kernel.cpp",
+    "fileloc": 33,
+    "instructions": 717,
+    "loads": {
+      "G": 29,
+      "L": 72
+    },
+    "name": "conv3d_hidden_layer<1>",
+    "stores": {
+      "L": 35
+    },
+    "total_instructions": 742
+  },
+  "6": {
+    "basicblocks": 9,
+    "calls": "",
+    "file": "line_buffer.h",
+    "fileloc": 36,
+    "instructions": 29,
+    "name": "reset",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 29
+  },
+  "7": {
+    "basicblocks": 7,
+    "calls": "",
+    "file": "line_buffer.h",
+    "fileloc": 36,
+    "instructions": 23,
+    "name": "reset",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 23
+  },
+  "8": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "predecoder_kernel.cpp",
+    "fileloc": 129,
+    "instructions": 166,
+    "name": "conv1x1_output_layer",
+    "total_instructions": 166
+  },
+  "9": {
+    "basicblocks": 27,
+    "calls": "",
+    "file": "predecoder_kernel.cpp",
+    "fileloc": 151,
+    "instructions": 211,
+    "loads": {
+      "G": 5,
+      "L": 5
+    },
+    "name": "edge_correction",
+    "stores": {
+      "L": 19
+    },
+    "total_instructions": 211
+  }
+}
