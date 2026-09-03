@@ -33,8 +33,11 @@ jobs:
 
       - name: Smoke experiment (d=3, few thousand shots)
         run: |
+          # --quick writes to results/smoke, never results/baselines: an
+          # earlier version overwrote real 20M-shot cells with 20k-shot ones
+          # and shifted the fitted threshold from 0.699% to 0.542%.
           PYTHONPATH=. python scripts/run_baselines.py --quick --workers 2 \
-            --max-shots 20000 --max-errors 50
+            --max-shots 20000 --max-errors 50 --out-dir "$RUNNER_TEMP/smoke"
 
       - name: Regenerate figures and numbers from committed results
         run: |
@@ -43,11 +46,10 @@ jobs:
 
       - name: Fail if the paper's numbers drifted from the data
         run: |
-          # The smoke run above writes into results/baselines/, so only the
-          # generated paper artefacts are checked: if regenerating them from
-          # committed results changes anything, the manuscript and the data
-          # have diverged and the committed version is stale.
-          git diff --exit-code -- paper/generated_numbers.tex \
+          # The smoke run writes outside the repo, so the whole tree must be
+          # clean here: if regenerating from committed results changes
+          # anything, the manuscript and its data have diverged.
+          git diff --exit-code -- paper/generated_numbers.tex results/ \
             || (echo "::error::generated_numbers.tex is stale; re-run scripts/make_numbers.py and commit" && exit 1)
 
       - name: Manuscript checks

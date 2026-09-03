@@ -1,24 +1,24 @@
 {
   "experiment_id": "threshold_fit_pymatching_baseline",
-  "timestamp": "2026-09-02T06:35:12.144475+00:00",
-  "git_commit": "cdc0a5b54a4c2026aabecda76ab30000a46c4c45",
+  "timestamp": "2026-09-03T08:39:40.344095+00:00",
+  "git_commit": "a3ecd526cb092ca290851678e8b1a3b6a072b4c0",
   "tier": "T4",
   "config": {
     "source_glob": "/home/cdac/Music/surface-code-hierarchical-decoder/results/baselines/*.json",
     "nominal_window": 0.4,
     "ansatz": "p_L = A + B*x + C*x^2, x = (p - p_th) * d^(1/nu)",
-    "n_input_points": 50
+    "n_input_points": 44
   },
   "crossing_estimate": 0.007156714888120766,
   "fit": {
-    "p_th": 0.006946240772160873,
-    "p_th_ci_low": 0.0068422031546968515,
-    "p_th_ci_high": 0.007057002783475476,
-    "nu": 1.2137618035306434,
+    "p_th": 0.006994858760265121,
+    "p_th_ci_low": 0.0068752618046949935,
+    "p_th_ci_high": 0.007102695310608242,
+    "nu": 1.1611776401168208,
     "coefficients": [
-      0.03204008901602673,
-      3.2410281997725296,
-      95.0188154397191
+      0.03275823159511986,
+      3.0426906502847073,
+      82.23835273587552
     ],
     "n_bootstrap": 500,
     "n_bootstrap_converged": 500,
@@ -28,45 +28,45 @@
       7,
       9
     ],
-    "n_points": 20,
+    "n_points": 16,
     "converged": true,
     "message": "ok"
   },
   "window_sensitivity": {
     "0.25": {
-      "p_th": 0.006502866001885364,
-      "nu": 0.6491579087953855,
-      "n_points": 10
+      "p_th": 0.006503992794310021,
+      "nu": 0.629473675394525,
+      "n_points": 8
     },
     "0.30": {
-      "p_th": 0.007005496300280296,
-      "nu": 1.1992873668341055,
-      "n_points": 14
+      "p_th": 0.006994312428559925,
+      "nu": 1.1850778768607195,
+      "n_points": 12
     },
     "0.35": {
-      "p_th": 0.006973550151518136,
-      "nu": 1.280891939802067,
-      "n_points": 16
+      "p_th": 0.006994312428559925,
+      "nu": 1.1850778768607195,
+      "n_points": 12
     },
     "0.40": {
-      "p_th": 0.006946240772160873,
-      "nu": 1.2137618035306434,
-      "n_points": 20
+      "p_th": 0.006994858760265121,
+      "nu": 1.1611776401168208,
+      "n_points": 16
     },
     "0.45": {
-      "p_th": 0.006833728174928699,
-      "nu": 1.3299780323663164,
-      "n_points": 24
+      "p_th": 0.006852892975555435,
+      "nu": 1.322143357813583,
+      "n_points": 20
     },
     "0.50": {
-      "p_th": 0.006833728174928699,
-      "nu": 1.3299780323663164,
-      "n_points": 24
+      "p_th": 0.006852892975555435,
+      "nu": 1.322143357813583,
+      "n_points": 20
     }
   },
   "p_th_window_spread": {
-    "min": 0.006502866001885364,
-    "max": 0.007005496300280296,
+    "min": 0.006503992794310021,
+    "max": 0.006994858760265121,
     "note": "Spread of the fitted p_th across fitting windows from 0.25 to 0.50. This is a systematic uncertainty from the choice of how much data the local collapse ansatz is fitted over, and is wider than the bootstrap statistical CI; both are reported and the paper quotes both."
   },
   "env_ref": "results/env.json"

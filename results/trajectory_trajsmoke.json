@@ -1,0 +1,85 @@
+{
+  "experiment_id": "trajectory_trajsmoke_d5_p0.003",
+  "timestamp": "2026-09-03T08:37:51.492153+00:00",
+  "git_commit": "a3ecd526cb092ca290851678e8b1a3b6a072b4c0",
+  "tier": "T4",
+  "config": {
+    "distance": 5,
+    "p": 0.003,
+    "shots": 60000,
+    "seed": 999,
+    "snapshots": 5,
+    "pattern": "models/predecoder_R5_traj_at*.pt"
+  },
+  "ler_baseline": 0.0036333333333333335,
+  "trajectory": [
+    {
+      "shots_trained": 10027008,
+      "train_loss": 0.021826705122305678,
+      "ler_predecoder": 0.004883333333333333,
+      "ci_low": 0.004341273912399462,
+      "ci_high": 0.005474097840552469,
+      "ler_baseline": 0.0036333333333333335,
+      "ler_ratio": 1.3440366972477062,
+      "ler_oracle": 0.0033166666666666665,
+      "oracle_ratio": 0.9128440366972477,
+      "saves": 19,
+      "breaks": 94
+    },
+    {
+      "shots_trained": 20021248,
+      "train_loss": 0.0038237247310700965,
+      "ler_predecoder": 0.009966666666666667,
+      "ci_low": 0.0091872789140105,
+      "ci_high": 0.010793984095816049,
+      "ler_baseline": 0.0036333333333333335,
+      "ler_ratio": 2.743119266055046,
+      "ler_oracle": 0.00285,
+      "oracle_ratio": 0.7844036697247706,
+      "saves": 47,
+      "breaks": 427
+    },
+    {
+      "shots_trained": 30015488,
+      "train_loss": 0.003236538464905786,
+      "ler_predecoder": 0.01065,
+      "ci_low": 0.009844064079049156,
+      "ci_high": 0.011503777810836821,
+      "ler_baseline": 0.0036333333333333335,
+      "ler_ratio": 2.9311926605504586,
+      "ler_oracle": 0.0029333333333333334,
+      "oracle_ratio": 0.8073394495412843,
+      "saves": 42,
+      "breaks": 463
+    },
+    {
+      "shots_trained": 40009728,
+      "train_loss": 0.002971369125803963,
+      "ler_predecoder": 0.012,
+      "ci_low": 0.011144084847547352,
+      "ci_high": 0.012903589156835076,
+      "ler_baseline": 0.0036333333333333335,
+      "ler_ratio": 3.3027522935779814,
+      "ler_oracle": 0.0029666666666666665,
+      "oracle_ratio": 0.8165137614678898,
+      "saves": 40,
+      "breaks": 542
+    },
+    {
+      "shots_trained": 50003968,
+      "train_loss": 0.0028186545997369483,
+      "ler_predecoder": 0.012466666666666666,
+      "ci_low": 0.011594157829086656,
+      "ci_high": 0.01338679289747665,
+      "ler_baseline": 0.0036333333333333335,
+      "ler_ratio": 3.4311926605504586,
+      "ler_oracle": 0.0028833333333333332,
+      "oracle_ratio": 0.793577981651376,
+      "saves": 45,
+      "breaks": 575
+    }
+  ],
+  "loss_vs_ler_correlation": -0.9566738169497712,
+  "interpretation": "Correlation between training loss and the pre-decoder's logical error rate ratio across training. A NEGATIVE value means the loss and the logical error rate move in opposite directions -- loss improving while decoding degrades -- which is direct evidence that the per-mechanism objective is misaligned with the decoding goal. A positive value would refute that claim.",
+  "env_ref": "results/env.json"
+}

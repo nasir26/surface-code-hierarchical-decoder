@@ -72,7 +72,22 @@ def main() -> None:
     parser.add_argument("--max-errors", type=int, default=1_000)
     parser.add_argument("--workers", type=int, default=60)
     parser.add_argument("--decoder", default="pymatching")
+    parser.add_argument(
+        "--out-dir", type=Path, default=None,
+        help="where to write result JSONs; defaults to results/baselines for a "
+             "full run and results/smoke for --quick, so a smoke run can never "
+             "overwrite real data with a few-thousand-shot stand-in",
+    )
     args = parser.parse_args()
+
+    # A quick run is a pipeline check, not a measurement. Writing it into the
+    # canonical results directory would silently replace 20M-shot cells with
+    # 20k-shot ones and shift every aggregate derived from them -- which is
+    # exactly what it did to the threshold fit (0.695% -> 0.542%) the first
+    # time CI ran it.
+    results_dir = args.out_dir or (
+        REPO_ROOT / "results" / ("smoke" if args.quick else "baselines")
+    )
 
     if args.quick:
         distances = [3, 5]
@@ -99,7 +114,7 @@ def main() -> None:
         print_progress=True,
     )
 
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
+    results_dir.mkdir(parents=True, exist_ok=True)
     commit = git_commit()
     timestamp = datetime.datetime.now(datetime.timezone.utc).isoformat()
 
@@ -148,11 +163,11 @@ def main() -> None:
                 "NOT a per-shot latency figure; see results/latency/ for that."
             ),
         }
-        (RESULTS_DIR / f"{experiment_id}.json").write_text(json.dumps(record, indent=2) + "\n")
+        (results_dir / f"{experiment_id}.json").write_text(json.dumps(record, indent=2) + "\n")
         written += 1
         points.append(ThresholdPoint(distance=d, p=p, shots=shots, errors=errors))
 
-    print(f"wrote {written} result files to {RESULTS_DIR}")
+    print(f"wrote {written} result files to {results_dir}")
 
     fit = fit_threshold(points, n_bootstrap=500, seed=0)
     fit_record = {
@@ -170,7 +185,8 @@ def main() -> None:
         "fit": fit.to_dict(),
         "env_ref": "results/env.json",
     }
-    out = REPO_ROOT / "results" / f"threshold_fit_{args.decoder}_baseline.json"
+    out = results_dir.parent / f"threshold_fit_{args.decoder}_baseline.json" \
+        if not args.quick else results_dir / f"threshold_fit_{args.decoder}_smoke.json"
     out.write_text(json.dumps(fit_record, indent=2) + "\n")
     print(f"threshold fit: p_th = {fit.p_th:.5f} "
           f"[{fit.p_th_ci_low:.5f}, {fit.p_th_ci_high:.5f}], nu = {fit.nu:.3f} ({fit.message})")
