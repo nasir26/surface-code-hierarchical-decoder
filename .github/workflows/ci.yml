@@ -1,0 +1,80 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+  workflow_dispatch:
+
+# No Vitis, no GPU and no FPGA in CI: those need licensed tooling and a
+# physical card. CI proves the software pipeline is not broken and that the
+# manuscript still agrees with the committed data, which is what can regress
+# without anyone noticing.
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies (CPU torch)
+        run: |
+          python -m pip install --upgrade pip
+          # requirements.txt pins a CUDA build that has no CI runner to use it.
+          grep -vE '^(--extra-index-url|torch==)' requirements.txt > requirements-ci.txt
+          pip install -r requirements-ci.txt
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Unit tests
+        run: PYTHONPATH=. python -m pytest tests/ -q
+
+      - name: Smoke experiment (d=3, few thousand shots)
+        run: |
+          PYTHONPATH=. python scripts/run_baselines.py --quick --workers 2 \
+            --max-shots 20000 --max-errors 50
+
+      - name: Regenerate figures and numbers from committed results
+        run: |
+          PYTHONPATH=. python scripts/make_numbers.py
+          PYTHONPATH=. python scripts/make_figures.py
+
+      - name: Fail if the paper's numbers drifted from the data
+        run: |
+          # The smoke run above writes into results/baselines/, so only the
+          # generated paper artefacts are checked: if regenerating them from
+          # committed results changes anything, the manuscript and the data
+          # have diverged and the committed version is stale.
+          git diff --exit-code -- paper/generated_numbers.tex \
+            || (echo "::error::generated_numbers.tex is stale; re-run scripts/make_numbers.py and commit" && exit 1)
+
+      - name: Manuscript checks
+        run: python scripts/check_paper.py
+
+  paper:
+    runs-on: ubuntu-latest
+    container:
+      image: texlive/texlive:latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Compile manuscript
+        working-directory: paper
+        run: |
+          latexmk -pdf -interaction=nonstopmode main.tex
+
+      - name: Fail on unresolved citations or references
+        working-directory: paper
+        run: |
+          if grep -qE "Citation .* undefined|Reference .* undefined|Undefined control sequence" main.log; then
+            grep -E "Citation .* undefined|Reference .* undefined|Undefined control sequence" main.log
+            echo "::error::unresolved citations or references"
+            exit 1
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: manuscript
+          path: paper/main.pdf
