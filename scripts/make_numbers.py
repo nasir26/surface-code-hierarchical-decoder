@@ -233,6 +233,34 @@ def main() -> None:
                 n.add("hierTauFullEscalation", fmt(r["tau"], 4), "same")
                 break
 
+    # ---- training trajectory ---------------------------------------------
+    traj = load(REPO_ROOT / "results" / "trajectory_traj.json")
+    if traj and traj.get("trajectory"):
+        rows = [r for r in traj["trajectory"] if r.get("train_loss") is not None]
+        if rows:
+            first, last = rows[0], rows[-1]
+            best = min(rows, key=lambda r: r["ler_ratio"])
+            worst = max(rows, key=lambda r: r["ler_ratio"])
+            n.add("trajPoints", str(len(rows)), "results/trajectory_traj.json, T4")
+            n.add("trajCorr", fmt(traj["loss_vs_ler_correlation"], 3),
+                  "same, corr(training loss, LER ratio); negative means the two disagree")
+            n.add("trajFirstShots", f"{first['shots_trained']:,}", "same")
+            n.add("trajFirstLoss", fmt(first["train_loss"], 3), "same")
+            n.add("trajFirstRatio", fmt(first["ler_ratio"]), "same")
+            n.add("trajLastShots", f"{last['shots_trained']:,}", "same")
+            n.add("trajLastLoss", fmt(last["train_loss"], 3), "same")
+            n.add("trajLastRatio", fmt(last["ler_ratio"]), "same")
+            n.add("trajBestRatio", fmt(best["ler_ratio"]), "same, best LER ratio seen")
+            n.add("trajBestShots", f"{best['shots_trained']:,}", "same, where it occurred")
+            n.add("trajWorstRatio", fmt(worst["ler_ratio"]), "same, worst LER ratio seen")
+            n.add("trajFirstSaves", str(first["saves"]), "same")
+            n.add("trajFirstBreaks", str(first["breaks"]), "same")
+            n.add("trajLastSaves", str(last["saves"]), "same")
+            n.add("trajLastBreaks", str(last["breaks"]), "same")
+            n.add("trajFirstOracle", fmt(first["oracle_ratio"]), "same, oracle at the first point")
+            n.add("trajLastOracle", fmt(last["oracle_ratio"]), "same, oracle at the last point")
+            n.add("trajShots", f"{traj['config']['shots']:,}", "same, evaluation shots per point")
+
     # ---- width sweep ------------------------------------------------------
     import re as _re
 

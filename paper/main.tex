@@ -43,8 +43,9 @@ qubit coherence. We report a negative result with two identified causes. Trainin
 a convolutional pre-decoder on a GPU to \trainShots{} shots, over an order of
 magnitude beyond a prior CPU-only study, leaves it \hierPreOnlyRatio$\times$
 worse than a PyMatching baseline: the loss converges, so undertraining is not the
-cause. The per-mechanism training objective is misaligned with logical error
-rate. Independently, a compute roofline on an AMD Alveo U55C bounds this
+cause. Tracking both metrics across training shows why: they are correlated
+at \trajCorr, so the per-mechanism objective is measurably misaligned with
+logical error rate. Independently, a compute roofline on an AMD Alveo U55C bounds this
 architecture at \rooflineIntEightLatency\,$\mu$s per shot using every DSP, so the
 microsecond target is unreachable by any implementation. We show a calibrated
 confidence gate bounds the damage, provably converging to the baseline, and
@@ -222,6 +223,36 @@ undertraining: the per-mechanism objective is misaligned with logical error rate
 and optimising it harder makes the network apply more confident wrong
 corrections.
 
+\subsection{Training actively degrades decoding}\label{sec:trajectory}
+
+Ruling out budget and capacity leaves the objective, but that is an inference
+until the two quantities are watched together. Misalignment is a claim about
+how two curves move relative to one another, so we evaluated \trajPoints{}
+checkpoints from a single run against one fixed held-out set of
+\trajShots{} shots, pairing the training loss with the resulting logical error
+rate (Fig.~\ref{fig:trajectory}).
+
+The two disagree, strongly. Over the run the loss falls monotonically from
+\trajFirstLoss{} to \trajLastLoss{} while the pre-decoder's error rate rises
+from \trajFirstRatio$\times$ baseline to \trajLastRatio$\times$, peaking at
+\trajWorstRatio$\times$. Their correlation is \trajCorr. The best decoder in
+the entire run is the least-trained checkpoint, at \trajBestShots{} shots.
+
+The mechanism is visible in what the corrections do. At the first checkpoint
+the pre-decoder rescues \trajFirstSaves{} shots the matcher gets wrong and
+corrupts \trajFirstBreaks{} it would have got right; by the last it rescues
+\trajLastSaves{} and corrupts \trajLastBreaks. Training teaches the network to
+intervene more often, and the additional interventions are overwhelmingly
+harmful. Minimising per-mechanism cross-entropy is not the same as minimising
+logical error rate, and past a very early point the two objectives pull in
+opposite directions.
+
+One nuance argues against reading this as the network simply getting worse.
+The oracle bound \emph{improves} across the same run, from
+\trajFirstOracle$\times$ baseline to \trajLastOracle$\times$: training does add
+information that a perfect gate could exploit. What degrades is the network's
+own decision rule about when to use it.
+
 \subsection{Capacity does not help either}\label{sec:width}
 
 Training budget is one axis; model capacity is another. We trained
@@ -276,6 +307,16 @@ line marks the fitted threshold. Provenance: T4}\label{fig:ler}
 \includegraphics[width=0.7\textwidth]{Fig7.pdf}
 \caption{Finite-size-scaling collapse of the baseline data onto a single
 quadratic. Provenance: T4}\label{fig:collapse}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=0.7\textwidth]{Fig13.pdf}
+\caption{Training loss (left axis) against logical error rate relative to
+baseline (right axis) over a single training run. The objective being
+minimised improves while the quantity the decoder exists to minimise gets
+worse; the oracle bound improves, showing the information is present but
+increasingly misused. Provenance: T4}\label{fig:trajectory}
 \end{figure}
 
 \begin{figure}[t]

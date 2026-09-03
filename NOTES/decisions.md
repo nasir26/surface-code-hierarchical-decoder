@@ -98,3 +98,40 @@ deployability, and the predecessor swept precision only.
 - Reported p_th = 0.00695, bootstrap CI [0.00684, 0.00706], with a window
   systematic of 0.0065-0.0070 that is wider than the statistical CI and is
   quoted alongside it.
+
+## 2026-09-03: the misalignment claim, measured
+
+The earlier entry inferred objective misalignment by elimination: training
+budget and model capacity were both ruled out, so the objective was what
+remained. Inference by elimination is not measurement, and it was the weakest
+step in the argument. This tests it directly.
+
+Twenty checkpoints from one width-12 run to 200M shots, each evaluated against
+the same held-out 200,000 shots at d=5, p=0.003:
+
+| shots | train loss | LER / baseline | saves | breaks |
+|---|---|---|---|---|
+| 10M | 0.0218 | **1.33** | 62 | 297 |
+| 50M | 0.0028 | 3.41 | 147 | 1870 |
+| 100M | 0.0026 | 3.92 | 177 | 2262 |
+| 200M | 0.00255 | 3.56 | 170 | 2000 |
+
+**corr(training loss, LER ratio) = -0.902.** The loss falls monotonically while
+the logical error rate rises. The best decoder produced anywhere in the run is
+the least-trained checkpoint.
+
+The mechanism is in the last two columns: breaks grow 6.7x while saves grow
+2.7x, so the ratio of harmful to helpful interventions worsens from 4.8:1 to
+11.8:1. Training teaches the network to intervene more often, and the marginal
+intervention is overwhelmingly harmful.
+
+One nuance keeps this from being "the network just gets worse". The oracle
+bound *improves* over the same run, 0.913 -> 0.762 of baseline. Training does
+add information a perfect gate could exploit; what degrades is the network's
+own decision rule about when to act on it. That distinction matters for what
+to try next: the fix is a better decision rule or a loss that penalises
+logical errors, not a better feature extractor.
+
+The test was designed to be able to fail. run_trajectory.py reports the sign
+of the correlation and states in words whether misalignment is supported or
+refuted; a positive correlation would have refuted the paper's central claim.

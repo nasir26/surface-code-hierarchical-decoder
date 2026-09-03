@@ -269,6 +269,54 @@ def fig_width_sweep(records: List[dict], name: str = "Fig12") -> None:
     save(fig, name)
 
 
+def fig_trajectory(record: dict, name: str = "Fig13") -> None:
+    """Training loss and logical error rate against training progress.
+
+    This is the figure the misalignment claim rests on. The two curves are
+    plotted on a shared x-axis precisely so a reader can see them diverge:
+    the objective being minimised improves monotonically while the quantity
+    the decoder exists to minimise gets worse.
+    """
+    rows = [r for r in record["trajectory"] if r.get("train_loss") is not None]
+    if len(rows) < 3:
+        print(f"skipping {name}: only {len(rows)} usable points")
+        return
+
+    shots = np.array([r["shots_trained"] for r in rows]) / 1e6
+    loss = np.array([r["train_loss"] for r in rows])
+    ratio = np.array([r["ler_ratio"] for r in rows])
+    oracle = np.array([r["oracle_ratio"] for r in rows])
+
+    fig, ax = plt.subplots(figsize=(SINGLE_COL, SINGLE_COL * 0.8))
+
+    ax.plot(shots, loss, color=COLORS[2], marker=MARKERS[2], linestyle=LINESTYLES[2],
+            markevery=2, label="training loss")
+    ax.set_yscale("log")
+    ax.set_xlabel("Training shots (millions)")
+    ax.set_ylabel("Training loss (BCE)", color=COLORS[2])
+    ax.tick_params(axis="y", labelcolor=COLORS[2])
+
+    ax2 = ax.twinx()
+    ax2.plot(shots, ratio, color=COLORS[1], marker=MARKERS[0], linestyle=LINESTYLES[0],
+             markevery=2, label="pre-decoder LER / baseline")
+    ax2.plot(shots, oracle, color=COLORS[0], marker=MARKERS[3], linestyle=LINESTYLES[3],
+             markevery=2, label="oracle LER / baseline")
+    ax2.axhline(1.0, color="0.3", linewidth=0.8, linestyle=(0, (2, 2)), zorder=0)
+    ax2.set_ylabel("Logical error rate $/$ baseline")
+    ax2.set_ylim(0, max(ratio) * 1.2)
+
+    corr = record.get("loss_vs_ler_correlation")
+    if corr is not None:
+        ax.annotate(f"corr $= {corr:+.2f}$", xy=(0.97, 0.06), xycoords="axes fraction",
+                    fontsize=7, color="0.25", ha="right", va="bottom")
+
+    lines = ax.get_lines()[:1] + ax2.get_lines()[:2]
+    ax.legend(lines, [l.get_label() for l in lines], frameon=False,
+              loc="center right", fontsize=6.5)
+    ax.grid(True, alpha=0.3)
+    save(fig, name)
+
+
 def load_width_records(pattern: str, roofline_cfg: dict | None) -> List[dict]:
     from src.pipeline.roofline import architecture_macs, roofline
 
@@ -329,6 +377,12 @@ def main() -> None:
         fig_roofline(rec)
     else:
         print(f"skipping Fig9: {rpath} not found")
+
+    tpath = REPO_ROOT / "results" / "trajectory_traj.json"
+    if tpath.exists():
+        fig_trajectory(json.load(open(tpath)))
+    else:
+        print(f"skipping Fig13: {tpath} not found")
 
     width_records = load_width_records(
         str(REPO_ROOT / "results" / "hierarchical" / "*_hierarchical_w*.json"), roofline_cfg)
